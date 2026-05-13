@@ -1,0 +1,80 @@
+# ACTIVITY MAP FOR DUMMIES - JESUIT PUNE PROVINCE
+
+Hello! This guide will explain how your new website works and how you can manage it without being a "tech genius."
+
+---
+
+## 🌍 1. THE BIG PICTURE
+Your website is a "Dashboard." It takes geographic data (where things are) and shows them on a beautiful map. 
+- **The Left Sidebar:** A list of all villages grouped by District and Tehsil.
+- **The Map:** Markers showing exactly where each center is.
+- **The Right Drawer:** Details about a village (families, history, etc.) when you click it.
+
+---
+
+## 📂 2. WHERE IS THE DATA?
+Currently, your website looks for either `sample.geojson` OR `sample.json`.
+- **Location:** `public/data/`
+- **What it does:** These files tell the website the names, locations, and hierarchy (District/Tehsil) of the villages.
+
+### Which format should I use?
+- **.geojson:** Best if you are exporting from a Map tool like QGIS or Google Earth.
+- **.json:** Best if you are making a simple list of villages manually.
+
+The website is smart enough to check for the `.geojson` file first. If it doesn't find it, it will look for a `.json` file in the same folder.
+
+### How to add a new village (Simple Way):
+If you want to add a village manually to the map without a database:
+1. Open `public/data/sample.geojson` in a text editor (like Notepad++).
+2. Copy one of the existing "features" (from `{` to `}`).
+3. Paste it at the end of the list.
+4. Change the `VILLAGE`, `TEHSIL`, and `DISTRICT` names.
+5. Update the `coordinates` (Longitude, Latitude).
+
+---
+
+## 🛠 3. THE "PRO" WAY (SUPABASE DATABASE)
+Your website is ready to connect to a real database called **Supabase**. This is better because multiple people can edit it at once.
+
+### Step-by-Step Setup:
+1. **Go to Supabase.com** and create a free account.
+2. **Create a Project** named "Jesuit Map."
+3. **Open the SQL Editor** (it looks like a `>_` icon) and paste the code from `INSTRUCTIONS_FOR_USER.md`.
+4. **Get your API Keys:** Go to Project Settings > API and copy the `URL` and `Anon Key`.
+5. **Create a file named `.env.local`** in the root folder of this project and paste them there:
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=your_url_here
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key_here
+   ```
+Once you do this, the website will automatically stop using the "sample" file and start using your live database!
+
+---
+
+## 🎨 4. THE DESIGN (LOOK & FEEL)
+Everything follows a "Jesuit Modern" style:
+- **Parchment Background:** A soft, paper-like white (`#fdfcf8`).
+- **Terracotta & Gold:** Accents that reflect ecclesiastical tradition.
+- **Glassmorphism:** The sidebar is semi-transparent, like frosted glass.
+
+If you want to change colors, look at `src/app/globals.css`.
+
+---
+
+## 📱 5. MOBILE USE
+- On a phone, the sidebar stays hidden until you need it.
+- When you click a village, a "Bottom Sheet" slides up from the bottom, just like in Google Maps.
+
+---
+
+## 🚀 6. HOW TO RUN IT
+Every time you want to see the website while developing:
+1. Open your terminal/command prompt in this folder.
+2. Type: `npm run dev`
+3. Open your browser to: `http://localhost:3000`
+
+---
+
+## 🧼 7. CLEANUP DONE
+I have removed all the messy sample files and old code. The project is now clean, organized, and ready for you!
+
+**Ad Maiorem Dei Gloriam** (For the Greater Glory of God)

@@ -1,0 +1,157 @@
+'use client';
+
+import { MapContainer, TileLayer, Marker, Popup, ZoomControl, useMap, GeoJSON } from 'react-leaflet';
+import MarkerClusterGroup from 'react-leaflet-cluster';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import 'leaflet.markercluster/dist/MarkerCluster.css';
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+import { useEffect, useMemo, useState } from 'react';
+import { Center } from '@/types';
+import { MapPin } from 'lucide-react';
+import { renderToStaticMarkup } from 'react-dom/server';
+
+// Fix for default Leaflet icons
+const DefaultIcon = L.icon({
+  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+});
+L.Marker.prototype.options.icon = DefaultIcon;
+
+interface MapComponentProps {
+  centers: Center[];
+  onCenterClick: (center: Center) => void;
+  selectedCenter: Center | null;
+  rawGeoData: any; // The original GeoJSON FeatureCollection
+}
+
+const CreateCustomIcon = (type: string, isSelected: boolean) => {
+  const colorMap: Record<string, string> = {
+    'Parish': '#a34436', // Terracotta
+    'Education': '#c5a059', // Gold
+    'Social Justice': '#2d2d2d', // Charcoal
+    'TDSS': '#27ae60', // Green for partners
+  };
+
+  const color = colorMap[type] || '#a34436';
+  
+  const iconMarkup = renderToStaticMarkup(
+    <div className={`${isSelected ? 'scale-125 transition-transform' : ''}`} style={{ color: isSelected ? '#c5a059' : color }}>
+      <MapPin size={isSelected ? 40 : 32} fill="white" strokeWidth={isSelected ? 2.5 : 1.5} />
+    </div>
+  );
+
+  return L.divIcon({
+    html: iconMarkup,
+    className: 'custom-map-marker',
+    iconSize: isSelected ? [40, 40] : [32, 32],
+    iconAnchor: isSelected ? [20, 40] : [16, 32],
+  });
+};
+
+function ChangeView({ center, zoom }: { center: [number, number], zoom: number }) {
+  const map = useMap();
+  useEffect(() => {
+    map.setView(center, zoom);
+  }, [center, zoom, map]);
+  return null;
+}
+
+export default function MapComponent({ centers, onCenterClick, selectedCenter, rawGeoData }: MapComponentProps) {
+  const centerPosition: [number, number] = [19.1, 75.2]; // Maharashtra
+  const selectedCenterId = selectedCenter?.id || null;
+
+  const icons = useMemo(() => ({
+    Parish: (sel: boolean) => CreateCustomIcon('Parish', sel),
+    Education: (sel: boolean) => CreateCustomIcon('Education', sel),
+    'Social Justice': (sel: boolean) => CreateCustomIcon('Social Justice', sel),
+    TDSS: (sel: boolean) => CreateCustomIcon('TDSS', sel),
+  }), []);
+
+  // Filter rawGeoData to find the selected feature's polygon
+  const selectedFeature = useMemo(() => {
+    if (!selectedCenter || !rawGeoData || rawGeoData.type !== 'FeatureCollection') return null;
+    return rawGeoData.features.find((f: any) => 
+      f.properties.Sangammer_ === selectedCenter.name || 
+      f.properties.VILLAGE === selectedCenter.name
+    );
+  }, [selectedCenter, rawGeoData]);
+
+  // Style for the highlighted boundary
+  const highlightStyle = {
+    color: "#c5a059", // Gold
+    weight: 3,
+    opacity: 0.8,
+    fillColor: "#c5a059",
+    fillOpacity: 0.2,
+    dashArray: '5, 10'
+  };
+
+  return (
+    <div className="h-full w-full relative z-0">
+      <MapContainer
+        center={centerPosition}
+        zoom={8}
+        scrollWheelZoom={true}
+        className="h-full w-full"
+        zoomControl={false}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+        />
+        
+        <ZoomControl position="bottomright" />
+
+        {selectedCenter && (
+          <ChangeView 
+            center={[selectedCenter.lat, selectedCenter.lng]} 
+            zoom={12} 
+          />
+        )}
+
+        {/* Highlight Boundary Layer */}
+        {selectedFeature && (
+          <GeoJSON 
+            key={`highlight-${selectedCenter?.id}`}
+            data={selectedFeature} 
+            style={highlightStyle}
+          />
+        )}
+
+        <MarkerClusterGroup
+          chunkedLoading
+          maxClusterRadius={50}
+          spiderfyOnMaxZoom={true}
+          showCoverageOnHover={false}
+        >
+          {centers.map((center) => (
+            <Marker
+              key={center.id}
+              position={[center.lat, center.lng]}
+              icon={(icons[center.type] || icons.Parish)(selectedCenterId === center.id)}
+              eventHandlers={{
+                click: () => onCenterClick(center),
+              }}
+            >
+              <Popup className="jesuit-popup">
+                <div className="p-1">
+                  <h3 className="font-serif font-bold text-lg">{center.name}</h3>
+                  <p className="text-sm text-gray-600">{center.type}</p>
+                  <button 
+                    onClick={() => onCenterClick(center)}
+                    className="mt-2 text-xs text-gold font-bold uppercase tracking-wider hover:underline"
+                  >
+                    View Details
+                  </button>
+                </div>
+              </Popup>
+            </Marker>
+          ))}
+        </MarkerClusterGroup>
+      </MapContainer>
+    </div>
+  );
+}

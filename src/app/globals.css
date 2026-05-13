@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fdfcf8;
+  --foreground: #2d2d2d;
+  
+  /* Ecclesiastical Palette */
+  --parchment: #fdfcf8;
+  --charcoal: #2d2d2d;
+  --muted-gold: #c5a059;
+  --jesuit-terracotta: #a34436;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-parchment: var(--parchment);
+  --color-charcoal: var(--charcoal);
+  --color-gold: var(--muted-gold);
+  --color-terracotta: var(--jesuit-terracotta);
+  
+  --font-serif: var(--font-eb-garamond), serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Glassmorphism Sidebar */
+.glass-sidebar {
+  background: rgba(253, 252, 248, 0.7);
+  backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(45, 45, 45, 0.1);
+}
+
+/* Custom Leaflet Tooltip */
+.village-label {
+  background: rgba(253, 252, 248, 0.9) !important;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(197, 160, 89, 0.3) !important;
+  border-radius: 4px !important;
+  color: #2d2d2d !important;
+  font-weight: 600 !important;
+  font-size: 10px !important;
+  padding: 2px 8px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+}
+
+.leaflet-tooltip-top:before, .leaflet-tooltip-bottom:before, .leaflet-tooltip-left:before, .leaflet-tooltip-right:before {
+  border: none !important;
+}
