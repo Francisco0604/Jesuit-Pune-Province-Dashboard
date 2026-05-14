@@ -54,8 +54,14 @@ export default function FilterSidebar({ centers, onCenterClick, selectedCenterId
   // Grouping logic
   const groupedData: Record<string, Record<string, Center[]>> = {};
   filteredCenters.forEach(center => {
-    const district = center.district || 'Beed';
-    const tehsil = center.tehsil || 'Unknown Area';
+    let district = center.district || 'Unknown District';
+    let tehsil = center.tehsil || 'Unknown Area';
+
+    // SPECIAL CASE: Move Beed to its own section (BEED) and FLATTEN hierarchy (Direct Villages)
+    if (district.toLowerCase() === 'beed' || district.toLowerCase() === 'bid' || center.type === 'TDSS') {
+      district = 'BEED';
+      tehsil = ''; // Empty string indicates "Direct Villages" (No sub-dropdown)
+    }
     
     if (!groupedData[district]) groupedData[district] = {};
     if (!groupedData[district][tehsil]) groupedData[district][tehsil] = [];
@@ -123,6 +129,43 @@ export default function FilterSidebar({ centers, onCenterClick, selectedCenterId
                 {isDistrictExpanded && (
                   <div className="mx-2 mb-2 space-y-2 border-l-2 border-gold/20 pl-4 mt-1">
                     {Object.entries(tehsils).map(([tehsil, villageList]) => {
+                      // Handle Direct Villages (Skip Taluka Header)
+                      if (tehsil === '') {
+                        return (
+                          <div key="direct-villages" className="space-y-1 pb-2">
+                            {villageList.map((center) => (
+                              <div
+                                key={center.id}
+                                onClick={() => onCenterClick(center)}
+                                className={cn(
+                                  "p-3 rounded-lg cursor-pointer transition-all border group text-sm mr-2",
+                                  selectedCenterId === center.id
+                                    ? "bg-white border-gold shadow-md ring-1 ring-gold/10"
+                                    : "bg-transparent border-transparent hover:bg-white/50 hover:border-charcoal/5"
+                                )}
+                              >
+                                <div className="flex items-center gap-2">
+                                  <div className={cn(
+                                    "w-2 h-2 rounded-full",
+                                    center.type === 'Parish' && "bg-terracotta",
+                                    center.type === 'Education' && "bg-gold",
+                                    center.type === 'Social Justice' && "bg-charcoal",
+                                    center.type === 'TDSS' && "bg-green-600",
+                                    selectedCenterId === center.id && "animate-pulse"
+                                  )} />
+                                  <span className={cn(
+                                    "transition-colors truncate",
+                                    selectedCenterId === center.id ? "text-gold font-bold" : "text-charcoal group-hover:text-gold"
+                                  )}>
+                                    {center.name}
+                                  </span>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        );
+                      }
+
                       const tehsilKey = `${district}-${tehsil}`;
                       const isTehsilExpanded = expandedTehsils[tehsilKey];
                       return (

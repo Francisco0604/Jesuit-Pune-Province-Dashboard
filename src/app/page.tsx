@@ -27,6 +27,7 @@ export default function Home() {
   const [selectedCenter, setSelectedCenter] = useState<Center | null>(null);
   const [centers, setCenters] = useState<Center[]>([]);
   const [rawGeoData, setRawGeoData] = useState<any>(null);
+  const [districtsData, setDistrictsData] = useState<any>(null);
 
   const [isSampleMode, setIsSampleMode] = useState(false);
 
@@ -46,11 +47,20 @@ export default function Home() {
           setIsSampleMode(true);
           
           // Load CSV data first or in parallel
-          const csvResponse = await fetch('/data/parish_data.csv');
+          const [csvResponse, districtsResponse] = await Promise.all([
+            fetch('/data/parish_data.csv'),
+            fetch('/data/districts.geojson')
+          ]);
+
           let csvData: any[] = [];
           if (csvResponse.ok) {
             const csvText = await csvResponse.text();
             csvData = parseCSV(csvText);
+          }
+
+          if (districtsResponse.ok) {
+            const dData = await districtsResponse.json();
+            setDistrictsData(dData);
           }
 
           // Try .geojson first, then .json
@@ -103,6 +113,7 @@ export default function Home() {
           onCenterClick={handleCenterClick}
           selectedCenter={selectedCenter}
           rawGeoData={rawGeoData}
+          districtsData={districtsData}
         />
         
         {/* Floating Header */}

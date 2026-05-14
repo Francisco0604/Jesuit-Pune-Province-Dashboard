@@ -25,6 +25,7 @@ interface MapComponentProps {
   onCenterClick: (center: Center) => void;
   selectedCenter: Center | null;
   rawGeoData: any; // The original GeoJSON FeatureCollection
+  districtsData: any; // District boundaries
 }
 
 const CreateCustomIcon = (type: string, isSelected: boolean) => {
@@ -59,7 +60,7 @@ function ChangeView({ center, zoom }: { center: [number, number], zoom: number }
   return null;
 }
 
-export default function MapComponent({ centers, onCenterClick, selectedCenter, rawGeoData }: MapComponentProps) {
+export default function MapComponent({ centers, onCenterClick, selectedCenter, rawGeoData, districtsData }: MapComponentProps) {
   const centerPosition: [number, number] = [19.1, 75.2]; // Maharashtra
   const selectedCenterId = selectedCenter?.id || null;
 
@@ -80,13 +81,27 @@ export default function MapComponent({ centers, onCenterClick, selectedCenter, r
   }, [selectedCenter, rawGeoData]);
 
   // Style for the highlighted boundary
-  const highlightStyle = {
+  const villageHighlightStyle = {
     color: "#c5a059", // Gold
     weight: 3,
-    opacity: 0.8,
+    opacity: 1,
     fillColor: "#c5a059",
-    fillOpacity: 0.2,
-    dashArray: '5, 10'
+    fillOpacity: 0.4,
+  };
+
+  const districtStyle = (feature: any) => {
+    const isSelected = selectedCenter && 
+      (selectedCenter.district?.toUpperCase() === feature.properties.name || 
+       (selectedCenter.district === '' && feature.properties.name === 'BEED')); // Default Beed for TDSS
+
+    return {
+      color: "#2d2d2d",
+      weight: isSelected ? 2 : 1,
+      opacity: isSelected ? 0.8 : 0.2,
+      fillColor: "#c5a059",
+      fillOpacity: isSelected ? 0.05 : 0, // Very faint highlight for the active district
+      dashArray: isSelected ? '' : '5, 5'
+    };
   };
 
   return (
@@ -105,19 +120,28 @@ export default function MapComponent({ centers, onCenterClick, selectedCenter, r
         
         <ZoomControl position="bottomright" />
 
-        {selectedCenter && (
-          <ChangeView 
-            center={[selectedCenter.lat, selectedCenter.lng]} 
-            zoom={12} 
+        {/* District Boundaries */}
+        {districtsData && (
+          <GeoJSON 
+            key={selectedCenter ? `districts-${selectedCenter.id}` : 'districts-static'}
+            data={districtsData} 
+            style={districtStyle}
           />
         )}
 
-        {/* Highlight Boundary Layer */}
+        {selectedCenter && (
+          <ChangeView 
+            center={[selectedCenter.lat, selectedCenter.lng]} 
+            zoom={selectedCenter.type === 'TDSS' ? 10 : 12} 
+          />
+        )}
+
+        {/* Highlight Village Boundary Layer */}
         {selectedFeature && (
           <GeoJSON 
-            key={`highlight-${selectedCenter?.id}`}
+            key={`village-highlight-${selectedCenter?.id}`}
             data={selectedFeature} 
-            style={highlightStyle}
+            style={villageHighlightStyle}
           />
         )}
 

@@ -18,7 +18,19 @@ export const normalizeCenter = (raw: RawData): Center | null => {
       'Social Justice': 'Social Justice',
       'TDSS': 'TDSS'
     };
-    const type: CenterType = typeMapping[rawType] || 'Parish';
+    let type: CenterType = typeMapping[rawType] || 'Parish';
+
+    // Special Case: Normalize names
+    let district = raw.DISTRICT || raw.district || raw.district_n || raw.district_4 || '';
+    if (district.toUpperCase() === 'AHAMADNAGAR') district = 'AHILYANAGAR';
+    
+    let tehsil = raw.TEHSIL || raw.tehsil || raw.taluka_nam || '';
+    if (tehsil.toUpperCase() === 'SANGAMMER') tehsil = 'SANGAMNER';
+
+    // Special Case: Beed centers are always TDSS
+    if (district.toLowerCase() === 'beed' || district.toLowerCase() === 'bid') {
+      type = 'TDSS';
+    }
 
     // 3. Extract Coordinates
     let lat: number | undefined;
@@ -73,8 +85,8 @@ export const normalizeCenter = (raw: RawData): Center | null => {
       catechists_count: parseInt(raw.catechists_count || raw.Catechists || raw.catechists_of_project || '0'),
       description: raw.description || raw.history || '',
       established_year: parseInt(raw.established_year || raw.year || '0'),
-      district: raw.DISTRICT || raw.district || '',
-      tehsil: raw.TEHSIL || raw.tehsil || '',
+      district,
+      tehsil,
       last_verified: raw.last_verified || new Date().toISOString()
     };
   } catch (error) {
