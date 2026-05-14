@@ -54,7 +54,7 @@ export default function FilterSidebar({ centers, onCenterClick, selectedCenterId
   // Grouping logic
   const groupedData: Record<string, Record<string, Center[]>> = {};
   filteredCenters.forEach(center => {
-    const district = center.district || 'Unknown District';
+    const district = center.district || 'Beed';
     const tehsil = center.tehsil || 'Unknown Area';
     
     if (!groupedData[district]) groupedData[district] = {};
