@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Center, CenterType } from '@/types';
 import { Search, Filter, MapPin, ChevronRight, ChevronDown } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
@@ -14,13 +14,38 @@ interface FilterSidebarProps {
   centers: Center[];
   onCenterClick: (center: Center) => void;
   selectedCenterId: string | null;
+  onFilterChange?: (filtered: Center[]) => void;
+  activeFilter?: string;
+  onFilterTypeChange?: (filter: string) => void;
 }
 
-export default function FilterSidebar({ centers, onCenterClick, selectedCenterId }: FilterSidebarProps) {
+export default function FilterSidebar({ 
+  centers, 
+  onCenterClick, 
+  selectedCenterId, 
+  onFilterChange,
+  activeFilter = 'All',
+  onFilterTypeChange
+}: FilterSidebarProps) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeFilter, setActiveFilter] = useState<CenterType | 'All'>('All');
   const [expandedDistricts, setExpandedDistricts] = useState<Record<string, boolean>>({});
   const [expandedTehsils, setExpandedTehsils] = useState<Record<string, boolean>>({});
+
+  // Filter centers based on search and category
+  const filteredCenters = useMemo(() => {
+    return centers.filter(center => {
+      const matchesSearch = center.name.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesFilter = activeFilter === 'All' || center.type === activeFilter;
+      return matchesSearch && matchesFilter;
+    });
+  }, [centers, searchTerm, activeFilter]);
+
+  // Notify parent when filtered centers change
+  useEffect(() => {
+    if (onFilterChange) {
+      onFilterChange(filteredCenters);
+    }
+  }, [filteredCenters, onFilterChange]);
 
   // Auto-expand hierarchy when a village is selected (e.g., from map click)
   useEffect(() => {
@@ -45,12 +70,6 @@ export default function FilterSidebar({ centers, onCenterClick, selectedCenterId
     setExpandedTehsils(prev => ({ ...prev, [tehsil]: !prev[tehsil] }));
   };
 
-  const filteredCenters = centers.filter(center => {
-    const matchesSearch = center.name.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesFilter = activeFilter === 'All' || center.type === activeFilter;
-    return matchesSearch && matchesFilter;
-  });
-
   // Grouping logic
   const groupedData: Record<string, Record<string, Center[]>> = {};
   filteredCenters.forEach(center => {
@@ -69,7 +88,7 @@ export default function FilterSidebar({ centers, onCenterClick, selectedCenterId
     groupedData[district][tehsil].push(center);
   });
 
-  const categories: (CenterType | 'All')[] = ['All', 'Parish', 'Education', 'Social Justice', 'TDSS'];
+  const categories: string[] = ['All', 'Parish', 'NFE Centres', 'Social Justice', 'TDSS'];
 
   return (
     <aside className="w-80 h-full glass-sidebar flex flex-col shadow-2xl z-10 overflow-hidden">
@@ -92,11 +111,11 @@ export default function FilterSidebar({ centers, onCenterClick, selectedCenterId
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveFilter(cat)}
+              onClick={() => onFilterTypeChange?.(cat)}
               className={cn(
                 "px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all",
                 activeFilter === cat 
-                  ? "bg-gold text-white shadow-md" 
+                  ? (cat === 'NFE Centres' ? "bg-[#8e44ad] text-white shadow-md" : "bg-gold text-white shadow-md")
                   : "bg-white/50 text-charcoal/60 border border-charcoal/5 hover:bg-white"
               )}
             >
@@ -148,7 +167,7 @@ export default function FilterSidebar({ centers, onCenterClick, selectedCenterId
                                   <div className={cn(
                                     "w-2 h-2 rounded-full",
                                     center.type === 'Parish' && "bg-terracotta",
-                                    center.type === 'Education' && "bg-gold",
+                                    center.type === 'NFE Centres' && "bg-[#8e44ad]",
                                     center.type === 'Social Justice' && "bg-charcoal",
                                     center.type === 'TDSS' && "bg-green-600",
                                     selectedCenterId === center.id && "animate-pulse"
@@ -201,7 +220,7 @@ export default function FilterSidebar({ centers, onCenterClick, selectedCenterId
                                     <div className={cn(
                                       "w-2 h-2 rounded-full",
                                       center.type === 'Parish' && "bg-terracotta",
-                                      center.type === 'Education' && "bg-gold",
+                                      center.type === 'NFE Centres' && "bg-[#8e44ad]",
                                       center.type === 'Social Justice' && "bg-charcoal",
                                       center.type === 'TDSS' && "bg-green-600",
                                       selectedCenterId === center.id && "animate-pulse"

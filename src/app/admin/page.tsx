@@ -1,32 +1,53 @@
 'use client';
 
-import { useState } from 'react';
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { getCenters, insertCenters, updateCenter } from '@/lib/supabase';
+import { useState, useEffect } from 'react';
 import { processData } from '@/utils/dataProcessor';
 import { Upload, Plus, Edit2, Trash2, Check, X, Loader2, Save } from 'lucide-react';
 import { Center } from '@/types';
 
 export default function AdminPage() {
-  const queryClient = useQueryClient();
   const [isImporting, setIsImporting] = useState(false);
-  const [editingId, setEditingId] = useState<string | null>(null);
+  const [centers, setCenters] = useState<Center[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const { data: centers, isLoading } = useQuery({
-    queryKey: ['centers'],
-    queryFn: getCenters,
-  });
+  // Load existing centers from public/data (This is a simplified mock for the UI, 
+  // in a real file-only system you'd fetch the list from the server)
+  useEffect(() => {
+    const loadLocalData = async () => {
+      try {
+        const response = await fetch('/data/sample.geojson');
+        if (response.ok) {
+          const data = await response.json();
+          setCenters(processData(data));
+        }
+      } catch (error) {
+        console.error('Failed to load local data:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    loadLocalData();
+  }, []);
 
-  const importMutation = useMutation({
-    mutationFn: insertCenters,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['centers'] });
-      alert('Data imported successfully!');
-    },
-    onError: (error) => {
-      alert(`Import failed: ${error.message}`);
+  const exportAllToJson = async () => {
+    if (!centers || centers.length === 0) return;
+    setIsImporting(true);
+    let successCount = 0;
+    for (const center of centers) {
+      try {
+        await fetch('/api/save-village', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(center),
+        });
+        successCount++;
+      } catch (e) {
+        console.error(`Failed to export JSON for ${center.name}:`, e);
+      }
     }
-  });
+    setIsImporting(false);
+    alert(`Exported ${successCount} centers to JSON files.`);
+  };
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -41,7 +62,7 @@ export default function AdminPage() {
         if (file.name.endsWith('.json') || file.name.endsWith('.geojson')) {
           data = JSON.parse(text);
         } else {
-          // Basic CSV to JSON conversion (simplified)
+          // Basic CSV to JSON conversion
           const lines = text.split('\n');
           const headers = lines[0].split(',');
           data = lines.slice(1).map(line => {
@@ -53,11 +74,18 @@ export default function AdminPage() {
           });
         }
 
-        const processed = processData(data);
+        const processed = processData(data, file.name);
         if (processed.length > 0) {
-          // Remove ID from processed data for insertion (let DB handle it or use generated ones)
-          const toInsert = processed.map(({ id, ...rest }) => rest);
-          importMutation.mutate(toInsert);
+          // Save each processed center to its JSON file
+          for (const center of processed) {
+            await fetch('/api/save-village', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(center),
+            });
+          }
+          setCenters(prev => [...prev, ...processed]);
+          alert('Data imported and JSON files created successfully!');
         } else {
           alert('No valid center data found in file.');
         }
@@ -81,6 +109,14 @@ export default function AdminPage() {
           </div>
           
           <div className="flex gap-4">
+            <button 
+              onClick={exportAllToJson}
+              disabled={isImporting}
+              className="flex items-center gap-2 bg-white text-charcoal border border-charcoal/10 px-4 py-2 rounded-lg hover:bg-parchment transition-colors shadow-md disabled:opacity-50"
+            >
+              <Save size={18} />
+              <span className="text-sm font-bold uppercase tracking-wider">Export All JSON</span>
+            </button>
             <label className="flex items-center gap-2 bg-charcoal text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-charcoal/90 transition-colors shadow-md">
               <Upload size={18} />
               <span className="text-sm font-bold uppercase tracking-wider">Import Data</span>
@@ -98,7 +134,7 @@ export default function AdminPage() {
           {[
             { label: 'Total Centers', value: centers?.length || 0, color: 'border-charcoal' },
             { label: 'Parishes', value: centers?.filter(c => c.type === 'Parish').length || 0, color: 'border-terracotta' },
-            { label: 'Educational', value: centers?.filter(c => c.type === 'Education').length || 0, color: 'border-gold' },
+            { label: 'NFE Centres', value: centers?.filter(c => c.type === 'NFE Centres').length || 0, color: 'border-[#8e44ad]' },
             { label: 'Social Justice', value: centers?.filter(c => c.type === 'Social Justice').length || 0, color: 'border-charcoal' },
           ].map((stat, i) => (
             <div key={i} className={`bg-white p-6 rounded-2xl shadow-sm border-l-4 ${stat.color}`}>
@@ -137,7 +173,7 @@ export default function AdminPage() {
                   <td className="px-6 py-4">
                     <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full ${
                       center.type === 'Parish' ? 'bg-terracotta/10 text-terracotta' :
-                      center.type === 'Education' ? 'bg-gold/10 text-gold' : 'bg-charcoal/10 text-charcoal'
+                      center.type === 'NFE Centres' ? 'bg-[#8e44ad]/10 text-[#8e44ad]' : 'bg-charcoal/10 text-charcoal'
                     }`}>
                       {center.type}
                     </span>
@@ -166,4 +202,6 @@ export default function AdminPage() {
       </div>
     </div>
   );
+}
+
 }

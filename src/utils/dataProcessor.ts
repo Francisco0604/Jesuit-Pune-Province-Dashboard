@@ -8,13 +8,49 @@ import { Center, CenterType, RawData } from '../types';
 export const normalizeCenter = (raw: RawData): Center | null => {
   try {
     // 1. Extract Name (Prioritize specific fields to avoid duplicates in sample.geojson)
-    const name = raw.Sangammer_ || raw.VILLAGE || raw.CLEAN_NAME || raw.name || raw.village_na || raw.NAME || raw.VillageName || raw.village_names || 'Unknown Center';
+    const name = raw.VILLAGE || raw.CLEAN_NAME || raw.name || raw.village_na || raw.NAME || raw.VillageName || raw.village_names || 'Unknown Center';
 
-    // 2. Extract Type
-    const rawType = raw.type || raw.category || 'Parish';
+    // 2. Extract Type and Cluster
+    let rawType = raw.type || raw.category;
+    let cluster = raw.cluster || 'General';
+    
+    // Auto-detect type and cluster from filename if not explicitly set
+    if (raw._source_file) {
+      const filename = raw._source_file.toLowerCase().replace(/\.(json|geojson)$/, '');
+      const parts = filename.split('_');
+      
+      // If filename is "category_clustername"
+      if (parts.length >= 2) {
+        const fileType = parts[0];
+        let fileCluster = parts.slice(1).join('_'); // Everything after the first underscore
+        
+        // Strip numeric suffixes like _1, _2, etc. for merging
+        fileCluster = fileCluster.replace(/_\d+$/, '');
+        
+        if (!rawType) {
+          if (fileType.includes('nfe')) rawType = 'NFE Centres';
+          else if (fileType.includes('social')) rawType = 'Social Justice';
+          else if (fileType.includes('parish')) rawType = 'Parish';
+          else if (fileType.includes('tdss')) rawType = 'TDSS';
+        }
+        
+        cluster = fileCluster.charAt(0).toUpperCase() + fileCluster.slice(1);
+      } else {
+        // Fallback for single-word filenames
+        if (!rawType) {
+          if (filename.includes('nfe')) rawType = 'NFE Centres';
+          else if (filename.includes('social')) rawType = 'Social Justice';
+          else if (filename.includes('parish')) rawType = 'Parish';
+          else if (filename.includes('tdss')) rawType = 'TDSS';
+        }
+      }
+    }
+
+    if (!rawType) rawType = 'Parish'; // Default
+
     const typeMapping: Record<string, CenterType> = {
       'Parish': 'Parish',
-      'Education': 'Education',
+      'NFE Centres': 'NFE Centres',
       'Social Justice': 'Social Justice',
       'TDSS': 'TDSS'
     };
@@ -78,6 +114,7 @@ export const normalizeCenter = (raw: RawData): Center | null => {
       id: raw.id || crypto.randomUUID(),
       name,
       type,
+      cluster,
       lat: lat || 0,
       lng: lng || 0,
       families: parseInt(raw.families || raw.Family || raw.family || '0'),
@@ -87,7 +124,8 @@ export const normalizeCenter = (raw: RawData): Center | null => {
       established_year: parseInt(raw.established_year || raw.year || '0'),
       district,
       tehsil,
-      last_verified: raw.last_verified || new Date().toISOString()
+      last_verified: raw.last_verified || new Date().toISOString(),
+      geometry: raw.geometry
     };
   } catch (error) {
     console.error('Normalization error:', error);
@@ -133,7 +171,7 @@ export const mergeData = (geoData: Center[], csvData: RawData[]): Center[] => {
   });
 };
 
-export const processData = (input: any): Center[] => {
+export const processData = (input: any, filename?: string): Center[] => {
   if (!input) return [];
 
   let rawItems: RawData[] = [];
@@ -142,16 +180,23 @@ export const processData = (input: any): Center[] => {
   if (input.type === 'FeatureCollection' && Array.isArray(input.features)) {
     rawItems = input.features.map((f: any) => ({
       ...f.properties,
-      geometry: f.geometry
+      geometry: f.geometry,
+      _source_file: f.properties._source_file || filename // Use existing or provided filename
     }));
   } 
   // Handle Array of objects
   else if (Array.isArray(input)) {
-    rawItems = input;
+    rawItems = input.map((item: any) => ({
+      ...item,
+      _source_file: item._source_file || filename
+    }));
   } 
   // Handle single object
   else if (typeof input === 'object') {
-    rawItems = [input];
+    rawItems = [{
+      ...input,
+      _source_file: input._source_file || filename
+    }];
   }
 
   return rawItems

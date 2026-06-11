@@ -6,8 +6,6 @@ import FilterSidebar from '@/components/FilterSidebar';
 import CenterDrawer from '@/components/CenterDrawer';
 import { Center } from '@/types';
 import { processData, parseCSV, mergeData } from '@/utils/dataProcessor';
-import { useQuery } from '@tanstack/react-query';
-import { getCenters } from '@/lib/supabase';
 import { Loader2 } from 'lucide-react';
 
 // Dynamically import MapComponent to avoid SSR issues with Leaflet
@@ -26,75 +24,57 @@ const MapComponent = dynamic(() => import('@/components/MapComponent'), {
 export default function Home() {
   const [selectedCenter, setSelectedCenter] = useState<Center | null>(null);
   const [centers, setCenters] = useState<Center[]>([]);
+  const [filteredCenters, setFilteredCenters] = useState<Center[]>([]);
+  const [activeFilter, setActiveFilter] = useState<string>('All');
   const [rawGeoData, setRawGeoData] = useState<any>(null);
   const [districtsData, setDistrictsData] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const [isSampleMode, setIsSampleMode] = useState(false);
-
-  // 1. Try to fetch from Supabase
-  const { data: dbCenters, isLoading: isDbLoading, isError: isDbError } = useQuery({
-    queryKey: ['centers'],
-    queryFn: getCenters,
-    retry: false, // Don't retry if keys are missing
-  });
-
-  // 2. Load sample data logic
+  // Load data logic from dynamic API
   useEffect(() => {
     const loadData = async () => {
       try {
-        if (isDbError || !dbCenters || dbCenters.length === 0) {
-          console.info('Attempting to load local sample data...');
-          setIsSampleMode(true);
-          
-          // Load CSV data first or in parallel
-          const [csvResponse, districtsResponse] = await Promise.all([
-            fetch('/data/parish_data.csv'),
-            fetch('/data/districts.geojson')
-          ]);
+        // Load Districts (Static)
+        const districtsResponse = await fetch('/data/districts.geojson');
+        if (districtsResponse.ok) {
+          const dData = await districtsResponse.json();
+          setDistrictsData(dData);
+        }
 
-          let csvData: any[] = [];
-          if (csvResponse.ok) {
-            const csvText = await csvResponse.text();
-            csvData = parseCSV(csvText);
-          }
-
-          if (districtsResponse.ok) {
-            const dData = await districtsResponse.json();
-            setDistrictsData(dData);
-          }
-
-          // Try .geojson first, then .json
-          let response = await fetch('/data/sample.geojson');
-          if (!response.ok) {
-            response = await fetch('/data/sample.json');
-          }
-          
-          if (!response.ok) {
-            throw new Error('No sample data file found (.geojson or .json)');
-          }
-
-          const rawData = await response.json();
+        // Load Dynamic Map Data from /data/uploads
+        const mapResponse = await fetch('/api/get-map-data');
+        if (mapResponse.ok) {
+          const rawData = await mapResponse.json();
           setRawGeoData(rawData);
           
-          const processedGeoData = processData(rawData);
-          const mergedData = mergeData(processedGeoData, csvData);
-          setCenters(mergedData);
-        } else {
-          setCenters(dbCenters);
-          setIsSampleMode(false);
+          const processed = processData(rawData);
+          setCenters(processed);
+          setFilteredCenters(processed); // Initialize filtered centers
         }
       } catch (error) {
         console.error('Data loading failed:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
-    if (!isDbLoading) {
-      loadData();
-    }
-  }, [dbCenters, isDbLoading, isDbError]);
+    loadData();
+  }, []);
 
-  const handleCenterClick = (center: Center) => {
-    setSelectedCenter(center);
+  const handleCenterClick = async (center: Center) => {
+    try {
+      // Fetch detailed info for the sidebar
+      const response = await fetch(`/api/get-village-info?name=${encodeURIComponent(center.name)}&type=${encodeURIComponent(center.type)}`);
+      if (response.ok) {
+        const fullData = await response.json();
+        setSelectedCenter({ ...center, ...fullData });
+      } else {
+        setSelectedCenter(center);
+      }
+    } catch (e) {
+      console.error('Failed to fetch village info:', e);
+      setSelectedCenter(center);
+    }
   };
 
   return (
@@ -104,16 +84,20 @@ export default function Home() {
         centers={centers} 
         onCenterClick={handleCenterClick}
         selectedCenterId={selectedCenter?.id || null}
+        onFilterChange={setFilteredCenters}
+        activeFilter={activeFilter}
+        onFilterTypeChange={setActiveFilter}
       />
 
       {/* Main Map Area */}
       <div className="flex-1 relative">
         <MapComponent 
-          centers={centers} 
+          centers={filteredCenters} 
           onCenterClick={handleCenterClick}
           selectedCenter={selectedCenter}
           rawGeoData={rawGeoData}
           districtsData={districtsData}
+          activeFilter={activeFilter}
         />
         
         {/* Floating Header */}
@@ -123,14 +107,6 @@ export default function Home() {
               Jesuit Pune Province Activity Map
             </h2>
           </div>
-          
-          {isSampleMode && (
-            <div className="bg-gold/10 backdrop-blur-sm px-3 py-1 rounded-full border border-gold/20 shadow-sm text-center">
-              <p className="text-[10px] font-bold text-gold uppercase tracking-widest">
-                Viewing Presentation Data (CSV Integrated)
-              </p>
-            </div>
-          )}
         </div>
       </div>
 

@@ -1,9 +1,10 @@
-export type CenterType = 'Parish' | 'Education' | 'Social Justice' | 'TDSS';
+export type CenterType = 'Parish' | 'NFE Centres' | 'Social Justice' | 'TDSS';
 
 export interface Center {
   id: string;
   name: string;
   type: CenterType;
+  cluster?: string; // New field for grouping
   lat: number;
   lng: number;
   families?: number;
@@ -14,6 +15,7 @@ export interface Center {
   district?: string;
   tehsil?: string;
   last_verified?: string; // ISO string
+  geometry?: any; // For GeoJSON boundaries
 }
 
 export interface RawData {
