@@ -2,20 +2,19 @@
 
 import { useState, useEffect } from 'react';
 import { processData } from '@/utils/dataProcessor';
-import { Upload, Plus, Edit2, Trash2, Check, X, Loader2, Save } from 'lucide-react';
-import { Center } from '@/types';
+import { Upload, Plus, Edit2, Trash2, Loader2, Save, Shield, Map, BookOpen, Users } from 'lucide-react';
+import { Center, RawData } from '@/types';
 
 export default function AdminPage() {
   const [isImporting, setIsImporting] = useState(false);
   const [centers, setCenters] = useState<Center[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Load existing centers from public/data (This is a simplified mock for the UI, 
-  // in a real file-only system you'd fetch the list from the server)
+  // Load existing centers from public/data
   useEffect(() => {
     const loadLocalData = async () => {
       try {
-        const response = await fetch('/data/sample.geojson');
+        const response = await fetch('/api/get-map-data');
         if (response.ok) {
           const data = await response.json();
           setCenters(processData(data));
@@ -67,10 +66,11 @@ export default function AdminPage() {
           const headers = lines[0].split(',');
           data = lines.slice(1).map(line => {
             const values = line.split(',');
-            return headers.reduce((obj: any, header, i) => {
+            const obj: RawData = {};
+            headers.forEach((header, i) => {
               obj[header.trim()] = values[i]?.trim();
-              return obj;
-            }, {});
+            });
+            return obj;
           });
         }
 
@@ -100,108 +100,124 @@ export default function AdminPage() {
   };
 
   return (
-    <div className="min-h-screen bg-parchment p-8">
+    <div className="min-h-screen bg-parchment p-12">
       <div className="max-w-6xl mx-auto">
-        <header className="flex justify-between items-end mb-12">
+        <header className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
           <div>
-            <h1 className="text-4xl font-serif font-bold text-charcoal">Admin Dashboard</h1>
-            <p className="text-charcoal/60 uppercase tracking-widest text-xs mt-2">Manage Province Centers</p>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 bg-charcoal flex items-center justify-center">
+                <Shield className="text-white w-5 h-5" />
+              </div>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-terracotta">Administrative Portal</span>
+            </div>
+            <h1 className="text-5xl font-serif font-bold text-charcoal">Province Records</h1>
+            <p className="text-charcoal/40 font-serif italic mt-2 text-lg">Managing the legacy and mission of Pune Province.</p>
           </div>
           
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <button 
               onClick={exportAllToJson}
               disabled={isImporting}
-              className="flex items-center gap-2 bg-white text-charcoal border border-charcoal/10 px-4 py-2 rounded-lg hover:bg-parchment transition-colors shadow-md disabled:opacity-50"
+              className="flex items-center gap-3 bg-white text-charcoal border border-charcoal/10 px-6 py-3 rounded-none hover:bg-parchment transition-all shadow-lg shadow-charcoal/5 disabled:opacity-50 font-bold uppercase tracking-widest text-[10px]"
             >
-              <Save size={18} />
-              <span className="text-sm font-bold uppercase tracking-wider">Export All JSON</span>
+              <Save size={16} />
+              <span>Sync All Data</span>
             </button>
-            <label className="flex items-center gap-2 bg-charcoal text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-charcoal/90 transition-colors shadow-md">
-              <Upload size={18} />
-              <span className="text-sm font-bold uppercase tracking-wider">Import Data</span>
+            <label className="flex items-center gap-3 bg-charcoal text-parchment px-6 py-3 rounded-none cursor-pointer hover:bg-terracotta transition-all shadow-xl shadow-charcoal/20 font-bold uppercase tracking-widest text-[10px]">
+              <Upload size={16} />
+              <span>Import GeoJSON</span>
               <input type="file" className="hidden" accept=".json,.geojson,.csv" onChange={handleFileUpload} />
             </label>
-            <button className="flex items-center gap-2 bg-gold text-white px-4 py-2 rounded-lg hover:bg-gold/90 transition-colors shadow-md">
-              <Plus size={18} />
-              <span className="text-sm font-bold uppercase tracking-wider">Add Center</span>
+            <button className="flex items-center gap-3 bg-gold text-charcoal px-6 py-3 rounded-none hover:bg-white transition-all shadow-xl shadow-gold/20 font-bold uppercase tracking-widest text-[10px]">
+              <Plus size={16} />
+              <span>New Entry</span>
             </button>
           </div>
         </header>
 
         {/* Stats Summary */}
-        <div className="grid grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {[
-            { label: 'Total Centers', value: centers?.length || 0, color: 'border-charcoal' },
-            { label: 'Parishes', value: centers?.filter(c => c.type === 'Parish').length || 0, color: 'border-terracotta' },
-            { label: 'NFE Centres', value: centers?.filter(c => c.type === 'NFE Centres').length || 0, color: 'border-[#8e44ad]' },
-            { label: 'Social Justice', value: centers?.filter(c => c.type === 'Social Justice').length || 0, color: 'border-charcoal' },
+            { label: 'Total Centers', value: centers?.length || 0, icon: Map, color: 'text-charcoal' },
+            { label: 'Parishes', value: centers?.filter(c => c.type === 'Parish').length || 0, icon: Shield, color: 'text-terracotta' },
+            { label: 'NFE Centres', value: centers?.filter(c => c.type === 'NFE Centres').length || 0, icon: BookOpen, color: 'text-[#9333ea]' },
+            { label: 'TDSS', value: centers?.filter(c => c.type === 'TDSS').length || 0, icon: Users, color: 'text-[#16a34a]' },
           ].map((stat, i) => (
-            <div key={i} className={`bg-white p-6 rounded-2xl shadow-sm border-l-4 ${stat.color}`}>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-charcoal/40 mb-1">{stat.label}</p>
-              <p className="text-3xl font-serif font-bold text-charcoal">{stat.value}</p>
+            <div key={i} className="bg-white p-8 shadow-xl shadow-charcoal/5 border-b-2 border-charcoal/5 group hover:border-gold transition-all">
+              <stat.icon className={`${stat.color} mb-4 opacity-40`} size={24} />
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-charcoal/30 mb-2">{stat.label}</p>
+              <p className="text-4xl font-serif font-bold text-charcoal">{stat.value}</p>
             </div>
           ))}
         </div>
 
         {/* Centers Table */}
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-charcoal/5">
-          <table className="w-full text-left">
-            <thead>
-              <tr className="bg-charcoal/5 text-charcoal/60 text-[10px] font-bold uppercase tracking-widest">
-                <th className="px-6 py-4">Center Name</th>
-                <th className="px-6 py-4">Type</th>
-                <th className="px-6 py-4">Location (Lat/Lng)</th>
-                <th className="px-6 py-4">Verified</th>
-                <th className="px-6 py-4 text-right">Actions</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-charcoal/5">
-              {isLoading ? (
-                <tr>
-                  <td colSpan={5} className="px-6 py-12 text-center">
-                    <Loader2 className="animate-spin mx-auto text-gold mb-2" size={32} />
-                    <p className="text-sm text-charcoal/40 italic font-serif">Loading centers...</p>
-                  </td>
+        <div className="bg-white shadow-2xl overflow-hidden border border-charcoal/5">
+          <div className="p-6 border-b border-charcoal/5 bg-white/50 flex justify-between items-center">
+            <h3 className="font-serif font-bold text-xl">Active Village Records</h3>
+            <div className="text-[10px] font-bold uppercase tracking-widest text-charcoal/30">Showing {centers?.length} entries</div>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="bg-parchment/30 text-charcoal/40 text-[9px] font-bold uppercase tracking-[0.2em]">
+                  <th className="px-8 py-5">Village Identity</th>
+                  <th className="px-8 py-5">Category</th>
+                  <th className="px-8 py-5">Geography</th>
+                  <th className="px-8 py-5">Metrics</th>
+                  <th className="px-8 py-5 text-right">Management</th>
                 </tr>
-              ) : centers?.map((center) => (
-                <tr key={center.id} className="hover:bg-parchment/30 transition-colors">
-                  <td className="px-6 py-4">
-                    <div className="font-serif font-bold text-charcoal">{center.name}</div>
-                    <div className="text-[10px] text-charcoal/40 uppercase tracking-tighter">{center.district}</div>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full ${
-                      center.type === 'Parish' ? 'bg-terracotta/10 text-terracotta' :
-                      center.type === 'NFE Centres' ? 'bg-[#8e44ad]/10 text-[#8e44ad]' : 'bg-charcoal/10 text-charcoal'
-                    }`}>
-                      {center.type}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 text-sm font-mono text-charcoal/60">
-                    {center.lat.toFixed(4)}, {center.lng.toFixed(4)}
-                  </td>
-                  <td className="px-6 py-4">
-                    <Check className="text-green-600" size={16} />
-                  </td>
-                  <td className="px-6 py-4 text-right">
-                    <div className="flex justify-end gap-2">
-                      <button className="p-2 text-charcoal/40 hover:text-gold transition-colors">
-                        <Edit2 size={16} />
-                      </button>
-                      <button className="p-2 text-charcoal/40 hover:text-terracotta transition-colors">
-                        <Trash2 size={16} />
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="divide-y divide-charcoal/5">
+                {isLoading ? (
+                  <tr>
+                    <td colSpan={5} className="px-8 py-20 text-center">
+                      <Loader2 className="animate-spin mx-auto text-gold mb-4" size={40} />
+                      <p className="text-lg text-charcoal/40 italic font-serif tracking-wide">Consulting archives...</p>
+                    </td>
+                  </tr>
+                ) : centers?.map((center) => (
+                  <tr key={center.id} className="hover:bg-parchment/20 transition-all group">
+                    <td className="px-8 py-6">
+                      <div className="font-serif font-bold text-charcoal text-lg group-hover:text-terracotta transition-colors">{center.name}</div>
+                      <div className="text-[10px] text-charcoal/30 uppercase tracking-widest font-bold">{center.district || 'Pune Province'}</div>
+                    </td>
+                    <td className="px-8 py-6">
+                      <span className={`text-[9px] font-bold uppercase tracking-[0.15em] px-3 py-1.5 border ${
+                        center.type === 'Parish' ? 'border-terracotta/20 text-terracotta bg-terracotta/5' :
+                        center.type === 'NFE Centres' ? 'border-[#9333ea]/20 text-[#9333ea] bg-[#9333ea]/5' : 
+                        'border-charcoal/20 text-charcoal bg-charcoal/5'
+                      }`}>
+                        {center.type}
+                      </span>
+                    </td>
+                    <td className="px-8 py-6">
+                      <div className="text-xs font-mono text-charcoal/40 mb-1">{center.lat.toFixed(4)}N</div>
+                      <div className="text-xs font-mono text-charcoal/40">{center.lng.toFixed(4)}E</div>
+                    </td>
+                    <td className="px-8 py-6">
+                      <div className="flex items-center gap-2">
+                        <Users size={12} className="text-gold" />
+                        <span className="text-sm font-serif font-bold">{center.families || 0} Families</span>
+                      </div>
+                    </td>
+                    <td className="px-8 py-6 text-right">
+                      <div className="flex justify-end gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button className="p-2 text-charcoal/20 hover:text-gold transition-colors">
+                          <Edit2 size={16} />
+                        </button>
+                        <button className="p-2 text-charcoal/20 hover:text-terracotta transition-colors">
+                          <Trash2 size={16} />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   );
-}
-
 }

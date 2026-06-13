@@ -1,4 +1,4 @@
-import { Center, CenterType, RawData } from '../types';
+import { Center, CenterType, RawData, GeoJSONFeature, GeoJSONFeatureCollection } from '../types';
 
 /**
  * DataProcessor Utility
@@ -54,7 +54,7 @@ export const normalizeCenter = (raw: RawData): Center | null => {
       'Social Justice': 'Social Justice',
       'TDSS': 'TDSS'
     };
-    let type: CenterType = typeMapping[rawType] || 'Parish';
+    const type: CenterType = typeMapping[rawType] || 'Parish';
 
     // Special Case: Normalize names
     let district = raw.DISTRICT || raw.district || raw.district_n || raw.district_4 || '';
@@ -62,11 +62,6 @@ export const normalizeCenter = (raw: RawData): Center | null => {
     
     let tehsil = raw.TEHSIL || raw.tehsil || raw.taluka_nam || '';
     if (tehsil.toUpperCase() === 'SANGAMMER') tehsil = 'SANGAMNER';
-
-    // Special Case: Beed centers are always TDSS
-    if (district.toLowerCase() === 'beed' || district.toLowerCase() === 'bid') {
-      type = 'TDSS';
-    }
 
     // 3. Extract Coordinates
     let lat: number | undefined;
@@ -171,14 +166,14 @@ export const mergeData = (geoData: Center[], csvData: RawData[]): Center[] => {
   });
 };
 
-export const processData = (input: any, filename?: string): Center[] => {
+export const processData = (input: GeoJSONFeatureCollection | RawData[] | RawData | null, filename?: string): Center[] => {
   if (!input) return [];
 
   let rawItems: RawData[] = [];
 
   // Handle GeoJSON FeatureCollection
-  if (input.type === 'FeatureCollection' && Array.isArray(input.features)) {
-    rawItems = input.features.map((f: any) => ({
+  if (typeof input === 'object' && 'type' in input && input.type === 'FeatureCollection' && Array.isArray(input.features)) {
+    rawItems = input.features.map((f: GeoJSONFeature) => ({
       ...f.properties,
       geometry: f.geometry,
       _source_file: f.properties._source_file || filename // Use existing or provided filename
@@ -186,16 +181,17 @@ export const processData = (input: any, filename?: string): Center[] => {
   } 
   // Handle Array of objects
   else if (Array.isArray(input)) {
-    rawItems = input.map((item: any) => ({
+    rawItems = input.map((item: RawData) => ({
       ...item,
       _source_file: item._source_file || filename
     }));
   } 
   // Handle single object
-  else if (typeof input === 'object') {
+  else if (typeof input === 'object' && input !== null) {
+    const item = input as RawData;
     rawItems = [{
-      ...input,
-      _source_file: input._source_file || filename
+      ...item,
+      _source_file: item._source_file || filename
     }];
   }
 

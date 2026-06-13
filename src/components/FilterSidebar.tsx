@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import { Center, CenterType } from '@/types';
-import { Search, Filter, MapPin, ChevronRight, ChevronDown } from 'lucide-react';
+import { Center } from '@/types';
+import { Search, Filter, ChevronRight, ChevronDown } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -30,6 +30,24 @@ export default function FilterSidebar({
   const [searchTerm, setSearchTerm] = useState('');
   const [expandedDistricts, setExpandedDistricts] = useState<Record<string, boolean>>({});
   const [expandedTehsils, setExpandedTehsils] = useState<Record<string, boolean>>({});
+  const [prevSelectedCenterId, setPrevSelectedCenterId] = useState<string | null>(null);
+
+  // Auto-expand hierarchy when a village is selected (e.g., from map click)
+  if (selectedCenterId !== prevSelectedCenterId) {
+    setPrevSelectedCenterId(selectedCenterId);
+    if (selectedCenterId) {
+      const selectedCenter = centers.find(c => c.id === selectedCenterId);
+      if (selectedCenter) {
+        if (selectedCenter.district && !expandedDistricts[selectedCenter.district]) {
+          setExpandedDistricts(prev => ({ ...prev, [selectedCenter.district!]: true }));
+        }
+        const tehsilKey = `${selectedCenter.district}-${selectedCenter.tehsil}`;
+        if (selectedCenter.tehsil && !expandedTehsils[tehsilKey]) {
+          setExpandedTehsils(prev => ({ ...prev, [tehsilKey]: true }));
+        }
+      }
+    }
+  }
 
   // Filter centers based on search and category
   const filteredCenters = useMemo(() => {
@@ -46,21 +64,6 @@ export default function FilterSidebar({
       onFilterChange(filteredCenters);
     }
   }, [filteredCenters, onFilterChange]);
-
-  // Auto-expand hierarchy when a village is selected (e.g., from map click)
-  useEffect(() => {
-    if (selectedCenterId) {
-      const selectedCenter = centers.find(c => c.id === selectedCenterId);
-      if (selectedCenter) {
-        if (selectedCenter.district) {
-          setExpandedDistricts(prev => ({ ...prev, [selectedCenter.district!]: true }));
-        }
-        if (selectedCenter.tehsil) {
-          setExpandedTehsils(prev => ({ ...prev, [`${selectedCenter.district}-${selectedCenter.tehsil}`]: true }));
-        }
-      }
-    }
-  }, [selectedCenterId, centers]);
 
   const toggleDistrict = (district: string) => {
     setExpandedDistricts(prev => ({ ...prev, [district]: !prev[district] }));
@@ -88,98 +91,99 @@ export default function FilterSidebar({
     groupedData[district][tehsil].push(center);
   });
 
-  const categories: string[] = ['All', 'Parish', 'NFE Centres', 'Social Justice', 'TDSS'];
+  const categories = [
+    { name: 'All', color: 'bg-charcoal' },
+    { name: 'Parish', color: 'bg-terracotta' },
+    { name: 'NFE Centres', color: 'bg-[#9333ea]' },
+    { name: 'Social Justice', color: 'bg-[#2d2d2d]' },
+    { name: 'TDSS', color: 'bg-[#16a34a]' }
+  ];
 
   return (
-    <aside className="w-80 h-full glass-sidebar flex flex-col shadow-2xl z-10 overflow-hidden">
-      <div className="p-6 border-b border-charcoal/10 bg-parchment/50">
-        <h1 className="text-2xl font-serif font-bold text-charcoal mb-1">Pune Province</h1>
-        <p className="text-xs text-charcoal/60 uppercase tracking-widest mb-6">Hierarchy Navigator</p>
+    <aside className="w-80 h-full glass-sidebar flex flex-col shadow-2xl z-10 overflow-hidden border-r border-charcoal/5">
+      <div className="p-8 border-b border-charcoal/10 bg-parchment/80 backdrop-blur-md">
+        <h1 className="text-2xl font-serif font-bold text-charcoal tracking-tight mb-1">Pune Province</h1>
+        <p className="text-[10px] text-terracotta uppercase tracking-[0.2em] font-bold mb-8">Activity Navigator</p>
         
-        <div className="relative mb-4">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-charcoal/40" size={18} />
+        <div className="relative mb-6">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-charcoal/30" size={16} />
           <input
             type="text"
-            placeholder="Search villages..."
-            className="w-full pl-10 pr-4 py-2 bg-white/50 border border-charcoal/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold/30 text-sm"
+            placeholder="Find a village..."
+            className="w-full pl-10 pr-4 py-2.5 bg-white/40 border border-charcoal/10 rounded-none focus:outline-none focus:border-gold transition-colors text-sm placeholder:text-charcoal/30 placeholder:italic font-serif"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
           {categories.map((cat) => (
             <button
-              key={cat}
-              onClick={() => onFilterTypeChange?.(cat)}
+              key={cat.name}
+              onClick={() => onFilterTypeChange?.(cat.name)}
               className={cn(
-                "px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all",
-                activeFilter === cat 
-                  ? (cat === 'NFE Centres' ? "bg-[#8e44ad] text-white shadow-md" : "bg-gold text-white shadow-md")
-                  : "bg-white/50 text-charcoal/60 border border-charcoal/5 hover:bg-white"
+                "px-2.5 py-1.5 text-[9px] font-bold uppercase tracking-widest transition-all border",
+                activeFilter === cat.name 
+                  ? `${cat.color} text-white border-transparent shadow-lg shadow-charcoal/10`
+                  : "bg-transparent text-charcoal/40 border-charcoal/10 hover:border-charcoal/30 hover:text-charcoal"
               )}
             >
-              {cat}
+              {cat.name}
             </button>
           ))}
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-4 custom-scrollbar">
+      <div className="flex-1 overflow-y-auto p-6 custom-scrollbar space-y-2">
         {Object.keys(groupedData).length > 0 ? (
           Object.entries(groupedData).map(([district, tehsils]) => {
             const isDistrictExpanded = expandedDistricts[district];
             return (
-              <div key={district} className={cn(
-                "mb-4 rounded-xl transition-all border",
-                isDistrictExpanded ? "border-gold/30 bg-gold/5 shadow-sm" : "border-transparent"
-              )}>
+              <div key={district} className="mb-2">
                 <button 
                   onClick={() => toggleDistrict(district)}
                   className={cn(
-                    "w-full flex items-center gap-2 p-3 hover:bg-charcoal/5 rounded-t-xl transition-colors text-left",
-                    isDistrictExpanded ? "text-gold font-bold" : "text-charcoal"
+                    "w-full flex items-center justify-between p-3 transition-colors text-left group",
+                    isDistrictExpanded ? "bg-charcoal text-parchment" : "bg-white/30 text-charcoal hover:bg-white/60"
                   )}
                 >
-                  {isDistrictExpanded ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
-                  <span className="font-serif uppercase tracking-wider text-sm">{district}</span>
+                  <div className="flex items-center gap-3">
+                    <span className="font-serif font-bold text-sm tracking-wide">{district}</span>
+                    <span className="text-[10px] opacity-40 font-sans">
+                      ({Object.values(tehsils).flat().length})
+                    </span>
+                  </div>
+                  {isDistrictExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} className="opacity-40" />}
                 </button>
 
                 {isDistrictExpanded && (
-                  <div className="mx-2 mb-2 space-y-2 border-l-2 border-gold/20 pl-4 mt-1">
+                  <div className="mt-1 space-y-1">
                     {Object.entries(tehsils).map(([tehsil, villageList]) => {
                       // Handle Direct Villages (Skip Taluka Header)
                       if (tehsil === '') {
                         return (
-                          <div key="direct-villages" className="space-y-1 pb-2">
+                          <div key="direct-villages" className="space-y-px">
                             {villageList.map((center) => (
-                              <div
+                              <button
                                 key={center.id}
                                 onClick={() => onCenterClick(center)}
                                 className={cn(
-                                  "p-3 rounded-lg cursor-pointer transition-all border group text-sm mr-2",
+                                  "w-full flex items-center gap-3 p-3 transition-all text-left text-xs",
                                   selectedCenterId === center.id
-                                    ? "bg-white border-gold shadow-md ring-1 ring-gold/10"
-                                    : "bg-transparent border-transparent hover:bg-white/50 hover:border-charcoal/5"
+                                    ? "bg-gold/10 text-charcoal font-bold border-l-2 border-gold shadow-sm"
+                                    : "bg-transparent text-charcoal/60 hover:bg-white/40 hover:text-charcoal border-l-2 border-transparent"
                                 )}
                               >
-                                <div className="flex items-center gap-2">
-                                  <div className={cn(
-                                    "w-2 h-2 rounded-full",
-                                    center.type === 'Parish' && "bg-terracotta",
-                                    center.type === 'NFE Centres' && "bg-[#8e44ad]",
-                                    center.type === 'Social Justice' && "bg-charcoal",
-                                    center.type === 'TDSS' && "bg-green-600",
-                                    selectedCenterId === center.id && "animate-pulse"
-                                  )} />
-                                  <span className={cn(
-                                    "transition-colors truncate",
-                                    selectedCenterId === center.id ? "text-gold font-bold" : "text-charcoal group-hover:text-gold"
-                                  )}>
-                                    {center.name}
-                                  </span>
-                                </div>
-                              </div>
+                                <div className={cn(
+                                  "w-1.5 h-1.5 rounded-full shrink-0",
+                                  center.type === 'Parish' && "bg-terracotta",
+                                  center.type === 'NFE Centres' && "bg-[#9333ea]",
+                                  center.type === 'Social Justice' && "bg-charcoal",
+                                  center.type === 'TDSS' && "bg-[#16a34a]",
+                                  selectedCenterId === center.id && "ring-4 ring-gold/20"
+                                )} />
+                                <span className="truncate">{center.name}</span>
+                              </button>
                             ))}
                           </div>
                         );
@@ -188,51 +192,40 @@ export default function FilterSidebar({
                       const tehsilKey = `${district}-${tehsil}`;
                       const isTehsilExpanded = expandedTehsils[tehsilKey];
                       return (
-                        <div key={tehsil} className={cn(
-                          "rounded-lg transition-all",
-                          isTehsilExpanded ? "bg-white/40 shadow-inner" : ""
-                        )}>
+                        <div key={tehsil} className="mt-0.5">
                           <button 
                             onClick={() => toggleTehsil(tehsilKey)}
                             className={cn(
-                              "w-full flex items-center gap-2 p-2 hover:bg-gold/5 rounded-lg transition-colors text-left",
-                              isTehsilExpanded ? "text-gold" : "text-charcoal/70"
+                              "w-full flex items-center justify-between p-2 pl-4 transition-colors text-left",
+                              isTehsilExpanded ? "bg-gold/5 text-gold" : "text-charcoal/50 hover:text-charcoal"
                             )}
                           >
-                            {isTehsilExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
-                            <span className="font-sans font-semibold text-xs uppercase tracking-tight">{tehsil}</span>
+                            <span className="font-sans font-bold text-[10px] uppercase tracking-wider">{tehsil}</span>
+                            {isTehsilExpanded ? <ChevronDown size={12} /> : <ChevronRight size={12} className="opacity-30" />}
                           </button>
 
                           {isTehsilExpanded && (
-                            <div className="ml-4 mt-1 space-y-1 pb-2">
+                            <div className="space-y-px">
                               {villageList.map((center) => (
-                                <div
+                                <button
                                   key={center.id}
                                   onClick={() => onCenterClick(center)}
                                   className={cn(
-                                    "p-3 rounded-lg cursor-pointer transition-all border group text-sm mr-2",
+                                    "w-full flex items-center gap-3 p-2.5 pl-8 transition-all text-left text-[11px]",
                                     selectedCenterId === center.id
-                                      ? "bg-white border-gold shadow-md ring-1 ring-gold/10"
-                                      : "bg-transparent border-transparent hover:bg-white/50 hover:border-charcoal/5"
+                                      ? "bg-gold/10 text-charcoal font-bold border-l-2 border-gold"
+                                      : "bg-transparent text-charcoal/60 hover:bg-white/40 hover:text-charcoal border-l-2 border-transparent"
                                   )}
                                 >
-                                  <div className="flex items-center gap-2">
-                                    <div className={cn(
-                                      "w-2 h-2 rounded-full",
-                                      center.type === 'Parish' && "bg-terracotta",
-                                      center.type === 'NFE Centres' && "bg-[#8e44ad]",
-                                      center.type === 'Social Justice' && "bg-charcoal",
-                                      center.type === 'TDSS' && "bg-green-600",
-                                      selectedCenterId === center.id && "animate-pulse"
+                                  <div className={cn(
+                                    "w-1.5 h-1.5 rounded-full shrink-0",
+                                    center.type === 'Parish' && "bg-terracotta",
+                                    center.type === 'NFE Centres' && "bg-[#9333ea]",
+                                    center.type === 'Social Justice' && "bg-charcoal",
+                                    selectedCenterId === center.id && "ring-4 ring-gold/20"
                                     )} />
-                                    <span className={cn(
-                                      "transition-colors truncate",
-                                      selectedCenterId === center.id ? "text-gold font-bold" : "text-charcoal group-hover:text-gold"
-                                    )}>
-                                      {center.name}
-                                    </span>
-                                  </div>
-                                </div>
+                                  <span className="truncate">{center.name}</span>
+                                </button>
                               ))}
                             </div>
                           )}
@@ -245,16 +238,17 @@ export default function FilterSidebar({
             );
           })
         ) : (
-          <div className="text-center py-12">
-            <Filter className="mx-auto text-charcoal/20 mb-2" size={32} />
-            <p className="text-sm text-charcoal/40 italic">No villages found.</p>
+          <div className="text-center py-20 px-4">
+            <Filter className="mx-auto text-charcoal/10 mb-4" size={40} strokeWidth={1} />
+            <p className="text-sm text-charcoal/40 font-serif italic">No villages match your search.</p>
           </div>
         )}
       </div>
       
-      <div className="p-4 border-t border-charcoal/10 bg-parchment/30 text-[10px] text-charcoal/40 text-center uppercase tracking-tighter">
-        © {new Date().getFullYear()} Jesuit Pune Province | Ad Maiorem Dei Gloriam
+      <div className="p-6 border-t border-charcoal/5 bg-parchment/50 text-[9px] text-charcoal/30 text-center uppercase tracking-[0.2em] font-bold">
+        Ad Maiorem Dei Gloriam
       </div>
     </aside>
   );
 }
+

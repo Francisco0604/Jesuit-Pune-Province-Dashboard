@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+import { GeoJSONFeature } from '@/types';
+
 export async function GET() {
   try {
     const uploadDir = path.join(process.cwd(), 'public', 'data', 'uploads');
@@ -12,15 +14,15 @@ export async function GET() {
 
     const files = fs.readdirSync(uploadDir).filter(f => f.endsWith('.geojson') || f.endsWith('.json'));
     
-    let allFeatures: any[] = [];
+    let allFeatures: GeoJSONFeature[] = [];
 
     for (const file of files) {
       const filePath = path.join(uploadDir, file);
       const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
       
-      const features = content.type === 'FeatureCollection' ? content.features : [content];
+      const features: GeoJSONFeature[] = content.type === 'FeatureCollection' ? content.features : [content];
       
-      const featuresWithSource = features.map((f: any) => ({
+      const featuresWithSource = features.map((f: GeoJSONFeature) => ({
         ...f,
         properties: {
           ...f.properties,
@@ -35,7 +37,8 @@ export async function GET() {
       type: 'FeatureCollection',
       features: allFeatures
     });
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }

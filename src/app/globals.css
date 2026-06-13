@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fdfcf8;
+  --background: #f5f5dc;
   --foreground: #2d2d2d;
   
   /* Ecclesiastical Palette */
-  --parchment: #fdfcf8;
+  --parchment: #f5f5dc;
   --charcoal: #2d2d2d;
   --muted-gold: #c5a059;
   --jesuit-terracotta: #a34436;

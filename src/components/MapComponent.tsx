@@ -6,8 +6,8 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
-import { useEffect, useMemo, useState } from 'react';
-import { Center } from '@/types';
+import { useEffect, useMemo } from 'react';
+import { Center, GeoJSONFeature, GeoJSONFeatureCollection } from '@/types';
 import { MapPin } from 'lucide-react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
@@ -24,8 +24,8 @@ interface MapComponentProps {
   centers: Center[];
   onCenterClick: (center: Center) => void;
   selectedCenter: Center | null;
-  rawGeoData: any; // The original GeoJSON FeatureCollection
-  districtsData: any; // District boundaries
+  rawGeoData: GeoJSONFeatureCollection | null; // The original GeoJSON FeatureCollection
+  districtsData: GeoJSONFeatureCollection | null; // District boundaries
   activeFilter?: string;
 }
 
@@ -63,7 +63,7 @@ function ChangeView({ center, zoom }: { center: [number, number], zoom: number }
 
 export default function MapComponent({ centers, onCenterClick, selectedCenter, rawGeoData, districtsData, activeFilter }: MapComponentProps) {
   const centerPosition: [number, number] = [19.1, 75.2]; // Maharashtra
-  const selectedCenterId = selectedCenter?.id || null;
+  // const selectedCenterId = selectedCenter?.id || null; // Removed as it was unused
 
   const icons = useMemo(() => ({
     Parish: (sel: boolean) => CreateCustomIcon('Parish', sel),
@@ -75,7 +75,7 @@ export default function MapComponent({ centers, onCenterClick, selectedCenter, r
   // Filter rawGeoData to find the selected feature's polygon
   const selectedFeature = useMemo(() => {
     if (!selectedCenter || !rawGeoData || rawGeoData.type !== 'FeatureCollection') return null;
-    return rawGeoData.features.find((f: any) => 
+    return rawGeoData.features.find((f: GeoJSONFeature) => 
       f.properties.VILLAGE === selectedCenter.name
     );
   }, [selectedCenter, rawGeoData]);
@@ -89,7 +89,7 @@ export default function MapComponent({ centers, onCenterClick, selectedCenter, r
     
     return {
       ...rawGeoData,
-      features: rawGeoData.features.filter((f: any) => {
+      features: rawGeoData.features.filter((f: GeoJSONFeature) => {
         const props = f.properties;
         const name = props.VILLAGE || props.CLEAN_NAME || props.name || props.village_na || props.NAME || props.VillageName || props.village_names;
         return visibleNames.has(name);
@@ -117,21 +117,29 @@ export default function MapComponent({ centers, onCenterClick, selectedCenter, r
 
   // Memoize the center points and names for all villages to avoid re-calculating on every render
   const villageLabels = useMemo(() => {
-    const labels: any[] = [];
+    interface Label {
+      id: string;
+      name: string;
+      lat: number;
+      lng: number;
+    }
+    const labels: Label[] = [];
     const seenNames = new Set();
 
     // 1. Process from filteredGeoData
     if (filteredGeoData && filteredGeoData.type === 'FeatureCollection') {
-      filteredGeoData.features.forEach((feature: any, index: number) => {
-        const props = feature.properties;
+      filteredGeoData.features.forEach((feature: GeoJSONFeature, index: number) => {
+        const props = feature.properties as Record<string, string>;
         const name = props.VILLAGE || props.CLEAN_NAME || props.name || props.village_na || props.NAME || props.VillageName || props.village_names || 'Unknown';
         seenNames.add(name);
         
         try {
-          const bounds = L.geoJSON(feature).getBounds();
+          const bounds = L.geoJSON(feature as any).getBounds(); // eslint-disable-line @typescript-eslint/no-explicit-any
           const center = bounds.getCenter();
           labels.push({ id: `raw-${index}`, name, lat: center.lat, lng: center.lng });
-        } catch (e) {}
+        } catch {
+          // Ignore errors during center calculation
+        }
       });
     }
 
@@ -146,10 +154,12 @@ export default function MapComponent({ centers, onCenterClick, selectedCenter, r
     return labels;
   }, [filteredGeoData, centers]);
 
-  const districtStyle = (feature: any) => {
-    const isSelected = selectedCenter && 
-      (selectedCenter.district?.toUpperCase() === feature.properties.name || 
-       (selectedCenter.district === '' && feature.properties.name === 'BEED')); // Default Beed for TDSS
+  const districtStyle = (feature: GeoJSONFeature | undefined) => {
+    if (!feature) return {};
+    
+    const props = feature.properties as any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    const isSelected = !!(selectedCenter && 
+      (selectedCenter.district?.toUpperCase() === props.name));
 
     return {
       color: "#2d2d2d",
@@ -181,8 +191,8 @@ export default function MapComponent({ centers, onCenterClick, selectedCenter, r
         {districtsData && (
           <GeoJSON 
             key={selectedCenter ? `districts-${selectedCenter.id}` : 'districts-static'}
-            data={districtsData} 
-            style={districtStyle}
+            data={districtsData as any} // eslint-disable-line @typescript-eslint/no-explicit-any
+            style={districtStyle as any} // eslint-disable-line @typescript-eslint/no-explicit-any
           />
         )}
 
@@ -196,7 +206,7 @@ export default function MapComponent({ centers, onCenterClick, selectedCenter, r
         )}
 
         {/* Village Labels (Points and Names) */}
-        {villageLabels.map((label: any) => (
+        {villageLabels.map((label) => (
           <Marker
             key={`label-${label.id}`}
             position={[label.lat, label.lng]}
@@ -225,7 +235,7 @@ export default function MapComponent({ centers, onCenterClick, selectedCenter, r
         {selectedCenter && (
           <ChangeView 
             center={[selectedCenter.lat, selectedCenter.lng]} 
-            zoom={selectedCenter.type === 'TDSS' ? 10 : 12} 
+            zoom={12} 
           />
         )}
 
@@ -248,7 +258,7 @@ export default function MapComponent({ centers, onCenterClick, selectedCenter, r
             <Marker
               key={center.id}
               position={[center.lat, center.lng]}
-              icon={(icons[center.type] || icons.Parish)(selectedCenterId === center.id)}
+              icon={(icons[center.type] || icons.Parish)(selectedCenter?.id === center.id)}
               eventHandlers={{
                 click: () => onCenterClick(center),
               }}

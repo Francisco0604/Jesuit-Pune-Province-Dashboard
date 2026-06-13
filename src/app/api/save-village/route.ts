@@ -61,8 +61,9 @@ export async function POST(request: Request) {
       success: true, 
       path: `/data/Village_details/${sectionFolder}/${clusterFolder}/${fileName}` 
     });
-  } catch (error: any) {
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     console.error('Error saving village JSON:', error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }

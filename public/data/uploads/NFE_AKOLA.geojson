@@ -1,0 +1,5329 @@
+{
+  "type": "FeatureCollection",
+  "name": "NFE_Akola",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "state_code": "27",
+        "state_name": "Maharashtra",
+        "district_c": "501",
+        "district_n": "Akola",
+        "taluka_cod": "3989",
+        "taluka_nam": "akot",
+        "census_201": "529873",
+        "village_na": "kund",
+        "cd_blk_cod": "40",
+        "cd_blk_nam": "Akot",
+        "gp_code": null,
+        "gp_name": null,
+        "ref_year": "2009",
+        "taluka_hq": "Akot",
+        "taluka_hq_": 55,
+        "district_h": "AKOLA",
+        "district_1": 6,
+        "near_stat_": "AKOT",
+        "near_sta_1": 55,
+        "near_sta_2": null,
+        "near_sta_3": null,
+        "near_sta_4": null,
+        "near_sta_5": null,
+        "area_ha": 102,
+        "tot_hh": 48,
+        "tot_popu": 259,
+        "tot_popu_m": 128,
+        "tot_popu_f": 131,
+        "tot_popu_s": 1,
+        "tot_popu_1": 1,
+        "tot_popu_2": 0,
+        "tot_popu_3": 258,
+        "tot_popu_4": 127,
+        "tot_popu_5": 131,
+        "govt_pre_p": 1,
+        "govt_pre_1": 1,
+        "priv_pre_p": 2,
+        "priv_pre_1": 0,
+        "near_pre_f": null,
+        "near_pre_v": null,
+        "near_pre_1": null,
+        "govt_prim_": 1,
+        "govt_pri_1": 1,
+        "priv_prim_": 2,
+        "priv_pri_1": 0,
+        "near_prim_": null,
+        "near_pri_1": null,
+        "near_pri_2": null,
+        "govt_mid_s": 2,
+        "govt_mid_n": 0,
+        "priv_mid_s": 2,
+        "priv_mid_n": 0,
+        "near_mid_f": 1,
+        "near_mid_v": "AVNARE",
+        "near_mid_1": "b",
+        "govt_sec_s": 2,
+        "govt_sec_n": 0,
+        "priv_sec_s": 2,
+        "priv_sec_n": 0,
+        "near_sec_f": 1,
+        "near_sec_v": "AAVNARE",
+        "near_sec_1": "b",
+        "govt_sen_s": 2,
+        "govt_sen_n": 0,
+        "priv_sen_s": 2,
+        "priv_sen_n": 0,
+        "near_sen_f": 1,
+        "near_sen_v": "AKOT",
+        "near_sen_1": "c",
+        "govt_artsc": 2,
+        "govt_art_1": 0,
+        "priv_artsc": 2,
+        "priv_art_1": 0,
+        "near_artsc": 2,
+        "near_art_1": "AKOT",
+        "near_art_2": "c",
+        "govt_engg_": 2,
+        "govt_eng_1": 0,
+        "priv_engg_": 2,
+        "priv_eng_1": 0,
+        "near_engg_": 2,
+        "near_eng_1": "AKOT",
+        "near_eng_2": "c",
+        "govt_medi_": 2,
+        "govt_med_1": 0,
+        "priv_medi_": 2,
+        "priv_med_1": 0,
+        "near_medi_": 2,
+        "near_med_1": "AKOT",
+        "near_med_2": "c",
+        "govt_mgmt_": 2,
+        "govt_mgm_1": 0,
+        "priv_mgmt_": 2,
+        "priv_mgm_1": 0,
+        "near_mgmt_": 1,
+        "near_mgm_1": "AKOLA",
+        "near_mgm_2": "c",
+        "govt_poly_": 2,
+        "govt_pol_1": 0,
+        "priv_poly_": 2,
+        "priv_pol_1": 0,
+        "near_poly_": 1,
+        "near_pol_1": "AKOT",
+        "near_pol_2": "c",
+        "govt_voc_s": 2,
+        "govt_voc_n": 0,
+        "priv_voc_s": 2,
+        "priv_voc_n": 0,
+        "near_voc_f": 1,
+        "near_voc_v": "AKOT",
+        "near_voc_1": "c",
+        "govt_nonf_": 2,
+        "govt_non_1": 0,
+        "priv_nonf_": 2,
+        "priv_non_1": 0,
+        "near_nonf_": 1,
+        "near_non_1": "AKOLA",
+        "near_non_2": "c",
+        "govt_divya": 2,
+        "govt_div_1": 0,
+        "priv_divya": 2,
+        "priv_div_1": 0,
+        "near_divya": 1,
+        "near_div_1": "AKOLA",
+        "near_div_2": "c",
+        "govt_oth_s": 2,
+        "govt_oth_n": 0,
+        "priv_oth_s": 2,
+        "priv_oth_n": 0,
+        "near_oth_f": null,
+        "near_oth_v": "N.A.",
+        "near_oth_1": "N.A.",
+        "chc_num": 0,
+        "chc_doc_nu": 0,
+        "chc_doc_in": 0,
+        "chc_param_": 0,
+        "chc_para_1": 0,
+        "chc_prox": "c",
+        "phc_num": 0,
+        "phc_doc_nu": 0,
+        "phc_doc_in": 0,
+        "phc_param_": 0,
+        "phc_para_1": 0,
+        "phc_prox": "b",
+        "phsubc_num": 0,
+        "phsubc_doc": 0,
+        "phsubc_d_1": 0,
+        "phsubc_par": 0,
+        "phsubc_p_1": 0,
+        "phsubc_pro": "b",
+        "mch_num": 0,
+        "mch_doc_nu": 0,
+        "mch_doc_in": 0,
+        "mch_param_": 0,
+        "mch_para_1": 0,
+        "mch_prox": "b",
+        "tbc_num": 0,
+        "tbc_doc_nu": 0,
+        "tbc_doc_in": 0,
+        "tbc_param_": 0,
+        "tbc_para_1": 0,
+        "tbc_prox": "b",
+        "hosp_allo_": 0,
+        "hosp_all_1": 0,
+        "hosp_all_2": 0,
+        "hosp_all_3": 0,
+        "hosp_all_4": 0,
+        "hosp_all_5": "b",
+        "hosp_alt_n": 0,
+        "hosp_alt_d": 0,
+        "hosp_alt_1": 0,
+        "hosp_alt_p": 0,
+        "hosp_alt_2": 0,
+        "hosp_all_p": "b",
+        "dispensary": 0,
+        "dispensa_1": 0,
+        "dispensa_2": 0,
+        "dispensa_3": 0,
+        "dispensa_4": 0,
+        "dispensa_5": "b",
+        "vet_num": 0,
+        "vet_doc_nu": 0,
+        "vet_doc_in": 0,
+        "vet_param_": 0,
+        "vet_para_1": 0,
+        "vet_prox": "b",
+        "mobile_h_n": 0,
+        "mobile_h_d": 0,
+        "mobile_h_1": 0,
+        "mobile_h_p": 0,
+        "mobile_h_2": 0,
+        "mobile_h_3": "b",
+        "fwc_num": 0,
+        "fwc_tot_nu": 0,
+        "fwc_doc_in": 0,
+        "fwc_para_t": 0,
+        "fwc_para_i": 0,
+        "fwc_prox": "b",
+        "ngmf_out": 0,
+        "ngmf_in_an": 0,
+        "ngmf_char": 0,
+        "ngmf_mbbs": 0,
+        "ngmf_other": 0,
+        "ngmf_no_de": 0,
+        "ngmf_trad_": 0,
+        "ngmf_shop": 0,
+        "nfmf_other": 0,
+        "tapwt": 2,
+        "tapwtf_yea": 2,
+        "tapwtf_sum": 2,
+        "tapwu": 1,
+        "tapwuf_yea": 1,
+        "tapwuf_sum": 1,
+        "cov_well": 2,
+        "cov_well_y": 2,
+        "cov_well_s": 2,
+        "uncov_well": 1,
+        "uncov_we_1": 1,
+        "uncov_we_2": 1,
+        "hp": 1,
+        "hp_year": 1,
+        "hp_summer": 1,
+        "twbore": 1,
+        "twbore_yea": 1,
+        "twbore_sum": 1,
+        "spr": 2,
+        "spr_year": 2,
+        "spr_summer": 2,
+        "rivcan": 2,
+        "rivcan_yea": 2,
+        "rivcan_sum": 2,
+        "tanpon": 2,
+        "tanpon_yea": 2,
+        "tanpon_sum": 2,
+        "other": 2,
+        "other_year": 2,
+        "other_summ": 2,
+        "clos_drain": 2,
+        "ope_drain": 1,
+        "no_drain": 2,
+        "op_pucca_c": 2,
+        "op_pucca_u": 2,
+        "op_kucha": 1,
+        "drain_wat_": 2,
+        "cov_tsc": 2,
+        "ctc_bath_g": 2,
+        "ctc_nobath": 2,
+        "rural_cen_": 2,
+        "rural_mart": 2,
+        "comm_waste": 2,
+        "comm_bio_r": 2,
+        "no_syst": 2,
+        "post": 2,
+        "post_prox": "c",
+        "sub_post": 2,
+        "sub_post_p": "c",
+        "post_tele": 2,
+        "post_tele_": "c",
+        "vil_pin": 1,
+        "vil_pin_pr": null,
+        "pin": null,
+        "tele_land": 2,
+        "tele_land_": "a",
+        "pco_mob": 2,
+        "pco_prox": "a",
+        "mob_cov": 2,
+        "mob_cov_pr": "a",
+        "net_cafe_c": 2,
+        "net_cafe_1": "c",
+        "courier": 2,
+        "courier_pr": "c",
+        "pub_bus": 2,
+        "pub_bus_pr": "a",
+        "priv_bus": 2,
+        "priv_bus_p": "c",
+        "rail_st": 2,
+        "rail_st_pr": "a",
+        "auto": 2,
+        "auto_prox": "a",
+        "taxi": 1,
+        "taxi_prox": null,
+        "van": 2,
+        "van_prox": "c",
+        "tract": 2,
+        "tract_prox": "c",
+        "pull_rick_": 2,
+        "pull_ric_1": "c",
+        "pull_ric_2": 2,
+        "pull_ric_3": null,
+        "cart_ani": 2,
+        "cart_ani_p": "c",
+        "sea_riv_fe": 2,
+        "sea_riv__1": null,
+        "nat_highw": 2,
+        "nat_highw_": "c",
+        "st_highw": 2,
+        "st_highw_p": "c",
+        "maj_dist_r": 2,
+        "maj_dist_1": "c",
+        "oth_dist_r": 2,
+        "oth_dist_1": "b",
+        "black_top_": 2,
+        "black_to_1": "a",
+        "grave_road": 2,
+        "grave_ro_1": "a",
+        "wat_bound_": 1,
+        "wat_boun_1": null,
+        "all_weath_": 2,
+        "all_weat_1": "a",
+        "navi_ww": 2,
+        "navi_wv_pr": null,
+        "footpath": 1,
+        "footpath_p": null,
+        "atm": 2,
+        "dist_near_": "c",
+        "comm_bank": 2,
+        "comm_bank_": "c",
+        "co_op_bank": 2,
+        "co_op_ba_1": "c",
+        "agri_cred_": 2,
+        "agri_cre_1": "c",
+        "self_help": 2,
+        "self_help_": "a",
+        "pub_distr_": 2,
+        "pub_dist_1": "b",
+        "mndi_mkt": 2,
+        "mndi_mkt_p": "b",
+        "haat": 2,
+        "haat_prox": "b",
+        "agri_mkt_s": 1,
+        "agri_mkt_1": null,
+        "nutri_cen_": 1,
+        "nutri_ce_1": null,
+        "nutri_ce_2": 1,
+        "nutri_ce_3": null,
+        "nutri_ce_4": 1,
+        "nutri_ce_5": null,
+        "asha": 1,
+        "asha_prox": null,
+        "comm_cen_t": 2,
+        "comm_cen_1": "c",
+        "sport_fiel": 2,
+        "sport_fi_1": "c",
+        "sport_club": 2,
+        "sport_cl_1": "c",
+        "cine_vid": 2,
+        "cine_vid_p": "c",
+        "pub_lib": 2,
+        "pub_lib_pr": "c",
+        "pub_read_r": 2,
+        "pub_read_1": "c",
+        "daily_news": 2,
+        "daily_ne_1": "c",
+        "ass_pol": 2,
+        "ass_pol_pr": "b",
+        "birth_deat": 1,
+        "birth_de_1": null,
+        "ps_dom": 1,
+        "ps_dom_sum": 15,
+        "ps_dom_win": 18,
+        "ps_agri": 1,
+        "ps_agri_su": 15,
+        "ps_agri_wi": 18,
+        "ps_comm": 1,
+        "ps_comm_su": 15,
+        "ps_comm_wi": 18,
+        "ps_all": 1,
+        "ps_all_sum": 15,
+        "ps_all_win": 18,
+        "agr_com_1": null,
+        "mfd_com_1": null,
+        "hcarft_com": null,
+        "agri_com_2": null,
+        "mfd_com_2": null,
+        "hcarft_c_1": null,
+        "agri_com_3": null,
+        "mfd_com_3": null,
+        "hcraft_com": null,
+        "forest": 39.8,
+        "area_non_a": 4.12,
+        "barren_unc": 3.45,
+        "perm_graze": 0,
+        "misc_crop": 0,
+        "cult_waste": 0,
+        "fallow": 5.8,
+        "curr_fallo": 0,
+        "net_area": 48.83,
+        "tot_unirri": 0,
+        "area_irri": 48.83,
+        "canal_area": 0,
+        "well_tube": 0,
+        "tank_lake": 0,
+        "water_fall": 0,
+        "other_sorc": 0,
+        "near_town": "AKOT",
+        "near_town_": 55,
+        "hh_tot_tot": 100,
+        "hh_tot_g": 100,
+        "hh_tot_l": 100,
+        "hh_tot_d": 14.3,
+        "hh_res_tot": 100,
+        "hh_res_g": 4.1,
+        "hh_res_l": 81.6,
+        "hh_res_d": 14.3,
+        "hh_rcu_tot": 0,
+        "hh_rcu_g": 0,
+        "hh_rcu_l": 0,
+        "hh_rcu_d": 0,
+        "mroof_gra": 0,
+        "mroof_pla": 10.2,
+        "mroof_htil": 2,
+        "mroof_mtil": 81.6,
+        "mroof_bri": 0,
+        "mroof_sto": 0,
+        "mroof_met": 0,
+        "mroof_con": 2,
+        "mroof_else": 4.1,
+        "mwall_gra": 24.5,
+        "mwall_pla": 0,
+        "mwall_mud": 69.4,
+        "mwall_wood": 0,
+        "mwall_stnp": 0,
+        "mwall_stp": 4.1,
+        "mwall_met": 0,
+        "mwall_brik": 2,
+        "mwall_conc": 0,
+        "mwall_else": 0,
+        "mflor_mud": 87.8,
+        "mflor_wood": 0,
+        "mflor_brik": 0,
+        "mflor_ston": 4.1,
+        "mflor_cem": 8.2,
+        "mflor_tile": 0,
+        "mflor_else": 0,
+        "dwell_no": 0,
+        "dwell_one": 49,
+        "dwell_two": 34.7,
+        "dwell_thre": 12.2,
+        "dwell_four": 4.1,
+        "dwell_five": 0,
+        "dwell_else": 0,
+        "hhsize_1": 2,
+        "hhsize_2": 10.2,
+        "hhsize_3": 4.1,
+        "hhsize_4": 36.7,
+        "hhsize_5": 18.4,
+        "hhsize_6": 24.5,
+        "hhsize_els": 4.1,
+        "own_own": 98,
+        "own_rent": 0,
+        "own_else": 2,
+        "marrco_0": 4.1,
+        "marrco_1": 75.5,
+        "marrco_2": 18.4,
+        "marrco_3": 2,
+        "marrco_4": 0,
+        "marrco_els": 0,
+        "msdw_tapt": 0,
+        "msdw_taput": 83.7,
+        "msdw_cwel": 0,
+        "msdw_ucwel": 0,
+        "msdw_hpump": 16.3,
+        "msdw_bore": 0,
+        "msdw_sprin": 0,
+        "msdw_river": 0,
+        "msdw_lake": 0,
+        "msdw_else": 0,
+        "locdw_in": 71.4,
+        "locdw_near": 28.6,
+        "locdw_away": 0,
+        "mslit_elec": 63.3,
+        "mslit_kero": 36.7,
+        "mslit_sol": 0,
+        "mslit_oil": 0,
+        "mslit_else": 0,
+        "mslit_no": 0,
+        "hh_hav_lat": 51,
+        "flat_pipe": 4.1,
+        "flat_sept": 42.9,
+        "flat_else": 0,
+        "plat_vent": 2,
+        "plat_open": 2,
+        "niso_open": 0,
+        "serlat_hum": 0,
+        "serlat_ani": 0,
+        "hh_no_lat": 49,
+        "alt_publat": 0,
+        "alt_open": 49,
+        "bath": 8.2,
+        "bathnoroof": 73.5,
+        "nobathroom": 18.4,
+        "ww_closed": 0,
+        "ww_open": 0,
+        "ww_no": 100,
+        "food_wood": 4.1,
+        "food_crop": 95.9,
+        "food_dung": 0,
+        "food_coal": 0,
+        "food_kero": 0,
+        "food_lpg": 0,
+        "food_elec": 0,
+        "food_bio": 0,
+        "food_else": 0,
+        "food_no": 0,
+        "kitch_tot": 100,
+        "kitch_in": 89.8,
+        "kitch_yesi": 79.6,
+        "kitch_noi": 10.2,
+        "kitch_out": 10.2,
+        "kitch_yeso": 6.1,
+        "kitch_noo": 4.1,
+        "kitch_noco": 0,
+        "hh_bank": 73.5,
+        "ass_radio": 34.7,
+        "ass_tele": 28.6,
+        "ass_pc_net": 0,
+        "ass_pc_nnt": 2,
+        "ass_mob_la": 0,
+        "ass_mob_mo": 40.8,
+        "ass_mob_bo": 2,
+        "ass_cycle": 36.7,
+        "ass_scoot": 18.4,
+        "ass_car": 2,
+        "ass_tv_pc": 0,
+        "ass_no_ass": 28.6,
+        "hhst_perma": 6.1,
+        "hhst_sperm": 79.6,
+        "hhst_tempo": 10.2,
+        "hhst_serv": 4.1,
+        "hhst_nser": 6.1,
+        "hhst_else": 4.1,
+        "ward": "0",
+        "tru": "Rural",
+        "no_hh": 48,
+        "tot_p": 259,
+        "tot_m": 128,
+        "tot_f": 131,
+        "p_06": 19,
+        "m_06": 11,
+        "f_06": 8,
+        "p_sc": 1,
+        "m_sc": 1,
+        "f_sc": 0,
+        "p_st": 258,
+        "m_st": 127,
+        "f_st": 131,
+        "p_lit": 198,
+        "m_lit": 107,
+        "f_lit": 91,
+        "p_ill": 61,
+        "m_ill": 21,
+        "f_ill": 40,
+        "tot_work_p": 136,
+        "tot_work_m": 67,
+        "tot_work_f": 69,
+        "mainwork_p": 127,
+        "mainwork_m": 61,
+        "mainwork_f": 66,
+        "main_cl_p": 21,
+        "main_cl_m": 12,
+        "main_cl_f": 9,
+        "main_al_p": 104,
+        "main_al_m": 48,
+        "main_al_f": 56,
+        "main_hh_p": 1,
+        "main_hh_m": 1,
+        "main_hh_f": 0,
+        "main_ot_p": 1,
+        "main_ot_m": 0,
+        "main_ot_f": 1,
+        "margwork_p": 9,
+        "margwork_m": 6,
+        "margwork_f": 3,
+        "marg_cl_p": 0,
+        "marg_cl_m": 0,
+        "marg_cl_f": 0,
+        "marg_al_p": 9,
+        "marg_al_m": 6,
+        "marg_al_f": 3,
+        "marg_hh_p": 0,
+        "marg_hh_m": 0,
+        "marg_hh_f": 0,
+        "marg_ot_p": 0,
+        "marg_ot_m": 0,
+        "marg_ot_f": 0,
+        "margwork_3": 9,
+        "margwork_1": 6,
+        "margwork_2": 3,
+        "marg_cl_3_": 0,
+        "marg_cl__1": 0,
+        "marg_cl__2": 0,
+        "marg_al_3_": 9,
+        "marg_al__1": 6,
+        "marg_al__2": 3,
+        "marg_hh_3_": 0,
+        "marg_hh__1": 0,
+        "marg_hh__2": 0,
+        "marg_ot_3_": 0,
+        "marg_ot__1": 0,
+        "marg_ot__2": 0,
+        "margwork_0": 0,
+        "margwork_4": 0,
+        "margwork_5": 0,
+        "marg_cl_0_": 0,
+        "marg_cl__3": 0,
+        "marg_cl__4": 0,
+        "marg_al_0_": 0,
+        "marg_al__3": 0,
+        "marg_al__4": 0,
+        "marg_hh_0_": 0,
+        "marg_hh__3": 0,
+        "marg_hh__4": 0,
+        "marg_ot_0_": 0,
+        "marg_ot__3": 0,
+        "marg_ot__4": 0,
+        "non_work_p": 123,
+        "non_work_m": 61,
+        "non_work_f": 62,
+        "district_2": "467",
+        "district_3": null,
+        "districtsh": null,
+        "district_4": "akola",
+        "pre_prim_d": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                77.19060735000005,
+                21.44169854100005
+              ],
+              [
+                77.19066997900006,
+                21.44168985600004
+              ],
+              [
+                77.19092874100005,
+                21.441460729000028
+              ],
+              [
+                77.19114787300003,
+                21.441266694000035
+              ],
+              [
+                77.19152999800008,
+                21.44085289800006
+              ],
+              [
+                77.19242425600004,
+                21.440433332000055
+              ],
+              [
+                77.19246033400003,
+                21.439827238000078
+              ],
+              [
+                77.19264930900005,
+                21.439185618000067
+              ],
+              [
+                77.19271645400005,
+                21.438809048000053
+              ],
+              [
+                77.19308221400007,
+                21.43822717000006
+              ],
+              [
+                77.19301619000004,
+                21.438142208000045
+              ],
+              [
+                77.19277328500004,
+                21.43782767600004
+              ],
+              [
+                77.19198133400005,
+                21.437331159000053
+              ],
+              [
+                77.19116282500005,
+                21.436411908000025
+              ],
+              [
+                77.19116102800007,
+                21.436382803000072
+              ],
+              [
+                77.19018443100003,
+                21.435963667000067
+              ],
+              [
+                77.18984513600003,
+                21.435797860000037
+              ],
+              [
+                77.18981977900006,
+                21.435785537000072
+              ],
+              [
+                77.18964444200003,
+                21.435637205000035
+              ],
+              [
+                77.19029554100007,
+                21.43410699900005
+              ],
+              [
+                77.19064844400003,
+                21.43332825600004
+              ],
+              [
+                77.18931514700006,
+                21.43260626500006
+              ],
+              [
+                77.18912349400006,
+                21.432592837000072
+              ],
+              [
+                77.18801531200006,
+                21.432700570000065
+              ],
+              [
+                77.18788222300003,
+                21.432716838000033
+              ],
+              [
+                77.18657241500006,
+                21.432877747000077
+              ],
+              [
+                77.18367332600008,
+                21.433224779000057
+              ],
+              [
+                77.18315504900005,
+                21.433345083000063
+              ],
+              [
+                77.18351573900003,
+                21.434780880000062
+              ],
+              [
+                77.18322151300003,
+                21.435179120000043
+              ],
+              [
+                77.18313282300005,
+                21.435298481000075
+              ],
+              [
+                77.18287155100006,
+                21.43565146800006
+              ],
+              [
+                77.18240713800003,
+                21.436280504000024
+              ],
+              [
+                77.18231605800008,
+                21.436554468000054
+              ],
+              [
+                77.18244169700006,
+                21.437377783000045
+              ],
+              [
+                77.18244061000007,
+                21.437556079000046
+              ],
+              [
+                77.18508776700008,
+                21.440142742000035
+              ],
+              [
+                77.18584678400003,
+                21.440246708000075
+              ],
+              [
+                77.18640325000007,
+                21.440474384000026
+              ],
+              [
+                77.18879159300008,
+                21.44162654300004
+              ],
+              [
+                77.18995637400008,
+                21.441789993000043
+              ],
+              [
+                77.19019123400005,
+                21.441757565000046
+              ],
+              [
+                77.19060735000005,
+                21.44169854100005
+              ]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "state_code": "27",
+        "state_name": "Maharashtra",
+        "district_c": "501",
+        "district_n": "Akola",
+        "taluka_cod": "3989",
+        "taluka_nam": "akot",
+        "census_201": "529746",
+        "village_na": "januna",
+        "cd_blk_cod": "40",
+        "cd_blk_nam": "Akot",
+        "gp_code": null,
+        "gp_name": null,
+        "ref_year": "2009",
+        "taluka_hq": "Akot",
+        "taluka_hq_": 25,
+        "district_h": "AKOLA",
+        "district_1": 70,
+        "near_stat_": null,
+        "near_sta_1": 0,
+        "near_sta_2": null,
+        "near_sta_3": null,
+        "near_sta_4": null,
+        "near_sta_5": null,
+        "area_ha": 71,
+        "tot_hh": 0,
+        "tot_popu": 0,
+        "tot_popu_m": 0,
+        "tot_popu_f": 0,
+        "tot_popu_s": 0,
+        "tot_popu_1": 0,
+        "tot_popu_2": 0,
+        "tot_popu_3": 0,
+        "tot_popu_4": 0,
+        "tot_popu_5": 0,
+        "govt_pre_p": null,
+        "govt_pre_1": null,
+        "priv_pre_p": null,
+        "priv_pre_1": null,
+        "near_pre_f": null,
+        "near_pre_v": null,
+        "near_pre_1": null,
+        "govt_prim_": null,
+        "govt_pri_1": null,
+        "priv_prim_": null,
+        "priv_pri_1": null,
+        "near_prim_": null,
+        "near_pri_1": null,
+        "near_pri_2": null,
+        "govt_mid_s": null,
+        "govt_mid_n": null,
+        "priv_mid_s": null,
+        "priv_mid_n": null,
+        "near_mid_f": null,
+        "near_mid_v": null,
+        "near_mid_1": null,
+        "govt_sec_s": null,
+        "govt_sec_n": null,
+        "priv_sec_s": null,
+        "priv_sec_n": null,
+        "near_sec_f": null,
+        "near_sec_v": null,
+        "near_sec_1": null,
+        "govt_sen_s": null,
+        "govt_sen_n": null,
+        "priv_sen_s": null,
+        "priv_sen_n": null,
+        "near_sen_f": null,
+        "near_sen_v": null,
+        "near_sen_1": null,
+        "govt_artsc": null,
+        "govt_art_1": null,
+        "priv_artsc": null,
+        "priv_art_1": null,
+        "near_artsc": null,
+        "near_art_1": null,
+        "near_art_2": null,
+        "govt_engg_": null,
+        "govt_eng_1": null,
+        "priv_engg_": null,
+        "priv_eng_1": null,
+        "near_engg_": null,
+        "near_eng_1": null,
+        "near_eng_2": null,
+        "govt_medi_": null,
+        "govt_med_1": null,
+        "priv_medi_": null,
+        "priv_med_1": null,
+        "near_medi_": null,
+        "near_med_1": null,
+        "near_med_2": null,
+        "govt_mgmt_": null,
+        "govt_mgm_1": null,
+        "priv_mgmt_": null,
+        "priv_mgm_1": null,
+        "near_mgmt_": null,
+        "near_mgm_1": null,
+        "near_mgm_2": null,
+        "govt_poly_": null,
+        "govt_pol_1": null,
+        "priv_poly_": null,
+        "priv_pol_1": null,
+        "near_poly_": null,
+        "near_pol_1": null,
+        "near_pol_2": null,
+        "govt_voc_s": null,
+        "govt_voc_n": null,
+        "priv_voc_s": null,
+        "priv_voc_n": null,
+        "near_voc_f": null,
+        "near_voc_v": null,
+        "near_voc_1": null,
+        "govt_nonf_": null,
+        "govt_non_1": null,
+        "priv_nonf_": null,
+        "priv_non_1": null,
+        "near_nonf_": null,
+        "near_non_1": null,
+        "near_non_2": null,
+        "govt_divya": null,
+        "govt_div_1": null,
+        "priv_divya": null,
+        "priv_div_1": null,
+        "near_divya": null,
+        "near_div_1": null,
+        "near_div_2": null,
+        "govt_oth_s": null,
+        "govt_oth_n": null,
+        "priv_oth_s": null,
+        "priv_oth_n": null,
+        "near_oth_f": null,
+        "near_oth_v": null,
+        "near_oth_1": null,
+        "chc_num": null,
+        "chc_doc_nu": null,
+        "chc_doc_in": null,
+        "chc_param_": null,
+        "chc_para_1": null,
+        "chc_prox": null,
+        "phc_num": null,
+        "phc_doc_nu": null,
+        "phc_doc_in": null,
+        "phc_param_": null,
+        "phc_para_1": null,
+        "phc_prox": null,
+        "phsubc_num": null,
+        "phsubc_doc": null,
+        "phsubc_d_1": null,
+        "phsubc_par": null,
+        "phsubc_p_1": null,
+        "phsubc_pro": null,
+        "mch_num": null,
+        "mch_doc_nu": null,
+        "mch_doc_in": null,
+        "mch_param_": null,
+        "mch_para_1": null,
+        "mch_prox": null,
+        "tbc_num": null,
+        "tbc_doc_nu": null,
+        "tbc_doc_in": null,
+        "tbc_param_": null,
+        "tbc_para_1": null,
+        "tbc_prox": null,
+        "hosp_allo_": null,
+        "hosp_all_1": null,
+        "hosp_all_2": null,
+        "hosp_all_3": null,
+        "hosp_all_4": null,
+        "hosp_all_5": null,
+        "hosp_alt_n": null,
+        "hosp_alt_d": null,
+        "hosp_alt_1": null,
+        "hosp_alt_p": null,
+        "hosp_alt_2": null,
+        "hosp_all_p": null,
+        "dispensary": null,
+        "dispensa_1": null,
+        "dispensa_2": null,
+        "dispensa_3": null,
+        "dispensa_4": null,
+        "dispensa_5": null,
+        "vet_num": null,
+        "vet_doc_nu": null,
+        "vet_doc_in": null,
+        "vet_param_": null,
+        "vet_para_1": null,
+        "vet_prox": null,
+        "mobile_h_n": null,
+        "mobile_h_d": null,
+        "mobile_h_1": null,
+        "mobile_h_p": null,
+        "mobile_h_2": null,
+        "mobile_h_3": null,
+        "fwc_num": null,
+        "fwc_tot_nu": null,
+        "fwc_doc_in": null,
+        "fwc_para_t": null,
+        "fwc_para_i": null,
+        "fwc_prox": null,
+        "ngmf_out": null,
+        "ngmf_in_an": null,
+        "ngmf_char": null,
+        "ngmf_mbbs": null,
+        "ngmf_other": null,
+        "ngmf_no_de": null,
+        "ngmf_trad_": null,
+        "ngmf_shop": null,
+        "nfmf_other": null,
+        "tapwt": null,
+        "tapwtf_yea": null,
+        "tapwtf_sum": null,
+        "tapwu": null,
+        "tapwuf_yea": null,
+        "tapwuf_sum": null,
+        "cov_well": null,
+        "cov_well_y": null,
+        "cov_well_s": null,
+        "uncov_well": null,
+        "uncov_we_1": null,
+        "uncov_we_2": null,
+        "hp": null,
+        "hp_year": null,
+        "hp_summer": null,
+        "twbore": null,
+        "twbore_yea": null,
+        "twbore_sum": null,
+        "spr": null,
+        "spr_year": null,
+        "spr_summer": null,
+        "rivcan": null,
+        "rivcan_yea": null,
+        "rivcan_sum": null,
+        "tanpon": null,
+        "tanpon_yea": null,
+        "tanpon_sum": null,
+        "other": null,
+        "other_year": null,
+        "other_summ": null,
+        "clos_drain": null,
+        "ope_drain": null,
+        "no_drain": null,
+        "op_pucca_c": null,
+        "op_pucca_u": null,
+        "op_kucha": null,
+        "drain_wat_": null,
+        "cov_tsc": null,
+        "ctc_bath_g": null,
+        "ctc_nobath": null,
+        "rural_cen_": null,
+        "rural_mart": null,
+        "comm_waste": null,
+        "comm_bio_r": null,
+        "no_syst": null,
+        "post": null,
+        "post_prox": null,
+        "sub_post": null,
+        "sub_post_p": null,
+        "post_tele": null,
+        "post_tele_": null,
+        "vil_pin": null,
+        "vil_pin_pr": null,
+        "pin": null,
+        "tele_land": null,
+        "tele_land_": null,
+        "pco_mob": null,
+        "pco_prox": null,
+        "mob_cov": null,
+        "mob_cov_pr": null,
+        "net_cafe_c": null,
+        "net_cafe_1": null,
+        "courier": null,
+        "courier_pr": null,
+        "pub_bus": null,
+        "pub_bus_pr": null,
+        "priv_bus": null,
+        "priv_bus_p": null,
+        "rail_st": null,
+        "rail_st_pr": null,
+        "auto": null,
+        "auto_prox": null,
+        "taxi": null,
+        "taxi_prox": null,
+        "van": null,
+        "van_prox": null,
+        "tract": null,
+        "tract_prox": null,
+        "pull_rick_": null,
+        "pull_ric_1": null,
+        "pull_ric_2": null,
+        "pull_ric_3": null,
+        "cart_ani": null,
+        "cart_ani_p": null,
+        "sea_riv_fe": null,
+        "sea_riv__1": null,
+        "nat_highw": null,
+        "nat_highw_": null,
+        "st_highw": null,
+        "st_highw_p": null,
+        "maj_dist_r": null,
+        "maj_dist_1": null,
+        "oth_dist_r": null,
+        "oth_dist_1": null,
+        "black_top_": null,
+        "black_to_1": null,
+        "grave_road": null,
+        "grave_ro_1": null,
+        "wat_bound_": null,
+        "wat_boun_1": null,
+        "all_weath_": null,
+        "all_weat_1": null,
+        "navi_ww": null,
+        "navi_wv_pr": null,
+        "footpath": null,
+        "footpath_p": null,
+        "atm": null,
+        "dist_near_": null,
+        "comm_bank": null,
+        "comm_bank_": null,
+        "co_op_bank": null,
+        "co_op_ba_1": null,
+        "agri_cred_": null,
+        "agri_cre_1": null,
+        "self_help": null,
+        "self_help_": null,
+        "pub_distr_": null,
+        "pub_dist_1": null,
+        "mndi_mkt": null,
+        "mndi_mkt_p": null,
+        "haat": null,
+        "haat_prox": null,
+        "agri_mkt_s": null,
+        "agri_mkt_1": null,
+        "nutri_cen_": null,
+        "nutri_ce_1": null,
+        "nutri_ce_2": null,
+        "nutri_ce_3": null,
+        "nutri_ce_4": null,
+        "nutri_ce_5": null,
+        "asha": null,
+        "asha_prox": null,
+        "comm_cen_t": null,
+        "comm_cen_1": null,
+        "sport_fiel": null,
+        "sport_fi_1": null,
+        "sport_club": null,
+        "sport_cl_1": null,
+        "cine_vid": null,
+        "cine_vid_p": null,
+        "pub_lib": null,
+        "pub_lib_pr": null,
+        "pub_read_r": null,
+        "pub_read_1": null,
+        "daily_news": null,
+        "daily_ne_1": null,
+        "ass_pol": null,
+        "ass_pol_pr": null,
+        "birth_deat": null,
+        "birth_de_1": null,
+        "ps_dom": null,
+        "ps_dom_sum": null,
+        "ps_dom_win": null,
+        "ps_agri": null,
+        "ps_agri_su": null,
+        "ps_agri_wi": null,
+        "ps_comm": null,
+        "ps_comm_su": null,
+        "ps_comm_wi": null,
+        "ps_all": null,
+        "ps_all_sum": null,
+        "ps_all_win": null,
+        "agr_com_1": null,
+        "mfd_com_1": null,
+        "hcarft_com": null,
+        "agri_com_2": null,
+        "mfd_com_2": null,
+        "hcarft_c_1": null,
+        "agri_com_3": null,
+        "mfd_com_3": null,
+        "hcraft_com": null,
+        "forest": 0,
+        "area_non_a": 3,
+        "barren_unc": 7,
+        "perm_graze": 0,
+        "misc_crop": 0,
+        "cult_waste": 0,
+        "fallow": 0,
+        "curr_fallo": 0,
+        "net_area": 61,
+        "tot_unirri": 3,
+        "area_irri": 58,
+        "canal_area": 0,
+        "well_tube": 3,
+        "tank_lake": 0,
+        "water_fall": 0,
+        "other_sorc": 0,
+        "near_town": null,
+        "near_town_": null,
+        "hh_tot_tot": null,
+        "hh_tot_g": null,
+        "hh_tot_l": null,
+        "hh_tot_d": null,
+        "hh_res_tot": null,
+        "hh_res_g": null,
+        "hh_res_l": null,
+        "hh_res_d": null,
+        "hh_rcu_tot": null,
+        "hh_rcu_g": null,
+        "hh_rcu_l": null,
+        "hh_rcu_d": null,
+        "mroof_gra": null,
+        "mroof_pla": null,
+        "mroof_htil": null,
+        "mroof_mtil": null,
+        "mroof_bri": null,
+        "mroof_sto": null,
+        "mroof_met": null,
+        "mroof_con": null,
+        "mroof_else": null,
+        "mwall_gra": null,
+        "mwall_pla": null,
+        "mwall_mud": null,
+        "mwall_wood": null,
+        "mwall_stnp": null,
+        "mwall_stp": null,
+        "mwall_met": null,
+        "mwall_brik": null,
+        "mwall_conc": null,
+        "mwall_else": null,
+        "mflor_mud": null,
+        "mflor_wood": null,
+        "mflor_brik": null,
+        "mflor_ston": null,
+        "mflor_cem": null,
+        "mflor_tile": null,
+        "mflor_else": null,
+        "dwell_no": null,
+        "dwell_one": null,
+        "dwell_two": null,
+        "dwell_thre": null,
+        "dwell_four": null,
+        "dwell_five": null,
+        "dwell_else": null,
+        "hhsize_1": null,
+        "hhsize_2": null,
+        "hhsize_3": null,
+        "hhsize_4": null,
+        "hhsize_5": null,
+        "hhsize_6": null,
+        "hhsize_els": null,
+        "own_own": null,
+        "own_rent": null,
+        "own_else": null,
+        "marrco_0": null,
+        "marrco_1": null,
+        "marrco_2": null,
+        "marrco_3": null,
+        "marrco_4": null,
+        "marrco_els": null,
+        "msdw_tapt": null,
+        "msdw_taput": null,
+        "msdw_cwel": null,
+        "msdw_ucwel": null,
+        "msdw_hpump": null,
+        "msdw_bore": null,
+        "msdw_sprin": null,
+        "msdw_river": null,
+        "msdw_lake": null,
+        "msdw_else": null,
+        "locdw_in": null,
+        "locdw_near": null,
+        "locdw_away": null,
+        "mslit_elec": null,
+        "mslit_kero": null,
+        "mslit_sol": null,
+        "mslit_oil": null,
+        "mslit_else": null,
+        "mslit_no": null,
+        "hh_hav_lat": null,
+        "flat_pipe": null,
+        "flat_sept": null,
+        "flat_else": null,
+        "plat_vent": null,
+        "plat_open": null,
+        "niso_open": null,
+        "serlat_hum": null,
+        "serlat_ani": null,
+        "hh_no_lat": null,
+        "alt_publat": null,
+        "alt_open": null,
+        "bath": null,
+        "bathnoroof": null,
+        "nobathroom": null,
+        "ww_closed": null,
+        "ww_open": null,
+        "ww_no": null,
+        "food_wood": null,
+        "food_crop": null,
+        "food_dung": null,
+        "food_coal": null,
+        "food_kero": null,
+        "food_lpg": null,
+        "food_elec": null,
+        "food_bio": null,
+        "food_else": null,
+        "food_no": null,
+        "kitch_tot": null,
+        "kitch_in": null,
+        "kitch_yesi": null,
+        "kitch_noi": null,
+        "kitch_out": null,
+        "kitch_yeso": null,
+        "kitch_noo": null,
+        "kitch_noco": null,
+        "hh_bank": null,
+        "ass_radio": null,
+        "ass_tele": null,
+        "ass_pc_net": null,
+        "ass_pc_nnt": null,
+        "ass_mob_la": null,
+        "ass_mob_mo": null,
+        "ass_mob_bo": null,
+        "ass_cycle": null,
+        "ass_scoot": null,
+        "ass_car": null,
+        "ass_tv_pc": null,
+        "ass_no_ass": null,
+        "hhst_perma": null,
+        "hhst_sperm": null,
+        "hhst_tempo": null,
+        "hhst_serv": null,
+        "hhst_nser": null,
+        "hhst_else": null,
+        "ward": null,
+        "tru": null,
+        "no_hh": null,
+        "tot_p": null,
+        "tot_m": null,
+        "tot_f": null,
+        "p_06": null,
+        "m_06": null,
+        "f_06": null,
+        "p_sc": null,
+        "m_sc": null,
+        "f_sc": null,
+        "p_st": null,
+        "m_st": null,
+        "f_st": null,
+        "p_lit": null,
+        "m_lit": null,
+        "f_lit": null,
+        "p_ill": null,
+        "m_ill": null,
+        "f_ill": null,
+        "tot_work_p": null,
+        "tot_work_m": null,
+        "tot_work_f": null,
+        "mainwork_p": null,
+        "mainwork_m": null,
+        "mainwork_f": null,
+        "main_cl_p": null,
+        "main_cl_m": null,
+        "main_cl_f": null,
+        "main_al_p": null,
+        "main_al_m": null,
+        "main_al_f": null,
+        "main_hh_p": null,
+        "main_hh_m": null,
+        "main_hh_f": null,
+        "main_ot_p": null,
+        "main_ot_m": null,
+        "main_ot_f": null,
+        "margwork_p": null,
+        "margwork_m": null,
+        "margwork_f": null,
+        "marg_cl_p": null,
+        "marg_cl_m": null,
+        "marg_cl_f": null,
+        "marg_al_p": null,
+        "marg_al_m": null,
+        "marg_al_f": null,
+        "marg_hh_p": null,
+        "marg_hh_m": null,
+        "marg_hh_f": null,
+        "marg_ot_p": null,
+        "marg_ot_m": null,
+        "marg_ot_f": null,
+        "margwork_3": null,
+        "margwork_1": null,
+        "margwork_2": null,
+        "marg_cl_3_": null,
+        "marg_cl__1": null,
+        "marg_cl__2": null,
+        "marg_al_3_": null,
+        "marg_al__1": null,
+        "marg_al__2": null,
+        "marg_hh_3_": null,
+        "marg_hh__1": null,
+        "marg_hh__2": null,
+        "marg_ot_3_": null,
+        "marg_ot__1": null,
+        "marg_ot__2": null,
+        "margwork_0": null,
+        "margwork_4": null,
+        "margwork_5": null,
+        "marg_cl_0_": null,
+        "marg_cl__3": null,
+        "marg_cl__4": null,
+        "marg_al_0_": null,
+        "marg_al__3": null,
+        "marg_al__4": null,
+        "marg_hh_0_": null,
+        "marg_hh__3": null,
+        "marg_hh__4": null,
+        "marg_ot_0_": null,
+        "marg_ot__3": null,
+        "marg_ot__4": null,
+        "non_work_p": null,
+        "non_work_m": null,
+        "non_work_f": null,
+        "district_2": "467",
+        "district_3": null,
+        "districtsh": null,
+        "district_4": "akola",
+        "pre_prim_d": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                77.12684817693723,
+                21.22035769313242
+              ],
+              [
+                77.12684774196272,
+                21.220317123962943
+              ],
+              [
+                77.12680113171467,
+                21.219811039668087
+              ],
+              [
+                77.12657124766655,
+                21.219168562667548
+              ],
+              [
+                77.12632024213906,
+                21.218564245259252
+              ],
+              [
+                77.12579653110248,
+                21.217793117703415
+              ],
+              [
+                77.12581750626975,
+                21.21679129821962
+              ],
+              [
+                77.1257299879587,
+                21.2162164330355
+              ],
+              [
+                77.12623232927923,
+                21.21561055122651
+              ],
+              [
+                77.12622146724159,
+                21.214773348288496
+              ],
+              [
+                77.12623888733387,
+                21.214085575729747
+              ],
+              [
+                77.1262408511414,
+                21.21406558923999
+              ],
+              [
+                77.12648947186241,
+                21.213690578816934
+              ],
+              [
+                77.1270648216388,
+                21.21357504255088
+              ],
+              [
+                77.12719122544019,
+                21.21293042605157
+              ],
+              [
+                77.12708049141429,
+                21.21167078207816
+              ],
+              [
+                77.1271594035505,
+                21.21115894889423
+              ],
+              [
+                77.12762679688345,
+                21.21074482877158
+              ],
+              [
+                77.12800569220904,
+                21.21061200336833
+              ],
+              [
+                77.12783406108224,
+                21.210142519155777
+              ],
+              [
+                77.12779093127804,
+                21.210024541139596
+              ],
+              [
+                77.12765258533452,
+                21.21004365807321
+              ],
+              [
+                77.12755963997836,
+                21.210044366856856
+              ],
+              [
+                77.12621138084761,
+                21.21005464062861
+              ],
+              [
+                77.12506589929392,
+                21.210037391051817
+              ],
+              [
+                77.12489743183319,
+                21.21004119904672
+              ],
+              [
+                77.12481252180253,
+                21.210038110927265
+              ],
+              [
+                77.12258652492444,
+                21.209957142674426
+              ],
+              [
+                77.12093888766603,
+                21.209920641699355
+              ],
+              [
+                77.12093713468298,
+                21.209923604698563
+              ],
+              [
+                77.1201261879757,
+                21.211294015428713
+              ],
+              [
+                77.12002473368825,
+                21.211522896321316
+              ],
+              [
+                77.11918365232545,
+                21.211557738939124
+              ],
+              [
+                77.11899225522778,
+                21.211544239198705
+              ],
+              [
+                77.11888329082797,
+                21.211694699227323
+              ],
+              [
+                77.11819168728495,
+                21.213143952344204
+              ],
+              [
+                77.11869958392614,
+                21.21315834518336
+              ],
+              [
+                77.11879794525798,
+                21.213222014117957
+              ],
+              [
+                77.1190019772788,
+                21.213403492644193
+              ],
+              [
+                77.1186231706988,
+                21.21378583880604
+              ],
+              [
+                77.1186546977176,
+                21.213788799118976
+              ],
+              [
+                77.11879874307922,
+                21.213802324838635
+              ],
+              [
+                77.11894485385187,
+                21.213816044197515
+              ],
+              [
+                77.11906499412578,
+                21.213827325187705
+              ],
+              [
+                77.11890210677159,
+                21.21404172691557
+              ],
+              [
+                77.11895455063677,
+                21.21408821132516
+              ],
+              [
+                77.11936332794626,
+                21.214450534855615
+              ],
+              [
+                77.1197397381197,
+                21.214539632145623
+              ],
+              [
+                77.11976283927687,
+                21.214768114814948
+              ],
+              [
+                77.11990504519356,
+                21.214752753188773
+              ],
+              [
+                77.12069936859791,
+                21.214666938344067
+              ],
+              [
+                77.12073218215872,
+                21.21475252909877
+              ],
+              [
+                77.12104491396647,
+                21.215568273580626
+              ],
+              [
+                77.12138955241623,
+                21.216467233179838
+              ],
+              [
+                77.12146312765962,
+                21.2166567997111
+              ],
+              [
+                77.12159977171132,
+                21.217008858644583
+              ],
+              [
+                77.12184255556348,
+                21.217504419801074
+              ],
+              [
+                77.12237900088247,
+                21.21904998030617
+              ],
+              [
+                77.12379570581723,
+                21.2207622489525
+              ],
+              [
+                77.12664513744761,
+                21.22041069331906
+              ],
+              [
+                77.12684817693723,
+                21.22035769313242
+              ]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "state_code": "27",
+        "state_name": "Maharashtra",
+        "district_c": "501",
+        "district_n": "Akola",
+        "taluka_cod": "3989",
+        "taluka_nam": "akot",
+        "census_201": "529747",
+        "village_na": "chinchpani",
+        "cd_blk_cod": "40",
+        "cd_blk_nam": "Akot",
+        "gp_code": null,
+        "gp_name": null,
+        "ref_year": "2009",
+        "taluka_hq": "Akot",
+        "taluka_hq_": 26,
+        "district_h": "AKOLA",
+        "district_1": 64,
+        "near_stat_": "AKOT",
+        "near_sta_1": 26,
+        "near_sta_2": null,
+        "near_sta_3": null,
+        "near_sta_4": null,
+        "near_sta_5": null,
+        "area_ha": 243.12,
+        "tot_hh": 108,
+        "tot_popu": 481,
+        "tot_popu_m": 232,
+        "tot_popu_f": 249,
+        "tot_popu_s": 0,
+        "tot_popu_1": 0,
+        "tot_popu_2": 0,
+        "tot_popu_3": 481,
+        "tot_popu_4": 232,
+        "tot_popu_5": 249,
+        "govt_pre_p": 1,
+        "govt_pre_1": 2,
+        "priv_pre_p": 2,
+        "priv_pre_1": 0,
+        "near_pre_f": null,
+        "near_pre_v": null,
+        "near_pre_1": null,
+        "govt_prim_": 1,
+        "govt_pri_1": 1,
+        "priv_prim_": 2,
+        "priv_pri_1": 0,
+        "near_prim_": null,
+        "near_pri_1": null,
+        "near_pri_2": null,
+        "govt_mid_s": 2,
+        "govt_mid_n": 0,
+        "priv_mid_s": 2,
+        "priv_mid_n": 0,
+        "near_mid_f": 1,
+        "near_mid_v": "RUIKHED",
+        "near_mid_1": "a",
+        "govt_sec_s": 2,
+        "govt_sec_n": 0,
+        "priv_sec_s": 2,
+        "priv_sec_n": 0,
+        "near_sec_f": 1,
+        "near_sec_v": "RUIKHED",
+        "near_sec_1": "a",
+        "govt_sen_s": 2,
+        "govt_sen_n": 0,
+        "priv_sen_s": 2,
+        "priv_sen_n": 0,
+        "near_sen_f": 2,
+        "near_sen_v": "RUIKHED",
+        "near_sen_1": "a",
+        "govt_artsc": 2,
+        "govt_art_1": 0,
+        "priv_artsc": 2,
+        "priv_art_1": 0,
+        "near_artsc": 2,
+        "near_art_1": "AKOT",
+        "near_art_2": "c",
+        "govt_engg_": 2,
+        "govt_eng_1": 0,
+        "priv_engg_": 2,
+        "priv_eng_1": 0,
+        "near_engg_": 2,
+        "near_eng_1": "AKOT",
+        "near_eng_2": "c",
+        "govt_medi_": 2,
+        "govt_med_1": 0,
+        "priv_medi_": 2,
+        "priv_med_1": 0,
+        "near_medi_": 1,
+        "near_med_1": "AKOT",
+        "near_med_2": "c",
+        "govt_mgmt_": 2,
+        "govt_mgm_1": 0,
+        "priv_mgmt_": 2,
+        "priv_mgm_1": 0,
+        "near_mgmt_": 1,
+        "near_mgm_1": "AKOT",
+        "near_mgm_2": "c",
+        "govt_poly_": 2,
+        "govt_pol_1": 0,
+        "priv_poly_": 2,
+        "priv_pol_1": 0,
+        "near_poly_": 1,
+        "near_pol_1": "AKOT",
+        "near_pol_2": "c",
+        "govt_voc_s": 2,
+        "govt_voc_n": 0,
+        "priv_voc_s": 2,
+        "priv_voc_n": 0,
+        "near_voc_f": 1,
+        "near_voc_v": "AKOT",
+        "near_voc_1": "c",
+        "govt_nonf_": 2,
+        "govt_non_1": 0,
+        "priv_nonf_": 2,
+        "priv_non_1": 0,
+        "near_nonf_": 1,
+        "near_non_1": "AKOT",
+        "near_non_2": "c",
+        "govt_divya": 2,
+        "govt_div_1": 0,
+        "priv_divya": 2,
+        "priv_div_1": 0,
+        "near_divya": 1,
+        "near_div_1": "AKOT",
+        "near_div_2": "c",
+        "govt_oth_s": 2,
+        "govt_oth_n": 0,
+        "priv_oth_s": 2,
+        "priv_oth_n": 0,
+        "near_oth_f": null,
+        "near_oth_v": "N.A.",
+        "near_oth_1": "N.A.",
+        "chc_num": 0,
+        "chc_doc_nu": 0,
+        "chc_doc_in": 0,
+        "chc_param_": 0,
+        "chc_para_1": 0,
+        "chc_prox": "c",
+        "phc_num": 0,
+        "phc_doc_nu": 0,
+        "phc_doc_in": 0,
+        "phc_param_": 0,
+        "phc_para_1": 0,
+        "phc_prox": "b",
+        "phsubc_num": 0,
+        "phsubc_doc": 0,
+        "phsubc_d_1": 0,
+        "phsubc_par": 0,
+        "phsubc_p_1": 0,
+        "phsubc_pro": "a",
+        "mch_num": 0,
+        "mch_doc_nu": 0,
+        "mch_doc_in": 0,
+        "mch_param_": 0,
+        "mch_para_1": 0,
+        "mch_prox": "b",
+        "tbc_num": 0,
+        "tbc_doc_nu": 0,
+        "tbc_doc_in": 0,
+        "tbc_param_": 0,
+        "tbc_para_1": 0,
+        "tbc_prox": "b",
+        "hosp_allo_": 0,
+        "hosp_all_1": 0,
+        "hosp_all_2": 0,
+        "hosp_all_3": 0,
+        "hosp_all_4": 0,
+        "hosp_all_5": "b",
+        "hosp_alt_n": 0,
+        "hosp_alt_d": 0,
+        "hosp_alt_1": 0,
+        "hosp_alt_p": 0,
+        "hosp_alt_2": 0,
+        "hosp_all_p": "b",
+        "dispensary": 0,
+        "dispensa_1": 0,
+        "dispensa_2": 0,
+        "dispensa_3": 0,
+        "dispensa_4": 0,
+        "dispensa_5": "b",
+        "vet_num": 0,
+        "vet_doc_nu": 0,
+        "vet_doc_in": 0,
+        "vet_param_": 0,
+        "vet_para_1": 0,
+        "vet_prox": "c",
+        "mobile_h_n": 0,
+        "mobile_h_d": 0,
+        "mobile_h_1": 0,
+        "mobile_h_p": 0,
+        "mobile_h_2": 0,
+        "mobile_h_3": "c",
+        "fwc_num": 0,
+        "fwc_tot_nu": 0,
+        "fwc_doc_in": 0,
+        "fwc_para_t": 0,
+        "fwc_para_i": 0,
+        "fwc_prox": "b",
+        "ngmf_out": 0,
+        "ngmf_in_an": 0,
+        "ngmf_char": 0,
+        "ngmf_mbbs": 0,
+        "ngmf_other": 0,
+        "ngmf_no_de": 0,
+        "ngmf_trad_": 0,
+        "ngmf_shop": 0,
+        "nfmf_other": 0,
+        "tapwt": 2,
+        "tapwtf_yea": 2,
+        "tapwtf_sum": 2,
+        "tapwu": 1,
+        "tapwuf_yea": 1,
+        "tapwuf_sum": 1,
+        "cov_well": 2,
+        "cov_well_y": 2,
+        "cov_well_s": 2,
+        "uncov_well": 1,
+        "uncov_we_1": 2,
+        "uncov_we_2": 2,
+        "hp": 1,
+        "hp_year": 1,
+        "hp_summer": 1,
+        "twbore": 1,
+        "twbore_yea": 1,
+        "twbore_sum": 1,
+        "spr": 2,
+        "spr_year": 2,
+        "spr_summer": 2,
+        "rivcan": 1,
+        "rivcan_yea": 2,
+        "rivcan_sum": 2,
+        "tanpon": 1,
+        "tanpon_yea": 2,
+        "tanpon_sum": 2,
+        "other": 2,
+        "other_year": 2,
+        "other_summ": 2,
+        "clos_drain": 2,
+        "ope_drain": 1,
+        "no_drain": 2,
+        "op_pucca_c": 2,
+        "op_pucca_u": 2,
+        "op_kucha": 1,
+        "drain_wat_": 2,
+        "cov_tsc": 1,
+        "ctc_bath_g": 2,
+        "ctc_nobath": 2,
+        "rural_cen_": 2,
+        "rural_mart": 2,
+        "comm_waste": 2,
+        "comm_bio_r": 2,
+        "no_syst": 2,
+        "post": 2,
+        "post_prox": "c",
+        "sub_post": 2,
+        "sub_post_p": "c",
+        "post_tele": 2,
+        "post_tele_": "c",
+        "vil_pin": 1,
+        "vil_pin_pr": null,
+        "pin": null,
+        "tele_land": 1,
+        "tele_land_": null,
+        "pco_mob": 2,
+        "pco_prox": "b",
+        "mob_cov": 2,
+        "mob_cov_pr": "a",
+        "net_cafe_c": 2,
+        "net_cafe_1": "c",
+        "courier": 2,
+        "courier_pr": "c",
+        "pub_bus": 1,
+        "pub_bus_pr": null,
+        "priv_bus": 2,
+        "priv_bus_p": "c",
+        "rail_st": 2,
+        "rail_st_pr": "c",
+        "auto": 1,
+        "auto_prox": null,
+        "taxi": 2,
+        "taxi_prox": "a",
+        "van": 2,
+        "van_prox": "c",
+        "tract": 2,
+        "tract_prox": "c",
+        "pull_rick_": 2,
+        "pull_ric_1": "c",
+        "pull_ric_2": 2,
+        "pull_ric_3": null,
+        "cart_ani": 2,
+        "cart_ani_p": "c",
+        "sea_riv_fe": 2,
+        "sea_riv__1": null,
+        "nat_highw": 2,
+        "nat_highw_": "c",
+        "st_highw": 2,
+        "st_highw_p": "c",
+        "maj_dist_r": 2,
+        "maj_dist_1": "c",
+        "oth_dist_r": 2,
+        "oth_dist_1": "c",
+        "black_top_": 2,
+        "black_to_1": "a",
+        "grave_road": 1,
+        "grave_ro_1": null,
+        "wat_bound_": 1,
+        "wat_boun_1": null,
+        "all_weath_": 1,
+        "all_weat_1": null,
+        "navi_ww": 2,
+        "navi_wv_pr": null,
+        "footpath": 1,
+        "footpath_p": null,
+        "atm": 2,
+        "dist_near_": "c",
+        "comm_bank": 2,
+        "comm_bank_": "c",
+        "co_op_bank": 2,
+        "co_op_ba_1": "c",
+        "agri_cred_": 2,
+        "agri_cre_1": "c",
+        "self_help": 2,
+        "self_help_": "a",
+        "pub_distr_": 2,
+        "pub_dist_1": "a",
+        "mndi_mkt": 2,
+        "mndi_mkt_p": "b",
+        "haat": 2,
+        "haat_prox": "b",
+        "agri_mkt_s": 1,
+        "agri_mkt_1": null,
+        "nutri_cen_": 1,
+        "nutri_ce_1": null,
+        "nutri_ce_2": 1,
+        "nutri_ce_3": null,
+        "nutri_ce_4": 1,
+        "nutri_ce_5": null,
+        "asha": 1,
+        "asha_prox": null,
+        "comm_cen_t": 2,
+        "comm_cen_1": "c",
+        "sport_fiel": 2,
+        "sport_fi_1": "c",
+        "sport_club": 2,
+        "sport_cl_1": "c",
+        "cine_vid": 2,
+        "cine_vid_p": "c",
+        "pub_lib": 2,
+        "pub_lib_pr": "c",
+        "pub_read_r": 2,
+        "pub_read_1": "c",
+        "daily_news": 2,
+        "daily_ne_1": "c",
+        "ass_pol": 2,
+        "ass_pol_pr": "b",
+        "birth_deat": 1,
+        "birth_de_1": null,
+        "ps_dom": 1,
+        "ps_dom_sum": 15,
+        "ps_dom_win": 18,
+        "ps_agri": 1,
+        "ps_agri_su": 15,
+        "ps_agri_wi": 18,
+        "ps_comm": 1,
+        "ps_comm_su": 15,
+        "ps_comm_wi": 18,
+        "ps_all": 1,
+        "ps_all_sum": 15,
+        "ps_all_win": 18,
+        "agr_com_1": null,
+        "mfd_com_1": null,
+        "hcarft_com": null,
+        "agri_com_2": null,
+        "mfd_com_2": null,
+        "hcarft_c_1": null,
+        "agri_com_3": null,
+        "mfd_com_3": null,
+        "hcraft_com": null,
+        "forest": 0,
+        "area_non_a": 0,
+        "barren_unc": 25.35,
+        "perm_graze": 3.38,
+        "misc_crop": 0,
+        "cult_waste": 0,
+        "fallow": 0,
+        "curr_fallo": 10.89,
+        "net_area": 203.5,
+        "tot_unirri": 0,
+        "area_irri": 203.5,
+        "canal_area": 0,
+        "well_tube": 0,
+        "tank_lake": 0,
+        "water_fall": 0,
+        "other_sorc": 0,
+        "near_town": "AKOT",
+        "near_town_": 26,
+        "hh_tot_tot": 100,
+        "hh_tot_g": 100,
+        "hh_tot_l": 100,
+        "hh_tot_d": 3.4,
+        "hh_res_tot": 99.2,
+        "hh_res_g": 36.1,
+        "hh_res_l": 59.7,
+        "hh_res_d": 3.4,
+        "hh_rcu_tot": 0.8,
+        "hh_rcu_g": 0,
+        "hh_rcu_l": 0.8,
+        "hh_rcu_d": 0,
+        "mroof_gra": 7.6,
+        "mroof_pla": 0,
+        "mroof_htil": 32.8,
+        "mroof_mtil": 56.3,
+        "mroof_bri": 0,
+        "mroof_sto": 0,
+        "mroof_met": 1.7,
+        "mroof_con": 1.7,
+        "mroof_else": 0,
+        "mwall_gra": 4.2,
+        "mwall_pla": 0,
+        "mwall_mud": 86.6,
+        "mwall_wood": 0,
+        "mwall_stnp": 0,
+        "mwall_stp": 0,
+        "mwall_met": 0,
+        "mwall_brik": 5,
+        "mwall_conc": 4.2,
+        "mwall_else": 0,
+        "mflor_mud": 96.6,
+        "mflor_wood": 0,
+        "mflor_brik": 0,
+        "mflor_ston": 0,
+        "mflor_cem": 3.4,
+        "mflor_tile": 0,
+        "mflor_else": 0,
+        "dwell_no": 17.6,
+        "dwell_one": 55.5,
+        "dwell_two": 18.5,
+        "dwell_thre": 1.7,
+        "dwell_four": 5.9,
+        "dwell_five": 0,
+        "dwell_else": 0.8,
+        "hhsize_1": 0.8,
+        "hhsize_2": 6.7,
+        "hhsize_3": 14.3,
+        "hhsize_4": 20.2,
+        "hhsize_5": 24.4,
+        "hhsize_6": 30.3,
+        "hhsize_els": 3.4,
+        "own_own": 98.3,
+        "own_rent": 1.7,
+        "own_else": 0,
+        "marrco_0": 4.2,
+        "marrco_1": 84.9,
+        "marrco_2": 10.1,
+        "marrco_3": 0.8,
+        "marrco_4": 0,
+        "marrco_els": 0,
+        "msdw_tapt": 2.5,
+        "msdw_taput": 0,
+        "msdw_cwel": 0,
+        "msdw_ucwel": 97.5,
+        "msdw_hpump": 0,
+        "msdw_bore": 0,
+        "msdw_sprin": 0,
+        "msdw_river": 0,
+        "msdw_lake": 0,
+        "msdw_else": 0,
+        "locdw_in": 0,
+        "locdw_near": 100,
+        "locdw_away": 0,
+        "mslit_elec": 48.7,
+        "mslit_kero": 48.7,
+        "mslit_sol": 2.5,
+        "mslit_oil": 0,
+        "mslit_else": 0,
+        "mslit_no": 0,
+        "hh_hav_lat": 2.5,
+        "flat_pipe": 0,
+        "flat_sept": 2.5,
+        "flat_else": 0,
+        "plat_vent": 0,
+        "plat_open": 0,
+        "niso_open": 0,
+        "serlat_hum": 0,
+        "serlat_ani": 0,
+        "hh_no_lat": 97.5,
+        "alt_publat": 0,
+        "alt_open": 97.5,
+        "bath": 4.2,
+        "bathnoroof": 89.1,
+        "nobathroom": 6.7,
+        "ww_closed": 0,
+        "ww_open": 0,
+        "ww_no": 100,
+        "food_wood": 96.6,
+        "food_crop": 0.8,
+        "food_dung": 0,
+        "food_coal": 1.7,
+        "food_kero": 0,
+        "food_lpg": 0,
+        "food_elec": 0,
+        "food_bio": 0,
+        "food_else": 0,
+        "food_no": 0.8,
+        "kitch_tot": 100,
+        "kitch_in": 95.8,
+        "kitch_yesi": 54.6,
+        "kitch_noi": 41.2,
+        "kitch_out": 3.4,
+        "kitch_yeso": 0,
+        "kitch_noo": 3.4,
+        "kitch_noco": 0.8,
+        "hh_bank": 47.9,
+        "ass_radio": 4.2,
+        "ass_tele": 15.1,
+        "ass_pc_net": 0,
+        "ass_pc_nnt": 0.8,
+        "ass_mob_la": 0.8,
+        "ass_mob_mo": 14.3,
+        "ass_mob_bo": 0,
+        "ass_cycle": 3.4,
+        "ass_scoot": 1.7,
+        "ass_car": 0,
+        "ass_tv_pc": 0,
+        "ass_no_ass": 70.6,
+        "hhst_perma": 9.2,
+        "hhst_sperm": 83.2,
+        "hhst_tempo": 7.6,
+        "hhst_serv": 4.2,
+        "hhst_nser": 3.4,
+        "hhst_else": 0,
+        "ward": "0",
+        "tru": "Rural",
+        "no_hh": 108,
+        "tot_p": 481,
+        "tot_m": 232,
+        "tot_f": 249,
+        "p_06": 68,
+        "m_06": 24,
+        "f_06": 44,
+        "p_sc": 0,
+        "m_sc": 0,
+        "f_sc": 0,
+        "p_st": 481,
+        "m_st": 232,
+        "f_st": 249,
+        "p_lit": 319,
+        "m_lit": 184,
+        "f_lit": 135,
+        "p_ill": 162,
+        "m_ill": 48,
+        "f_ill": 114,
+        "tot_work_p": 250,
+        "tot_work_m": 125,
+        "tot_work_f": 125,
+        "mainwork_p": 250,
+        "mainwork_m": 125,
+        "mainwork_f": 125,
+        "main_cl_p": 21,
+        "main_cl_m": 10,
+        "main_cl_f": 11,
+        "main_al_p": 222,
+        "main_al_m": 110,
+        "main_al_f": 112,
+        "main_hh_p": 2,
+        "main_hh_m": 1,
+        "main_hh_f": 1,
+        "main_ot_p": 5,
+        "main_ot_m": 4,
+        "main_ot_f": 1,
+        "margwork_p": 0,
+        "margwork_m": 0,
+        "margwork_f": 0,
+        "marg_cl_p": 0,
+        "marg_cl_m": 0,
+        "marg_cl_f": 0,
+        "marg_al_p": 0,
+        "marg_al_m": 0,
+        "marg_al_f": 0,
+        "marg_hh_p": 0,
+        "marg_hh_m": 0,
+        "marg_hh_f": 0,
+        "marg_ot_p": 0,
+        "marg_ot_m": 0,
+        "marg_ot_f": 0,
+        "margwork_3": 0,
+        "margwork_1": 0,
+        "margwork_2": 0,
+        "marg_cl_3_": 0,
+        "marg_cl__1": 0,
+        "marg_cl__2": 0,
+        "marg_al_3_": 0,
+        "marg_al__1": 0,
+        "marg_al__2": 0,
+        "marg_hh_3_": 0,
+        "marg_hh__1": 0,
+        "marg_hh__2": 0,
+        "marg_ot_3_": 0,
+        "marg_ot__1": 0,
+        "marg_ot__2": 0,
+        "margwork_0": 0,
+        "margwork_4": 0,
+        "margwork_5": 0,
+        "marg_cl_0_": 0,
+        "marg_cl__3": 0,
+        "marg_cl__4": 0,
+        "marg_al_0_": 0,
+        "marg_al__3": 0,
+        "marg_al__4": 0,
+        "marg_hh_0_": 0,
+        "marg_hh__3": 0,
+        "marg_hh__4": 0,
+        "marg_ot_0_": 0,
+        "marg_ot__3": 0,
+        "marg_ot__4": 0,
+        "non_work_p": 231,
+        "non_work_m": 107,
+        "non_work_f": 124,
+        "district_2": "467",
+        "district_3": null,
+        "districtsh": null,
+        "district_4": "akola",
+        "pre_prim_d": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                77.15095114255976,
+                21.232300619180972
+              ],
+              [
+                77.15088408320014,
+                21.229674142842946
+              ],
+              [
+                77.1510763220835,
+                21.22840880216859
+              ],
+              [
+                77.15070760145021,
+                21.226945901218475
+              ],
+              [
+                77.15082521754009,
+                21.22590804819279
+              ],
+              [
+                77.15053770120915,
+                21.22511313124118
+              ],
+              [
+                77.150549333159,
+                21.22493003721592
+              ],
+              [
+                77.15057673004227,
+                21.22449877511025
+              ],
+              [
+                77.1505596747913,
+                21.22437463965262
+              ],
+              [
+                77.15040047760807,
+                21.223215901103945
+              ],
+              [
+                77.1502244327655,
+                21.22195887605862
+              ],
+              [
+                77.15013221376746,
+                21.2214168638004
+              ],
+              [
+                77.1500951565402,
+                21.221199064297178
+              ],
+              [
+                77.14995784953479,
+                21.22039204292287
+              ],
+              [
+                77.14977430121768,
+                21.219173402295592
+              ],
+              [
+                77.14977383433161,
+                21.219170305572305
+              ],
+              [
+                77.14946658655177,
+                21.217574564829736
+              ],
+              [
+                77.14942337557737,
+                21.217540541624476
+              ],
+              [
+                77.14928372269597,
+                21.217528027960956
+              ],
+              [
+                77.14887319345885,
+                21.21749158570929
+              ],
+              [
+                77.14799770706918,
+                21.217506835347702
+              ],
+              [
+                77.14695014466893,
+                21.217525075338486
+              ],
+              [
+                77.14669558179806,
+                21.21751858398615
+              ],
+              [
+                77.14657207689864,
+                21.217480055123747
+              ],
+              [
+                77.1464696894114,
+                21.217456128710886
+              ],
+              [
+                77.1462203447606,
+                21.217398265991093
+              ],
+              [
+                77.14570659372332,
+                21.217278707553984
+              ],
+              [
+                77.14542894958106,
+                21.217214095331368
+              ],
+              [
+                77.14406325810627,
+                21.216968052781837
+              ],
+              [
+                77.14282459631538,
+                21.216934336146593
+              ],
+              [
+                77.14280608720901,
+                21.216933832775318
+              ],
+              [
+                77.14262600273281,
+                21.216890972921966
+              ],
+              [
+                77.14195083342246,
+                21.21672841418444
+              ],
+              [
+                77.14166747579665,
+                21.216427992442686
+              ],
+              [
+                77.14148199322473,
+                21.216230519552074
+              ],
+              [
+                77.1412493871289,
+                21.215983541745974
+              ],
+              [
+                77.14123313078045,
+                21.21598133928976
+              ],
+              [
+                77.14116662385838,
+                21.21589803642617
+              ],
+              [
+                77.14095543601269,
+                21.215644465258947
+              ],
+              [
+                77.14092719879626,
+                21.215627384204037
+              ],
+              [
+                77.14091767225479,
+                21.215621620310554
+              ],
+              [
+                77.14076275799657,
+                21.215535144267424
+              ],
+              [
+                77.14067374731563,
+                21.21552455325353
+              ],
+              [
+                77.14066415565313,
+                21.21555496236961
+              ],
+              [
+                77.14065278008519,
+                21.21559103415945
+              ],
+              [
+                77.14065243316028,
+                21.21559709214003
+              ],
+              [
+                77.14062788820515,
+                21.21569156829857
+              ],
+              [
+                77.14046057310681,
+                21.215692951133548
+              ],
+              [
+                77.14040103943809,
+                21.215693442702573
+              ],
+              [
+                77.14019339327587,
+                21.215681145951468
+              ],
+              [
+                77.13852742383503,
+                21.215737525947482
+              ],
+              [
+                77.1384800697779,
+                21.21573912798197
+              ],
+              [
+                77.138438947734,
+                21.21574051940046
+              ],
+              [
+                77.13825309473685,
+                21.215603429677564
+              ],
+              [
+                77.1380075034089,
+                21.215421953777895
+              ],
+              [
+                77.13798750187806,
+                21.215383644549284
+              ],
+              [
+                77.13729604992515,
+                21.215429227755255
+              ],
+              [
+                77.13718099423765,
+                21.215436813339824
+              ],
+              [
+                77.13689515335967,
+                21.21545565590323
+              ],
+              [
+                77.13632315265863,
+                21.215493361155108
+              ],
+              [
+                77.13628500745716,
+                21.21549587582461
+              ],
+              [
+                77.13494418259235,
+                21.215294833607896
+              ],
+              [
+                77.13493215862096,
+                21.215297693933977
+              ],
+              [
+                77.13484211452264,
+                21.215272356040526
+              ],
+              [
+                77.13477554210209,
+                21.21525362179793
+              ],
+              [
+                77.13464242228697,
+                21.21521737421658
+              ],
+              [
+                77.13458368435917,
+                21.215153013386253
+              ],
+              [
+                77.1344611557051,
+                21.21501875404618
+              ],
+              [
+                77.13428674723059,
+                21.215022006294294
+              ],
+              [
+                77.13419316583506,
+                21.215023751901974
+              ],
+              [
+                77.13398332206356,
+                21.215027664801557
+              ],
+              [
+                77.13389176605658,
+                21.21502937182233
+              ],
+              [
+                77.13379313604169,
+                21.21500869113958
+              ],
+              [
+                77.13373496983057,
+                21.214996494328425
+              ],
+              [
+                77.13279017387826,
+                21.214905856911628
+              ],
+              [
+                77.13249426864992,
+                21.214877468899864
+              ],
+              [
+                77.13235871633955,
+                21.214864463863876
+              ],
+              [
+                77.13234077259273,
+                21.214861752888094
+              ],
+              [
+                77.13185549195008,
+                21.214788428364564
+              ],
+              [
+                77.12980061482384,
+                21.214477924390238
+              ],
+              [
+                77.12970547024503,
+                21.214463545600243
+              ],
+              [
+                77.12945135611635,
+                21.214425147026784
+              ],
+              [
+                77.12901848300376,
+                21.214359733244404
+              ],
+              [
+                77.12864211569679,
+                21.214302858022197
+              ],
+              [
+                77.12839033557908,
+                21.214252132886372
+              ],
+              [
+                77.128175530009,
+                21.214208856408803
+              ],
+              [
+                77.12808765318995,
+                21.21417782665651
+              ],
+              [
+                77.1279538017662,
+                21.214130563975967
+              ],
+              [
+                77.12779857189003,
+                21.21413501454897
+              ],
+              [
+                77.12747910913033,
+                21.214097493643226
+              ],
+              [
+                77.12742598481452,
+                21.214091255371212
+              ],
+              [
+                77.1272442200319,
+                21.214081466547547
+              ],
+              [
+                77.1271313971705,
+                21.21407539170345
+              ],
+              [
+                77.12665035094713,
+                21.21404948744742
+              ],
+              [
+                77.12644200060733,
+                21.214064224704615
+              ],
+              [
+                77.1262408511414,
+                21.21406558923999
+              ],
+              [
+                77.12623888733387,
+                21.214085575729747
+              ],
+              [
+                77.12622146724159,
+                21.214773348288496
+              ],
+              [
+                77.12623232927923,
+                21.21561055122651
+              ],
+              [
+                77.1257299879587,
+                21.2162164330355
+              ],
+              [
+                77.12581750626975,
+                21.21679129821962
+              ],
+              [
+                77.12579653110248,
+                21.217793117703415
+              ],
+              [
+                77.12632024213906,
+                21.218564245259252
+              ],
+              [
+                77.12657124766655,
+                21.219168562667548
+              ],
+              [
+                77.12680113171467,
+                21.219811039668087
+              ],
+              [
+                77.12684774196272,
+                21.220317123962943
+              ],
+              [
+                77.12684817693723,
+                21.22035769313242
+              ],
+              [
+                77.127085844451,
+                21.220709782025594
+              ],
+              [
+                77.12740963005399,
+                21.220870180705692
+              ],
+              [
+                77.12753962008637,
+                21.220843953411944
+              ],
+              [
+                77.1275587946987,
+                21.220842148569776
+              ],
+              [
+                77.12880633409243,
+                21.22072483177276
+              ],
+              [
+                77.13044246905903,
+                21.220405588183795
+              ],
+              [
+                77.13051643023498,
+                21.220459052985532
+              ],
+              [
+                77.13061080021647,
+                21.22052726975549
+              ],
+              [
+                77.13201842102998,
+                21.221544784680475
+              ],
+              [
+                77.1343141315207,
+                21.22314962427529
+              ],
+              [
+                77.13456906115528,
+                21.22333672840398
+              ],
+              [
+                77.13477310137947,
+                21.223486484394975
+              ],
+              [
+                77.13574486344304,
+                21.224199698267373
+              ],
+              [
+                77.13750276710118,
+                21.22423627536807
+              ],
+              [
+                77.13864320735857,
+                21.224259626370245
+              ],
+              [
+                77.13931386404766,
+                21.22529071901949
+              ],
+              [
+                77.13980475080326,
+                21.226044183742218
+              ],
+              [
+                77.14231148389312,
+                21.226925882909494
+              ],
+              [
+                77.14229509105435,
+                21.227046139894522
+              ],
+              [
+                77.1444202936282,
+                21.227130539220187
+              ],
+              [
+                77.14639304321341,
+                21.22716124456286
+              ],
+              [
+                77.14657709640058,
+                21.227193099409686
+              ],
+              [
+                77.1478039469548,
+                21.227405425591378
+              ],
+              [
+                77.14881079256647,
+                21.227579837801088
+              ],
+              [
+                77.1491699478899,
+                21.228514889840568
+              ],
+              [
+                77.14953839797435,
+                21.229474128813493
+              ],
+              [
+                77.15049839475377,
+                21.232328691323378
+              ],
+              [
+                77.15095114255976,
+                21.232300619180972
+              ]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "state_code": "27",
+        "state_name": "Maharashtra",
+        "district_c": "501",
+        "district_n": "Akola",
+        "taluka_cod": "3989",
+        "taluka_nam": "akot",
+        "census_201": "529874",
+        "village_na": "koha",
+        "cd_blk_cod": "40",
+        "cd_blk_nam": "Akot",
+        "gp_code": null,
+        "gp_name": null,
+        "ref_year": "2009",
+        "taluka_hq": "Akot",
+        "taluka_hq_": 51,
+        "district_h": "AKOLA",
+        "district_1": 65,
+        "near_stat_": "AKOT",
+        "near_sta_1": 51,
+        "near_sta_2": null,
+        "near_sta_3": null,
+        "near_sta_4": null,
+        "near_sta_5": null,
+        "area_ha": 238,
+        "tot_hh": 96,
+        "tot_popu": 528,
+        "tot_popu_m": 270,
+        "tot_popu_f": 258,
+        "tot_popu_s": 8,
+        "tot_popu_1": 4,
+        "tot_popu_2": 4,
+        "tot_popu_3": 316,
+        "tot_popu_4": 145,
+        "tot_popu_5": 171,
+        "govt_pre_p": 1,
+        "govt_pre_1": 2,
+        "priv_pre_p": 2,
+        "priv_pre_1": 0,
+        "near_pre_f": null,
+        "near_pre_v": null,
+        "near_pre_1": null,
+        "govt_prim_": 1,
+        "govt_pri_1": 1,
+        "priv_prim_": 2,
+        "priv_pri_1": 0,
+        "near_prim_": null,
+        "near_pri_1": null,
+        "near_pri_2": null,
+        "govt_mid_s": 2,
+        "govt_mid_n": 0,
+        "priv_mid_s": 2,
+        "priv_mid_n": 0,
+        "near_mid_f": 1,
+        "near_mid_v": "Keliweli",
+        "near_mid_1": "b",
+        "govt_sec_s": 2,
+        "govt_sec_n": 0,
+        "priv_sec_s": 2,
+        "priv_sec_n": 0,
+        "near_sec_f": 1,
+        "near_sec_v": "Keliweli",
+        "near_sec_1": "c",
+        "govt_sen_s": 2,
+        "govt_sen_n": 0,
+        "priv_sen_s": 2,
+        "priv_sen_n": 0,
+        "near_sen_f": 1,
+        "near_sen_v": "AKOT",
+        "near_sen_1": "c",
+        "govt_artsc": 2,
+        "govt_art_1": 0,
+        "priv_artsc": 2,
+        "priv_art_1": 0,
+        "near_artsc": 1,
+        "near_art_1": "AKOT",
+        "near_art_2": "c",
+        "govt_engg_": 2,
+        "govt_eng_1": 0,
+        "priv_engg_": 2,
+        "priv_eng_1": 0,
+        "near_engg_": 1,
+        "near_eng_1": "AKOT",
+        "near_eng_2": "c",
+        "govt_medi_": 2,
+        "govt_med_1": 0,
+        "priv_medi_": 2,
+        "priv_med_1": 0,
+        "near_medi_": 1,
+        "near_med_1": "AKOLA",
+        "near_med_2": "c",
+        "govt_mgmt_": 2,
+        "govt_mgm_1": 0,
+        "priv_mgmt_": 2,
+        "priv_mgm_1": 0,
+        "near_mgmt_": 1,
+        "near_mgm_1": "AKOLA",
+        "near_mgm_2": "c",
+        "govt_poly_": 2,
+        "govt_pol_1": 0,
+        "priv_poly_": 2,
+        "priv_pol_1": 0,
+        "near_poly_": 1,
+        "near_pol_1": "AKOT",
+        "near_pol_2": "c",
+        "govt_voc_s": 2,
+        "govt_voc_n": 0,
+        "priv_voc_s": 2,
+        "priv_voc_n": 0,
+        "near_voc_f": 1,
+        "near_voc_v": "AKOT",
+        "near_voc_1": "c",
+        "govt_nonf_": 2,
+        "govt_non_1": 0,
+        "priv_nonf_": 2,
+        "priv_non_1": 0,
+        "near_nonf_": 1,
+        "near_non_1": "AKOLA",
+        "near_non_2": "c",
+        "govt_divya": 2,
+        "govt_div_1": 0,
+        "priv_divya": 2,
+        "priv_div_1": 0,
+        "near_divya": 1,
+        "near_div_1": "AKOLA",
+        "near_div_2": "c",
+        "govt_oth_s": 2,
+        "govt_oth_n": 0,
+        "priv_oth_s": 2,
+        "priv_oth_n": 0,
+        "near_oth_f": null,
+        "near_oth_v": "N.A.",
+        "near_oth_1": "N.A.",
+        "chc_num": 0,
+        "chc_doc_nu": 0,
+        "chc_doc_in": 0,
+        "chc_param_": 0,
+        "chc_para_1": 0,
+        "chc_prox": "c",
+        "phc_num": 0,
+        "phc_doc_nu": 0,
+        "phc_doc_in": 0,
+        "phc_param_": 0,
+        "phc_para_1": 0,
+        "phc_prox": "b",
+        "phsubc_num": 0,
+        "phsubc_doc": 0,
+        "phsubc_d_1": 0,
+        "phsubc_par": 0,
+        "phsubc_p_1": 0,
+        "phsubc_pro": "b",
+        "mch_num": 0,
+        "mch_doc_nu": 0,
+        "mch_doc_in": 0,
+        "mch_param_": 0,
+        "mch_para_1": 0,
+        "mch_prox": "b",
+        "tbc_num": 0,
+        "tbc_doc_nu": 0,
+        "tbc_doc_in": 0,
+        "tbc_param_": 0,
+        "tbc_para_1": 0,
+        "tbc_prox": "b",
+        "hosp_allo_": 0,
+        "hosp_all_1": 0,
+        "hosp_all_2": 0,
+        "hosp_all_3": 0,
+        "hosp_all_4": 0,
+        "hosp_all_5": "b",
+        "hosp_alt_n": 0,
+        "hosp_alt_d": 0,
+        "hosp_alt_1": 0,
+        "hosp_alt_p": 0,
+        "hosp_alt_2": 0,
+        "hosp_all_p": "b",
+        "dispensary": 0,
+        "dispensa_1": 0,
+        "dispensa_2": 0,
+        "dispensa_3": 0,
+        "dispensa_4": 0,
+        "dispensa_5": "b",
+        "vet_num": 0,
+        "vet_doc_nu": 0,
+        "vet_doc_in": 0,
+        "vet_param_": 0,
+        "vet_para_1": 0,
+        "vet_prox": "c",
+        "mobile_h_n": 0,
+        "mobile_h_d": 0,
+        "mobile_h_1": 0,
+        "mobile_h_p": 0,
+        "mobile_h_2": 0,
+        "mobile_h_3": "c",
+        "fwc_num": 0,
+        "fwc_tot_nu": 0,
+        "fwc_doc_in": 0,
+        "fwc_para_t": 0,
+        "fwc_para_i": 0,
+        "fwc_prox": "b",
+        "ngmf_out": 0,
+        "ngmf_in_an": 0,
+        "ngmf_char": 0,
+        "ngmf_mbbs": 0,
+        "ngmf_other": 0,
+        "ngmf_no_de": 0,
+        "ngmf_trad_": 0,
+        "ngmf_shop": 0,
+        "nfmf_other": 0,
+        "tapwt": 2,
+        "tapwtf_yea": 2,
+        "tapwtf_sum": 2,
+        "tapwu": 2,
+        "tapwuf_yea": 2,
+        "tapwuf_sum": 2,
+        "cov_well": 2,
+        "cov_well_y": 2,
+        "cov_well_s": 2,
+        "uncov_well": 1,
+        "uncov_we_1": 1,
+        "uncov_we_2": 1,
+        "hp": 1,
+        "hp_year": 1,
+        "hp_summer": 1,
+        "twbore": 1,
+        "twbore_yea": 1,
+        "twbore_sum": 1,
+        "spr": 2,
+        "spr_year": 2,
+        "spr_summer": 2,
+        "rivcan": 2,
+        "rivcan_yea": 2,
+        "rivcan_sum": 2,
+        "tanpon": 1,
+        "tanpon_yea": 1,
+        "tanpon_sum": 1,
+        "other": 2,
+        "other_year": 2,
+        "other_summ": 2,
+        "clos_drain": 2,
+        "ope_drain": 1,
+        "no_drain": 2,
+        "op_pucca_c": 2,
+        "op_pucca_u": 2,
+        "op_kucha": 1,
+        "drain_wat_": 1,
+        "cov_tsc": 2,
+        "ctc_bath_g": 2,
+        "ctc_nobath": 2,
+        "rural_cen_": 2,
+        "rural_mart": 2,
+        "comm_waste": 2,
+        "comm_bio_r": 2,
+        "no_syst": 2,
+        "post": 2,
+        "post_prox": "b",
+        "sub_post": 2,
+        "sub_post_p": "b",
+        "post_tele": 2,
+        "post_tele_": "b",
+        "vil_pin": 1,
+        "vil_pin_pr": null,
+        "pin": null,
+        "tele_land": 2,
+        "tele_land_": "b",
+        "pco_mob": 2,
+        "pco_prox": "b",
+        "mob_cov": 1,
+        "mob_cov_pr": null,
+        "net_cafe_c": 2,
+        "net_cafe_1": "b",
+        "courier": 2,
+        "courier_pr": "b",
+        "pub_bus": 1,
+        "pub_bus_pr": null,
+        "priv_bus": 2,
+        "priv_bus_p": "b",
+        "rail_st": 2,
+        "rail_st_pr": "b",
+        "auto": 1,
+        "auto_prox": null,
+        "taxi": 2,
+        "taxi_prox": "a",
+        "van": 2,
+        "van_prox": "b",
+        "tract": 2,
+        "tract_prox": "c",
+        "pull_rick_": 2,
+        "pull_ric_1": "c",
+        "pull_ric_2": 2,
+        "pull_ric_3": null,
+        "cart_ani": 2,
+        "cart_ani_p": "c",
+        "sea_riv_fe": 2,
+        "sea_riv__1": null,
+        "nat_highw": 2,
+        "nat_highw_": "c",
+        "st_highw": 2,
+        "st_highw_p": "c",
+        "maj_dist_r": 2,
+        "maj_dist_1": "c",
+        "oth_dist_r": 2,
+        "oth_dist_1": "b",
+        "black_top_": 2,
+        "black_to_1": "a",
+        "grave_road": 1,
+        "grave_ro_1": null,
+        "wat_bound_": 1,
+        "wat_boun_1": null,
+        "all_weath_": 1,
+        "all_weat_1": null,
+        "navi_ww": 2,
+        "navi_wv_pr": null,
+        "footpath": 1,
+        "footpath_p": null,
+        "atm": 2,
+        "dist_near_": "c",
+        "comm_bank": 2,
+        "comm_bank_": "c",
+        "co_op_bank": 2,
+        "co_op_ba_1": "c",
+        "agri_cred_": 2,
+        "agri_cre_1": "c",
+        "self_help": 2,
+        "self_help_": "a",
+        "pub_distr_": 1,
+        "pub_dist_1": null,
+        "mndi_mkt": 2,
+        "mndi_mkt_p": "b",
+        "haat": 2,
+        "haat_prox": "b",
+        "agri_mkt_s": 1,
+        "agri_mkt_1": null,
+        "nutri_cen_": 1,
+        "nutri_ce_1": null,
+        "nutri_ce_2": 1,
+        "nutri_ce_3": null,
+        "nutri_ce_4": 1,
+        "nutri_ce_5": null,
+        "asha": 1,
+        "asha_prox": null,
+        "comm_cen_t": 2,
+        "comm_cen_1": "c",
+        "sport_fiel": 2,
+        "sport_fi_1": "c",
+        "sport_club": 2,
+        "sport_cl_1": "c",
+        "cine_vid": 2,
+        "cine_vid_p": "c",
+        "pub_lib": 2,
+        "pub_lib_pr": "c",
+        "pub_read_r": 2,
+        "pub_read_1": "c",
+        "daily_news": 2,
+        "daily_ne_1": "c",
+        "ass_pol": 2,
+        "ass_pol_pr": "b",
+        "birth_deat": 1,
+        "birth_de_1": null,
+        "ps_dom": 1,
+        "ps_dom_sum": 15,
+        "ps_dom_win": 18,
+        "ps_agri": 1,
+        "ps_agri_su": 15,
+        "ps_agri_wi": 18,
+        "ps_comm": 1,
+        "ps_comm_su": 15,
+        "ps_comm_wi": 18,
+        "ps_all": 1,
+        "ps_all_sum": 15,
+        "ps_all_win": 18,
+        "agr_com_1": null,
+        "mfd_com_1": null,
+        "hcarft_com": null,
+        "agri_com_2": null,
+        "mfd_com_2": null,
+        "hcarft_c_1": null,
+        "agri_com_3": null,
+        "mfd_com_3": null,
+        "hcraft_com": null,
+        "forest": 85.74,
+        "area_non_a": 56.21,
+        "barren_unc": 3.41,
+        "perm_graze": 0,
+        "misc_crop": 0,
+        "cult_waste": 0,
+        "fallow": 9.57,
+        "curr_fallo": 0,
+        "net_area": 83.07,
+        "tot_unirri": 0,
+        "area_irri": 83.07,
+        "canal_area": 0,
+        "well_tube": 0,
+        "tank_lake": 0,
+        "water_fall": 0,
+        "other_sorc": 0,
+        "near_town": "AKOT",
+        "near_town_": 51,
+        "hh_tot_tot": 100,
+        "hh_tot_g": 100,
+        "hh_tot_l": 100,
+        "hh_tot_d": 0,
+        "hh_res_tot": 98.9,
+        "hh_res_g": 0,
+        "hh_res_l": 98.9,
+        "hh_res_d": 0,
+        "hh_rcu_tot": 1.1,
+        "hh_rcu_g": 0,
+        "hh_rcu_l": 1.1,
+        "hh_rcu_d": 0,
+        "mroof_gra": 0,
+        "mroof_pla": 0,
+        "mroof_htil": 97.8,
+        "mroof_mtil": 0,
+        "mroof_bri": 2.2,
+        "mroof_sto": 0,
+        "mroof_met": 0,
+        "mroof_con": 0,
+        "mroof_else": 0,
+        "mwall_gra": 0,
+        "mwall_pla": 0,
+        "mwall_mud": 100,
+        "mwall_wood": 0,
+        "mwall_stnp": 0,
+        "mwall_stp": 0,
+        "mwall_met": 0,
+        "mwall_brik": 0,
+        "mwall_conc": 0,
+        "mwall_else": 0,
+        "mflor_mud": 100,
+        "mflor_wood": 0,
+        "mflor_brik": 0,
+        "mflor_ston": 0,
+        "mflor_cem": 0,
+        "mflor_tile": 0,
+        "mflor_else": 0,
+        "dwell_no": 6.5,
+        "dwell_one": 93.5,
+        "dwell_two": 0,
+        "dwell_thre": 0,
+        "dwell_four": 0,
+        "dwell_five": 0,
+        "dwell_else": 0,
+        "hhsize_1": 0,
+        "hhsize_2": 5.4,
+        "hhsize_3": 5.4,
+        "hhsize_4": 17.2,
+        "hhsize_5": 25.8,
+        "hhsize_6": 36.6,
+        "hhsize_els": 9.7,
+        "own_own": 100,
+        "own_rent": 0,
+        "own_else": 0,
+        "marrco_0": 7.5,
+        "marrco_1": 66.7,
+        "marrco_2": 21.5,
+        "marrco_3": 4.3,
+        "marrco_4": 0,
+        "marrco_els": 0,
+        "msdw_tapt": 0,
+        "msdw_taput": 0,
+        "msdw_cwel": 0,
+        "msdw_ucwel": 0,
+        "msdw_hpump": 100,
+        "msdw_bore": 0,
+        "msdw_sprin": 0,
+        "msdw_river": 0,
+        "msdw_lake": 0,
+        "msdw_else": 0,
+        "locdw_in": 0,
+        "locdw_near": 5.4,
+        "locdw_away": 94.6,
+        "mslit_elec": 33.3,
+        "mslit_kero": 66.7,
+        "mslit_sol": 0,
+        "mslit_oil": 0,
+        "mslit_else": 0,
+        "mslit_no": 0,
+        "hh_hav_lat": 1.1,
+        "flat_pipe": 0,
+        "flat_sept": 0,
+        "flat_else": 1.1,
+        "plat_vent": 0,
+        "plat_open": 0,
+        "niso_open": 0,
+        "serlat_hum": 0,
+        "serlat_ani": 0,
+        "hh_no_lat": 98.9,
+        "alt_publat": 0,
+        "alt_open": 98.9,
+        "bath": 0,
+        "bathnoroof": 98.9,
+        "nobathroom": 1.1,
+        "ww_closed": 0,
+        "ww_open": 0,
+        "ww_no": 100,
+        "food_wood": 100,
+        "food_crop": 0,
+        "food_dung": 0,
+        "food_coal": 0,
+        "food_kero": 0,
+        "food_lpg": 0,
+        "food_elec": 0,
+        "food_bio": 0,
+        "food_else": 0,
+        "food_no": 0,
+        "kitch_tot": 100,
+        "kitch_in": 100,
+        "kitch_yesi": 0,
+        "kitch_noi": 100,
+        "kitch_out": 0,
+        "kitch_yeso": 0,
+        "kitch_noo": 0,
+        "kitch_noco": 0,
+        "hh_bank": 98.9,
+        "ass_radio": 0,
+        "ass_tele": 0,
+        "ass_pc_net": 1.1,
+        "ass_pc_nnt": 0,
+        "ass_mob_la": 0,
+        "ass_mob_mo": 1.1,
+        "ass_mob_bo": 0,
+        "ass_cycle": 0,
+        "ass_scoot": 0,
+        "ass_car": 0,
+        "ass_tv_pc": 0,
+        "ass_no_ass": 97.8,
+        "hhst_perma": 0,
+        "hhst_sperm": 100,
+        "hhst_tempo": 0,
+        "hhst_serv": 0,
+        "hhst_nser": 0,
+        "hhst_else": 0,
+        "ward": "0",
+        "tru": "Rural",
+        "no_hh": 96,
+        "tot_p": 528,
+        "tot_m": 270,
+        "tot_f": 258,
+        "p_06": 66,
+        "m_06": 35,
+        "f_06": 31,
+        "p_sc": 8,
+        "m_sc": 4,
+        "f_sc": 4,
+        "p_st": 316,
+        "m_st": 145,
+        "f_st": 171,
+        "p_lit": 394,
+        "m_lit": 206,
+        "f_lit": 188,
+        "p_ill": 134,
+        "m_ill": 64,
+        "f_ill": 70,
+        "tot_work_p": 291,
+        "tot_work_m": 155,
+        "tot_work_f": 136,
+        "mainwork_p": 111,
+        "mainwork_m": 60,
+        "mainwork_f": 51,
+        "main_cl_p": 2,
+        "main_cl_m": 0,
+        "main_cl_f": 2,
+        "main_al_p": 100,
+        "main_al_m": 57,
+        "main_al_f": 43,
+        "main_hh_p": 0,
+        "main_hh_m": 0,
+        "main_hh_f": 0,
+        "main_ot_p": 9,
+        "main_ot_m": 3,
+        "main_ot_f": 6,
+        "margwork_p": 180,
+        "margwork_m": 95,
+        "margwork_f": 85,
+        "marg_cl_p": 1,
+        "marg_cl_m": 1,
+        "marg_cl_f": 0,
+        "marg_al_p": 178,
+        "marg_al_m": 93,
+        "marg_al_f": 85,
+        "marg_hh_p": 0,
+        "marg_hh_m": 0,
+        "marg_hh_f": 0,
+        "marg_ot_p": 1,
+        "marg_ot_m": 1,
+        "marg_ot_f": 0,
+        "margwork_3": 180,
+        "margwork_1": 95,
+        "margwork_2": 85,
+        "marg_cl_3_": 1,
+        "marg_cl__1": 1,
+        "marg_cl__2": 0,
+        "marg_al_3_": 178,
+        "marg_al__1": 93,
+        "marg_al__2": 85,
+        "marg_hh_3_": 0,
+        "marg_hh__1": 0,
+        "marg_hh__2": 0,
+        "marg_ot_3_": 1,
+        "marg_ot__1": 1,
+        "marg_ot__2": 0,
+        "margwork_0": 0,
+        "margwork_4": 0,
+        "margwork_5": 0,
+        "marg_cl_0_": 0,
+        "marg_cl__3": 0,
+        "marg_cl__4": 0,
+        "marg_al_0_": 0,
+        "marg_al__3": 0,
+        "marg_al__4": 0,
+        "marg_hh_0_": 0,
+        "marg_hh__3": 0,
+        "marg_hh__4": 0,
+        "marg_ot_0_": 0,
+        "marg_ot__3": 0,
+        "marg_ot__4": 0,
+        "non_work_p": 237,
+        "non_work_m": 115,
+        "non_work_f": 122,
+        "district_2": "467",
+        "district_3": null,
+        "districtsh": null,
+        "district_4": "akola",
+        "pre_prim_d": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                77.11552848400004,
+                21.38262134100006
+              ],
+              [
+                77.11567144400004,
+                21.381521174000056
+              ],
+              [
+                77.11510385800005,
+                21.381468233000078
+              ],
+              [
+                77.11509443100005,
+                21.381525816000078
+              ],
+              [
+                77.11475406500006,
+                21.383664253000063
+              ],
+              [
+                77.11444057800009,
+                21.383754956000075
+              ],
+              [
+                77.11378786900008,
+                21.384313922000047
+              ],
+              [
+                77.11246308300008,
+                21.38557578800004
+              ],
+              [
+                77.11179223900007,
+                21.385289001000046
+              ],
+              [
+                77.11168283700005,
+                21.38535084700004
+              ],
+              [
+                77.11162596300005,
+                21.38561339900008
+              ],
+              [
+                77.11139559100008,
+                21.385536819000038
+              ],
+              [
+                77.11113585300006,
+                21.385501522000027
+              ],
+              [
+                77.11092042100006,
+                21.38555862100003
+              ],
+              [
+                77.11033303100004,
+                21.385695879000025
+              ],
+              [
+                77.11036515200004,
+                21.386083979000034
+              ],
+              [
+                77.11040248600005,
+                21.387581364000027
+              ],
+              [
+                77.11033969200008,
+                21.38770682300003
+              ],
+              [
+                77.10961874500003,
+                21.38939447000007
+              ],
+              [
+                77.10909155700006,
+                21.390696130000038
+              ],
+              [
+                77.10888799700007,
+                21.390873938000027
+              ],
+              [
+                77.10857179700008,
+                21.391052096000067
+              ],
+              [
+                77.10815019500006,
+                21.39106638900006
+              ],
+              [
+                77.10800596900003,
+                21.390658892000033
+              ],
+              [
+                77.10651642800008,
+                21.39035037600007
+              ],
+              [
+                77.10441093600008,
+                21.389945015000023
+              ],
+              [
+                77.10429277000003,
+                21.38991604000006
+              ],
+              [
+                77.10384364700008,
+                21.389813611000022
+              ],
+              [
+                77.10335808200006,
+                21.389626656000075
+              ],
+              [
+                77.10329235500006,
+                21.389607111000032
+              ],
+              [
+                77.10310057400005,
+                21.38954225200007
+              ],
+              [
+                77.10307880900007,
+                21.389519750000034
+              ],
+              [
+                77.10196646100007,
+                21.389070099000037
+              ],
+              [
+                77.10019340600007,
+                21.388809240000057
+              ],
+              [
+                77.10006432500006,
+                21.38943763900005
+              ],
+              [
+                77.10055818700005,
+                21.389587336000034
+              ],
+              [
+                77.10045798100003,
+                21.390544034000072
+              ],
+              [
+                77.10038542800004,
+                21.39131557500008
+              ],
+              [
+                77.10028131900003,
+                21.392021761000024
+              ],
+              [
+                77.10026189600006,
+                21.392149903000075
+              ],
+              [
+                77.10017955000006,
+                21.39270875400007
+              ],
+              [
+                77.09945684200005,
+                21.393934813000044
+              ],
+              [
+                77.09976187600006,
+                21.39467923500007
+              ],
+              [
+                77.10034524600007,
+                21.396111736000023
+              ],
+              [
+                77.10077341600004,
+                21.39709388400007
+              ],
+              [
+                77.10105414800006,
+                21.397269062000078
+              ],
+              [
+                77.10133331400004,
+                21.397342681000055
+              ],
+              [
+                77.10255188500008,
+                21.39749690700006
+              ],
+              [
+                77.10302542900007,
+                21.39751632100007
+              ],
+              [
+                77.10332466800008,
+                21.398150163000025
+              ],
+              [
+                77.10333680100007,
+                21.398679944000037
+              ],
+              [
+                77.10410594400008,
+                21.398481209000067
+              ],
+              [
+                77.10411891300004,
+                21.398233469000047
+              ],
+              [
+                77.10408981900008,
+                21.39818334200004
+              ],
+              [
+                77.10468252700008,
+                21.398171913000056
+              ],
+              [
+                77.10490117700004,
+                21.398167286000046
+              ],
+              [
+                77.10579763900006,
+                21.39870165700006
+              ],
+              [
+                77.10597549600004,
+                21.398408266000047
+              ],
+              [
+                77.10616582300008,
+                21.39856848200003
+              ],
+              [
+                77.10635747700007,
+                21.398762548000036
+              ],
+              [
+                77.10786910900003,
+                21.399498122000068
+              ],
+              [
+                77.10835136900005,
+                21.399259639000036
+              ],
+              [
+                77.10856607200003,
+                21.399329499000032
+              ],
+              [
+                77.10873600500008,
+                21.400014516000056
+              ],
+              [
+                77.10973819900005,
+                21.400128746000064
+              ],
+              [
+                77.10994939300008,
+                21.400227392000033
+              ],
+              [
+                77.11038911500003,
+                21.400386823000076
+              ],
+              [
+                77.11053558900005,
+                21.400412320000044
+              ],
+              [
+                77.11079194500007,
+                21.400505745000032
+              ],
+              [
+                77.11099220300008,
+                21.40057846800005
+              ],
+              [
+                77.11160685700008,
+                21.400802800000065
+              ],
+              [
+                77.11219406100008,
+                21.399934856000073
+              ],
+              [
+                77.11220103400007,
+                21.39986430400006
+              ],
+              [
+                77.11244092900006,
+                21.399571277000064
+              ],
+              [
+                77.11265264000008,
+                21.399313884000037
+              ],
+              [
+                77.11301248000007,
+                21.398874342000056
+              ],
+              [
+                77.11215324700004,
+                21.39831336800006
+              ],
+              [
+                77.11118991200004,
+                21.394284906000053
+              ],
+              [
+                77.11157068900008,
+                21.393307578000076
+              ],
+              [
+                77.11218026900008,
+                21.39197236600006
+              ],
+              [
+                77.11224901200006,
+                21.391826576000028
+              ],
+              [
+                77.11227262600005,
+                21.391693905000068
+              ],
+              [
+                77.11228206800007,
+                21.39163970800007
+              ],
+              [
+                77.11250636900007,
+                21.39037171800004
+              ],
+              [
+                77.11313261900006,
+                21.389485583000067
+              ],
+              [
+                77.11513814300008,
+                21.38972753400003
+              ],
+              [
+                77.11562691900008,
+                21.38996523000003
+              ],
+              [
+                77.11699534500008,
+                21.39058890700005
+              ],
+              [
+                77.11728179100004,
+                21.390677715000038
+              ],
+              [
+                77.11825188800003,
+                21.390923472000054
+              ],
+              [
+                77.11928025200007,
+                21.39128809400006
+              ],
+              [
+                77.11965480900005,
+                21.391421758000035
+              ],
+              [
+                77.12202158000008,
+                21.392262841000047
+              ],
+              [
+                77.12202280400004,
+                21.392431545000022
+              ],
+              [
+                77.12194716800008,
+                21.393157400000064
+              ],
+              [
+                77.12210920400008,
+                21.393647771000076
+              ],
+              [
+                77.12251647200003,
+                21.393828721000034
+              ],
+              [
+                77.12335891500004,
+                21.39359074200007
+              ],
+              [
+                77.12316244300007,
+                21.394054047000054
+              ],
+              [
+                77.12299956700008,
+                21.39431693800003
+              ],
+              [
+                77.12344263100005,
+                21.394566609000037
+              ],
+              [
+                77.12350385500008,
+                21.395323622000035
+              ],
+              [
+                77.12555220600007,
+                21.396372188000043
+              ],
+              [
+                77.12607424100008,
+                21.396635140000058
+              ],
+              [
+                77.12837573500008,
+                21.396579212000063
+              ],
+              [
+                77.12873709300004,
+                21.396398055000077
+              ],
+              [
+                77.12987288300008,
+                21.396640397000056
+              ],
+              [
+                77.13147723900005,
+                21.39701945400003
+              ],
+              [
+                77.13291040600006,
+                21.396723660000077
+              ],
+              [
+                77.13309001900006,
+                21.396590481000032
+              ],
+              [
+                77.13440669100004,
+                21.395752256000037
+              ],
+              [
+                77.13463960800004,
+                21.39553765100004
+              ],
+              [
+                77.13473925400007,
+                21.395444792000035
+              ],
+              [
+                77.13513485200008,
+                21.395080698000072
+              ],
+              [
+                77.13587147300007,
+                21.394417572000066
+              ],
+              [
+                77.13609662300007,
+                21.39406080200007
+              ],
+              [
+                77.13578485600004,
+                21.393490244000077
+              ],
+              [
+                77.13541007600008,
+                21.392821713000046
+              ],
+              [
+                77.13493456100008,
+                21.392435629000033
+              ],
+              [
+                77.13434751900007,
+                21.392025080000053
+              ],
+              [
+                77.13279602500006,
+                21.392561072000035
+              ],
+              [
+                77.13314115700007,
+                21.393036735000067
+              ],
+              [
+                77.13312190700003,
+                21.393043568000053
+              ],
+              [
+                77.13286027400005,
+                21.392989122000074
+              ],
+              [
+                77.13282470500008,
+                21.392981339000073
+              ],
+              [
+                77.13275158500005,
+                21.39307975400004
+              ],
+              [
+                77.13282270600007,
+                21.393090808000068
+              ],
+              [
+                77.13294083400007,
+                21.393107916000076
+              ],
+              [
+                77.13311079800008,
+                21.39313331900007
+              ],
+              [
+                77.13129461000005,
+                21.393928016000075
+              ],
+              [
+                77.13087397200007,
+                21.394040533000066
+              ],
+              [
+                77.13001704600003,
+                21.39394625400007
+              ],
+              [
+                77.12899173600005,
+                21.393765058000042
+              ],
+              [
+                77.12812635200004,
+                21.393663464000042
+              ],
+              [
+                77.12786443500005,
+                21.39353227500004
+              ],
+              [
+                77.12745948800006,
+                21.39332876000003
+              ],
+              [
+                77.12647096400008,
+                21.39283202100006
+              ],
+              [
+                77.12645584400008,
+                21.392815707000068
+              ],
+              [
+                77.12559461300003,
+                21.39188183300007
+              ],
+              [
+                77.12486264400007,
+                21.391041768000036
+              ],
+              [
+                77.12413804700003,
+                21.390727549000076
+              ],
+              [
+                77.12369345600007,
+                21.390551235000032
+              ],
+              [
+                77.12333047200008,
+                21.39012639400005
+              ],
+              [
+                77.12318803700003,
+                21.389887610000073
+              ],
+              [
+                77.12314352700008,
+                21.389905244000033
+              ],
+              [
+                77.12001198500008,
+                21.38862424000007
+              ],
+              [
+                77.11937344400008,
+                21.388775793000036
+              ],
+              [
+                77.11894595900003,
+                21.38816889700007
+              ],
+              [
+                77.11862063800004,
+                21.38766154600006
+              ],
+              [
+                77.11783975300006,
+                21.386442999000053
+              ],
+              [
+                77.11666781300005,
+                21.385184494000043
+              ],
+              [
+                77.11627798400008,
+                21.384657593000043
+              ],
+              [
+                77.11622204200006,
+                21.38451332300008
+              ],
+              [
+                77.11607027700006,
+                21.38435468600005
+              ],
+              [
+                77.11571286000003,
+                21.383960843000068
+              ],
+              [
+                77.11552848400004,
+                21.38262134100006
+              ]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "state_code": "27",
+        "state_name": "Maharashtra",
+        "district_c": "501",
+        "district_n": "Akola",
+        "taluka_cod": "3989",
+        "taluka_nam": "akot",
+        "census_201": "529750",
+        "village_na": "khirkund bk.",
+        "cd_blk_cod": "40",
+        "cd_blk_nam": "Akot",
+        "gp_code": null,
+        "gp_name": null,
+        "ref_year": "2009",
+        "taluka_hq": "Akot",
+        "taluka_hq_": 22,
+        "district_h": "AKOLA",
+        "district_1": 67,
+        "near_stat_": "AKOT",
+        "near_sta_1": 22,
+        "near_sta_2": null,
+        "near_sta_3": null,
+        "near_sta_4": null,
+        "near_sta_5": null,
+        "area_ha": 275.51,
+        "tot_hh": 256,
+        "tot_popu": 1433,
+        "tot_popu_m": 715,
+        "tot_popu_f": 718,
+        "tot_popu_s": 11,
+        "tot_popu_1": 7,
+        "tot_popu_2": 4,
+        "tot_popu_3": 1402,
+        "tot_popu_4": 697,
+        "tot_popu_5": 705,
+        "govt_pre_p": 1,
+        "govt_pre_1": 2,
+        "priv_pre_p": 2,
+        "priv_pre_1": 0,
+        "near_pre_f": null,
+        "near_pre_v": null,
+        "near_pre_1": null,
+        "govt_prim_": 1,
+        "govt_pri_1": 1,
+        "priv_prim_": 2,
+        "priv_pri_1": 0,
+        "near_prim_": null,
+        "near_pri_1": null,
+        "near_pri_2": null,
+        "govt_mid_s": 1,
+        "govt_mid_n": 1,
+        "priv_mid_s": 2,
+        "priv_mid_n": 0,
+        "near_mid_f": null,
+        "near_mid_v": null,
+        "near_mid_1": null,
+        "govt_sec_s": 2,
+        "govt_sec_n": 0,
+        "priv_sec_s": 2,
+        "priv_sec_n": 0,
+        "near_sec_f": 2,
+        "near_sec_v": "RUIKHED",
+        "near_sec_1": "b",
+        "govt_sen_s": 2,
+        "govt_sen_n": 0,
+        "priv_sen_s": 2,
+        "priv_sen_n": 0,
+        "near_sen_f": 2,
+        "near_sen_v": "RUIKHED",
+        "near_sen_1": "b",
+        "govt_artsc": 2,
+        "govt_art_1": 0,
+        "priv_artsc": 2,
+        "priv_art_1": 0,
+        "near_artsc": 2,
+        "near_art_1": "AKOT",
+        "near_art_2": "c",
+        "govt_engg_": 2,
+        "govt_eng_1": 0,
+        "priv_engg_": 2,
+        "priv_eng_1": 0,
+        "near_engg_": 2,
+        "near_eng_1": "AKOT",
+        "near_eng_2": "c",
+        "govt_medi_": 2,
+        "govt_med_1": 0,
+        "priv_medi_": 2,
+        "priv_med_1": 0,
+        "near_medi_": 1,
+        "near_med_1": "AKOLA",
+        "near_med_2": "c",
+        "govt_mgmt_": 2,
+        "govt_mgm_1": 0,
+        "priv_mgmt_": 2,
+        "priv_mgm_1": 0,
+        "near_mgmt_": 2,
+        "near_mgm_1": "AKOT",
+        "near_mgm_2": "c",
+        "govt_poly_": 2,
+        "govt_pol_1": 0,
+        "priv_poly_": 2,
+        "priv_pol_1": 0,
+        "near_poly_": 2,
+        "near_pol_1": "AKOT",
+        "near_pol_2": "c",
+        "govt_voc_s": 2,
+        "govt_voc_n": 0,
+        "priv_voc_s": 2,
+        "priv_voc_n": 0,
+        "near_voc_f": 2,
+        "near_voc_v": "AKOT",
+        "near_voc_1": "c",
+        "govt_nonf_": 2,
+        "govt_non_1": 0,
+        "priv_nonf_": 2,
+        "priv_non_1": 0,
+        "near_nonf_": 2,
+        "near_non_1": "AKOT",
+        "near_non_2": "c",
+        "govt_divya": 2,
+        "govt_div_1": 0,
+        "priv_divya": 2,
+        "priv_div_1": 0,
+        "near_divya": 2,
+        "near_div_1": "AKOT",
+        "near_div_2": "c",
+        "govt_oth_s": 2,
+        "govt_oth_n": 0,
+        "priv_oth_s": 2,
+        "priv_oth_n": 0,
+        "near_oth_f": null,
+        "near_oth_v": "N.A.",
+        "near_oth_1": "N.A.",
+        "chc_num": 0,
+        "chc_doc_nu": 0,
+        "chc_doc_in": 0,
+        "chc_param_": 0,
+        "chc_para_1": 0,
+        "chc_prox": "c",
+        "phc_num": 0,
+        "phc_doc_nu": 0,
+        "phc_doc_in": 0,
+        "phc_param_": 0,
+        "phc_para_1": 0,
+        "phc_prox": "c",
+        "phsubc_num": 0,
+        "phsubc_doc": 0,
+        "phsubc_d_1": 0,
+        "phsubc_par": 0,
+        "phsubc_p_1": 0,
+        "phsubc_pro": "b",
+        "mch_num": 0,
+        "mch_doc_nu": 0,
+        "mch_doc_in": 0,
+        "mch_param_": 0,
+        "mch_para_1": 0,
+        "mch_prox": "c",
+        "tbc_num": 0,
+        "tbc_doc_nu": 0,
+        "tbc_doc_in": 0,
+        "tbc_param_": 0,
+        "tbc_para_1": 0,
+        "tbc_prox": "c",
+        "hosp_allo_": 0,
+        "hosp_all_1": 0,
+        "hosp_all_2": 0,
+        "hosp_all_3": 0,
+        "hosp_all_4": 0,
+        "hosp_all_5": "c",
+        "hosp_alt_n": 0,
+        "hosp_alt_d": 0,
+        "hosp_alt_1": 0,
+        "hosp_alt_p": 0,
+        "hosp_alt_2": 0,
+        "hosp_all_p": "c",
+        "dispensary": 0,
+        "dispensa_1": 0,
+        "dispensa_2": 0,
+        "dispensa_3": 0,
+        "dispensa_4": 0,
+        "dispensa_5": "c",
+        "vet_num": 0,
+        "vet_doc_nu": 0,
+        "vet_doc_in": 0,
+        "vet_param_": 0,
+        "vet_para_1": 0,
+        "vet_prox": "c",
+        "mobile_h_n": 1,
+        "mobile_h_d": 1,
+        "mobile_h_1": 1,
+        "mobile_h_p": 1,
+        "mobile_h_2": 1,
+        "mobile_h_3": null,
+        "fwc_num": 0,
+        "fwc_tot_nu": 0,
+        "fwc_doc_in": 0,
+        "fwc_para_t": 0,
+        "fwc_para_i": 0,
+        "fwc_prox": "c",
+        "ngmf_out": 0,
+        "ngmf_in_an": 0,
+        "ngmf_char": 0,
+        "ngmf_mbbs": 0,
+        "ngmf_other": 0,
+        "ngmf_no_de": 0,
+        "ngmf_trad_": 0,
+        "ngmf_shop": 0,
+        "nfmf_other": 0,
+        "tapwt": 1,
+        "tapwtf_yea": 1,
+        "tapwtf_sum": 1,
+        "tapwu": 2,
+        "tapwuf_yea": 2,
+        "tapwuf_sum": 2,
+        "cov_well": 2,
+        "cov_well_y": 2,
+        "cov_well_s": 2,
+        "uncov_well": 1,
+        "uncov_we_1": 1,
+        "uncov_we_2": 1,
+        "hp": 1,
+        "hp_year": 2,
+        "hp_summer": 2,
+        "twbore": 1,
+        "twbore_yea": 2,
+        "twbore_sum": 2,
+        "spr": 2,
+        "spr_year": 2,
+        "spr_summer": 2,
+        "rivcan": 1,
+        "rivcan_yea": 2,
+        "rivcan_sum": 2,
+        "tanpon": 1,
+        "tanpon_yea": 2,
+        "tanpon_sum": 2,
+        "other": 2,
+        "other_year": 2,
+        "other_summ": 2,
+        "clos_drain": 2,
+        "ope_drain": 1,
+        "no_drain": 2,
+        "op_pucca_c": 2,
+        "op_pucca_u": 2,
+        "op_kucha": 1,
+        "drain_wat_": 1,
+        "cov_tsc": 2,
+        "ctc_bath_g": 2,
+        "ctc_nobath": 2,
+        "rural_cen_": 2,
+        "rural_mart": 2,
+        "comm_waste": 2,
+        "comm_bio_r": 2,
+        "no_syst": 2,
+        "post": 1,
+        "post_prox": null,
+        "sub_post": 2,
+        "sub_post_p": "c",
+        "post_tele": 1,
+        "post_tele_": null,
+        "vil_pin": 1,
+        "vil_pin_pr": null,
+        "pin": null,
+        "tele_land": 1,
+        "tele_land_": null,
+        "pco_mob": 1,
+        "pco_prox": null,
+        "mob_cov": 1,
+        "mob_cov_pr": null,
+        "net_cafe_c": 2,
+        "net_cafe_1": "c",
+        "courier": 2,
+        "courier_pr": "c",
+        "pub_bus": 1,
+        "pub_bus_pr": null,
+        "priv_bus": 2,
+        "priv_bus_p": "c",
+        "rail_st": 2,
+        "rail_st_pr": "c",
+        "auto": 1,
+        "auto_prox": null,
+        "taxi": 2,
+        "taxi_prox": "b",
+        "van": 2,
+        "van_prox": "c",
+        "tract": 2,
+        "tract_prox": "c",
+        "pull_rick_": 2,
+        "pull_ric_1": "c",
+        "pull_ric_2": 2,
+        "pull_ric_3": null,
+        "cart_ani": 2,
+        "cart_ani_p": "c",
+        "sea_riv_fe": 2,
+        "sea_riv__1": null,
+        "nat_highw": 2,
+        "nat_highw_": "c",
+        "st_highw": 2,
+        "st_highw_p": "c",
+        "maj_dist_r": 2,
+        "maj_dist_1": "c",
+        "oth_dist_r": 1,
+        "oth_dist_1": null,
+        "black_top_": 2,
+        "black_to_1": "b",
+        "grave_road": 1,
+        "grave_ro_1": null,
+        "wat_bound_": 2,
+        "wat_boun_1": "b",
+        "all_weath_": 2,
+        "all_weat_1": "a",
+        "navi_ww": 2,
+        "navi_wv_pr": null,
+        "footpath": 1,
+        "footpath_p": null,
+        "atm": 2,
+        "dist_near_": "c",
+        "comm_bank": 2,
+        "comm_bank_": "c",
+        "co_op_bank": 2,
+        "co_op_ba_1": "c",
+        "agri_cred_": 2,
+        "agri_cre_1": "c",
+        "self_help": 1,
+        "self_help_": null,
+        "pub_distr_": 1,
+        "pub_dist_1": null,
+        "mndi_mkt": 2,
+        "mndi_mkt_p": "b",
+        "haat": 2,
+        "haat_prox": "b",
+        "agri_mkt_s": 1,
+        "agri_mkt_1": null,
+        "nutri_cen_": 1,
+        "nutri_ce_1": null,
+        "nutri_ce_2": 1,
+        "nutri_ce_3": null,
+        "nutri_ce_4": 1,
+        "nutri_ce_5": null,
+        "asha": 1,
+        "asha_prox": null,
+        "comm_cen_t": 2,
+        "comm_cen_1": "c",
+        "sport_fiel": 2,
+        "sport_fi_1": "c",
+        "sport_club": 2,
+        "sport_cl_1": "c",
+        "cine_vid": 2,
+        "cine_vid_p": "c",
+        "pub_lib": 2,
+        "pub_lib_pr": "c",
+        "pub_read_r": 2,
+        "pub_read_1": "c",
+        "daily_news": 2,
+        "daily_ne_1": "c",
+        "ass_pol": 2,
+        "ass_pol_pr": "b",
+        "birth_deat": 1,
+        "birth_de_1": null,
+        "ps_dom": 1,
+        "ps_dom_sum": 20,
+        "ps_dom_win": 16,
+        "ps_agri": 1,
+        "ps_agri_su": 10,
+        "ps_agri_wi": 12,
+        "ps_comm": 1,
+        "ps_comm_su": 20,
+        "ps_comm_wi": 16,
+        "ps_all": 1,
+        "ps_all_sum": 20,
+        "ps_all_win": 16,
+        "agr_com_1": "Jowar",
+        "mfd_com_1": null,
+        "hcarft_com": null,
+        "agri_com_2": "Cotton",
+        "mfd_com_2": null,
+        "hcarft_c_1": null,
+        "agri_com_3": null,
+        "mfd_com_3": null,
+        "hcraft_com": null,
+        "forest": 0,
+        "area_non_a": 1.2,
+        "barren_unc": 1.64,
+        "perm_graze": 1.62,
+        "misc_crop": 0,
+        "cult_waste": 0,
+        "fallow": 12.59,
+        "curr_fallo": 2.71,
+        "net_area": 255.75,
+        "tot_unirri": 0,
+        "area_irri": 255.75,
+        "canal_area": 0,
+        "well_tube": 0,
+        "tank_lake": 0,
+        "water_fall": 0,
+        "other_sorc": 0,
+        "near_town": "AKOT",
+        "near_town_": 22,
+        "hh_tot_tot": 100,
+        "hh_tot_g": 100,
+        "hh_tot_l": 100,
+        "hh_tot_d": 3.6,
+        "hh_res_tot": 98.8,
+        "hh_res_g": 27.4,
+        "hh_res_l": 67.9,
+        "hh_res_d": 3.6,
+        "hh_rcu_tot": 1.2,
+        "hh_rcu_g": 0.8,
+        "hh_rcu_l": 0.4,
+        "hh_rcu_d": 0,
+        "mroof_gra": 16.3,
+        "mroof_pla": 21.8,
+        "mroof_htil": 20.2,
+        "mroof_mtil": 22.6,
+        "mroof_bri": 0,
+        "mroof_sto": 2.4,
+        "mroof_met": 16.7,
+        "mroof_con": 0,
+        "mroof_else": 0,
+        "mwall_gra": 78.2,
+        "mwall_pla": 2.4,
+        "mwall_mud": 9.5,
+        "mwall_wood": 0,
+        "mwall_stnp": 2,
+        "mwall_stp": 2,
+        "mwall_met": 0,
+        "mwall_brik": 6,
+        "mwall_conc": 0,
+        "mwall_else": 0,
+        "mflor_mud": 94,
+        "mflor_wood": 0,
+        "mflor_brik": 4.4,
+        "mflor_ston": 0,
+        "mflor_cem": 1.6,
+        "mflor_tile": 0,
+        "mflor_else": 0,
+        "dwell_no": 0.4,
+        "dwell_one": 94,
+        "dwell_two": 4,
+        "dwell_thre": 0.4,
+        "dwell_four": 0.8,
+        "dwell_five": 0,
+        "dwell_else": 0.4,
+        "hhsize_1": 0.8,
+        "hhsize_2": 6.3,
+        "hhsize_3": 6.3,
+        "hhsize_4": 11.9,
+        "hhsize_5": 21.4,
+        "hhsize_6": 46.4,
+        "hhsize_els": 6.7,
+        "own_own": 100,
+        "own_rent": 0,
+        "own_else": 0,
+        "marrco_0": 8.7,
+        "marrco_1": 68.3,
+        "marrco_2": 19.8,
+        "marrco_3": 2.8,
+        "marrco_4": 0.4,
+        "marrco_els": 0,
+        "msdw_tapt": 13.5,
+        "msdw_taput": 7.5,
+        "msdw_cwel": 15.9,
+        "msdw_ucwel": 37.3,
+        "msdw_hpump": 6.3,
+        "msdw_bore": 0,
+        "msdw_sprin": 19.4,
+        "msdw_river": 0,
+        "msdw_lake": 0,
+        "msdw_else": 0,
+        "locdw_in": 10.3,
+        "locdw_near": 34.5,
+        "locdw_away": 55.2,
+        "mslit_elec": 16.3,
+        "mslit_kero": 77.8,
+        "mslit_sol": 0,
+        "mslit_oil": 6,
+        "mslit_else": 0,
+        "mslit_no": 0,
+        "hh_hav_lat": 2.8,
+        "flat_pipe": 1.2,
+        "flat_sept": 0.8,
+        "flat_else": 0.4,
+        "plat_vent": 0.4,
+        "plat_open": 0,
+        "niso_open": 0,
+        "serlat_hum": 0,
+        "serlat_ani": 0,
+        "hh_no_lat": 97.2,
+        "alt_publat": 0,
+        "alt_open": 97.2,
+        "bath": 0,
+        "bathnoroof": 71.8,
+        "nobathroom": 28.2,
+        "ww_closed": 2.8,
+        "ww_open": 60.3,
+        "ww_no": 36.9,
+        "food_wood": 98.8,
+        "food_crop": 0.8,
+        "food_dung": 0,
+        "food_coal": 0,
+        "food_kero": 0,
+        "food_lpg": 0.4,
+        "food_elec": 0,
+        "food_bio": 0,
+        "food_else": 0,
+        "food_no": 0,
+        "kitch_tot": 100,
+        "kitch_in": 99.6,
+        "kitch_yesi": 36.9,
+        "kitch_noi": 62.7,
+        "kitch_out": 0.4,
+        "kitch_yeso": 0.4,
+        "kitch_noo": 0,
+        "kitch_noco": 0,
+        "hh_bank": 34.1,
+        "ass_radio": 7.9,
+        "ass_tele": 6.3,
+        "ass_pc_net": 0,
+        "ass_pc_nnt": 27,
+        "ass_mob_la": 0.8,
+        "ass_mob_mo": 12.7,
+        "ass_mob_bo": 0,
+        "ass_cycle": 3.6,
+        "ass_scoot": 2.8,
+        "ass_car": 0,
+        "ass_tv_pc": 0,
+        "ass_no_ass": 58.3,
+        "hhst_perma": 9.5,
+        "hhst_sperm": 52.8,
+        "hhst_tempo": 37.7,
+        "hhst_serv": 2,
+        "hhst_nser": 35.7,
+        "hhst_else": 0,
+        "ward": "0",
+        "tru": "Rural",
+        "no_hh": 256,
+        "tot_p": 1433,
+        "tot_m": 715,
+        "tot_f": 718,
+        "p_06": 199,
+        "m_06": 93,
+        "f_06": 106,
+        "p_sc": 11,
+        "m_sc": 7,
+        "f_sc": 4,
+        "p_st": 1402,
+        "m_st": 697,
+        "f_st": 705,
+        "p_lit": 852,
+        "m_lit": 492,
+        "f_lit": 360,
+        "p_ill": 581,
+        "m_ill": 223,
+        "f_ill": 358,
+        "tot_work_p": 771,
+        "tot_work_m": 404,
+        "tot_work_f": 367,
+        "mainwork_p": 756,
+        "mainwork_m": 400,
+        "mainwork_f": 356,
+        "main_cl_p": 99,
+        "main_cl_m": 52,
+        "main_cl_f": 47,
+        "main_al_p": 643,
+        "main_al_m": 339,
+        "main_al_f": 304,
+        "main_hh_p": 1,
+        "main_hh_m": 0,
+        "main_hh_f": 1,
+        "main_ot_p": 13,
+        "main_ot_m": 9,
+        "main_ot_f": 4,
+        "margwork_p": 15,
+        "margwork_m": 4,
+        "margwork_f": 11,
+        "marg_cl_p": 1,
+        "marg_cl_m": 0,
+        "marg_cl_f": 1,
+        "marg_al_p": 14,
+        "marg_al_m": 4,
+        "marg_al_f": 10,
+        "marg_hh_p": 0,
+        "marg_hh_m": 0,
+        "marg_hh_f": 0,
+        "marg_ot_p": 0,
+        "marg_ot_m": 0,
+        "marg_ot_f": 0,
+        "margwork_3": 14,
+        "margwork_1": 4,
+        "margwork_2": 10,
+        "marg_cl_3_": 1,
+        "marg_cl__1": 0,
+        "marg_cl__2": 1,
+        "marg_al_3_": 13,
+        "marg_al__1": 4,
+        "marg_al__2": 9,
+        "marg_hh_3_": 0,
+        "marg_hh__1": 0,
+        "marg_hh__2": 0,
+        "marg_ot_3_": 0,
+        "marg_ot__1": 0,
+        "marg_ot__2": 0,
+        "margwork_0": 1,
+        "margwork_4": 0,
+        "margwork_5": 1,
+        "marg_cl_0_": 0,
+        "marg_cl__3": 0,
+        "marg_cl__4": 0,
+        "marg_al_0_": 1,
+        "marg_al__3": 0,
+        "marg_al__4": 1,
+        "marg_hh_0_": 0,
+        "marg_hh__3": 0,
+        "marg_hh__4": 0,
+        "marg_ot_0_": 0,
+        "marg_ot__3": 0,
+        "marg_ot__4": 0,
+        "non_work_p": 662,
+        "non_work_m": 311,
+        "non_work_f": 351,
+        "district_2": "467",
+        "district_3": null,
+        "districtsh": null,
+        "district_4": "akola",
+        "pre_prim_d": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                77.17402631103964,
+                21.242653461996923
+              ],
+              [
+                77.17407510260927,
+                21.24261627996577
+              ],
+              [
+                77.17583802521965,
+                21.24265361862138
+              ],
+              [
+                77.17603178903445,
+                21.24264673888269
+              ],
+              [
+                77.17671906773239,
+                21.242642656799546
+              ],
+              [
+                77.17719759932183,
+                21.242660744320986
+              ],
+              [
+                77.17753446167762,
+                21.242548853115565
+              ],
+              [
+                77.17773672709528,
+                21.242481669176087
+              ],
+              [
+                77.17915237426067,
+                21.241915231223352
+              ],
+              [
+                77.17928398469456,
+                21.241867932671113
+              ],
+              [
+                77.18012216661124,
+                21.241526410707003
+              ],
+              [
+                77.1803101094216,
+                21.241419096324183
+              ],
+              [
+                77.18051658421446,
+                21.241430789715526
+              ],
+              [
+                77.1823438470099,
+                21.24145712163236
+              ],
+              [
+                77.18256238795641,
+                21.241476106649444
+              ],
+              [
+                77.1828358286383,
+                21.24152819359872
+              ],
+              [
+                77.18461363643986,
+                21.241973970689404
+              ],
+              [
+                77.18558882913953,
+                21.242177644884823
+              ],
+              [
+                77.18689468208481,
+                21.242443351377332
+              ],
+              [
+                77.18704442413835,
+                21.24241517029893
+              ],
+              [
+                77.18748892479476,
+                21.242500506083694
+              ],
+              [
+                77.18765567224334,
+                21.24251007468814
+              ],
+              [
+                77.18840478443005,
+                21.24261577616175
+              ],
+              [
+                77.18858784870434,
+                21.242642215817252
+              ],
+              [
+                77.18941539511285,
+                21.24279560293608
+              ],
+              [
+                77.18958100135653,
+                21.242820410594668
+              ],
+              [
+                77.19014530712693,
+                21.2429292309576
+              ],
+              [
+                77.19037123146352,
+                21.242972798435822
+              ],
+              [
+                77.19108188378145,
+                21.242502449934594
+              ],
+              [
+                77.19121388363675,
+                21.242403788866348
+              ],
+              [
+                77.19239345524815,
+                21.241578055017815
+              ],
+              [
+                77.19259294637527,
+                21.24143840444773
+              ],
+              [
+                77.19263154873096,
+                21.24087168396233
+              ],
+              [
+                77.192759656083,
+                21.23967598719587
+              ],
+              [
+                77.19280597379984,
+                21.23908271622753
+              ],
+              [
+                77.1927833052359,
+                21.238984604193757
+              ],
+              [
+                77.19279624868346,
+                21.238912324261175
+              ],
+              [
+                77.19283919234444,
+                21.238670639296334
+              ],
+              [
+                77.19320975348064,
+                21.237897320098575
+              ],
+              [
+                77.19358797897122,
+                21.237118301101134
+              ],
+              [
+                77.19363764339934,
+                21.237016010193024
+              ],
+              [
+                77.19383746320335,
+                21.236580200951735
+              ],
+              [
+                77.19257768701509,
+                21.23506608279864
+              ],
+              [
+                77.19256075536669,
+                21.2350463922004
+              ],
+              [
+                77.19193138525604,
+                21.234340398977686
+              ],
+              [
+                77.19201738846229,
+                21.233591228614305
+              ],
+              [
+                77.19209984792978,
+                21.23285900121386
+              ],
+              [
+                77.19213858646077,
+                21.232568119799172
+              ],
+              [
+                77.19217691686181,
+                21.23228028907565
+              ],
+              [
+                77.19219752943145,
+                21.232022881412774
+              ],
+              [
+                77.19226260907286,
+                21.231896804244656
+              ],
+              [
+                77.19226493316299,
+                21.231876479642967
+              ],
+              [
+                77.1922794851887,
+                21.231756224844034
+              ],
+              [
+                77.19217168758075,
+                21.23159069624046
+              ],
+              [
+                77.19146344914391,
+                21.23013667688508
+              ],
+              [
+                77.19075005301569,
+                21.22874305565403
+              ],
+              [
+                77.18568848191117,
+                21.227418415086746
+              ],
+              [
+                77.18369023123971,
+                21.226887637741783
+              ],
+              [
+                77.18339307490626,
+                21.22676904430159
+              ],
+              [
+                77.17933100280226,
+                21.225703134855603
+              ],
+              [
+                77.17676010877719,
+                21.22494574934184
+              ],
+              [
+                77.17626540590219,
+                21.224640596427378
+              ],
+              [
+                77.17596712853084,
+                21.224125733751844
+              ],
+              [
+                77.17511953546197,
+                21.223811200580343
+              ],
+              [
+                77.17448004411166,
+                21.223686306218216
+              ],
+              [
+                77.17431178423887,
+                21.224297559878153
+              ],
+              [
+                77.17403462253736,
+                21.224528878838232
+              ],
+              [
+                77.17385458715162,
+                21.224936469584414
+              ],
+              [
+                77.17378658536259,
+                21.225090420628334
+              ],
+              [
+                77.17345074624384,
+                21.225717463214103
+              ],
+              [
+                77.17332263524317,
+                21.226135158996016
+              ],
+              [
+                77.17311113368288,
+                21.226561835961718
+              ],
+              [
+                77.17308445627408,
+                21.22709270572112
+              ],
+              [
+                77.17307159572093,
+                21.22725419111468
+              ],
+              [
+                77.17297470083575,
+                21.227504599579092
+              ],
+              [
+                77.1729121376229,
+                21.22770703155238
+              ],
+              [
+                77.17277389603005,
+                21.227900636964236
+              ],
+              [
+                77.1725703861376,
+                21.227865129450226
+              ],
+              [
+                77.17245734908735,
+                21.227923458172434
+              ],
+              [
+                77.17238830456294,
+                21.228039572783583
+              ],
+              [
+                77.17224467354166,
+                21.22817284356875
+              ],
+              [
+                77.17210258043724,
+                21.228219316794604
+              ],
+              [
+                77.17197654960228,
+                21.228276675407024
+              ],
+              [
+                77.17189667825322,
+                21.228544110342433
+              ],
+              [
+                77.17190033396828,
+                21.228649595166857
+              ],
+              [
+                77.17197098644893,
+                21.228913474098192
+              ],
+              [
+                77.17176434971286,
+                21.2290538391829
+              ],
+              [
+                77.17127988106313,
+                21.229340884899383
+              ],
+              [
+                77.17107415976582,
+                21.229711973233847
+              ],
+              [
+                77.17095781585668,
+                21.230002302354936
+              ],
+              [
+                77.17080255532244,
+                21.230024791856486
+              ],
+              [
+                77.17048165322437,
+                21.23005600212047
+              ],
+              [
+                77.1703241999296,
+                21.230321838605555
+              ],
+              [
+                77.16999330346714,
+                21.230362489761703
+              ],
+              [
+                77.17002840162014,
+                21.230612612390377
+              ],
+              [
+                77.16982394358894,
+                21.23066223528956
+              ],
+              [
+                77.16943940192716,
+                21.230836658421865
+              ],
+              [
+                77.16920803032035,
+                21.23118365284644
+              ],
+              [
+                77.16892052330117,
+                21.231542128976283
+              ],
+              [
+                77.16872213828799,
+                21.2317213412175
+              ],
+              [
+                77.16853940238751,
+                21.231844695283876
+              ],
+              [
+                77.16839796288946,
+                21.232009984962286
+              ],
+              [
+                77.16816963005743,
+                21.232054766735104
+              ],
+              [
+                77.16819045958177,
+                21.23231075234268
+              ],
+              [
+                77.16795577923874,
+                21.23254902905372
+              ],
+              [
+                77.16764427038449,
+                21.232849519199036
+              ],
+              [
+                77.16743655086195,
+                21.233103567093366
+              ],
+              [
+                77.16730131420609,
+                21.233156492149057
+              ],
+              [
+                77.1671278003214,
+                21.23320954771292
+              ],
+              [
+                77.1670633167954,
+                21.233284319737127
+              ],
+              [
+                77.16698750186927,
+                21.233472336344093
+              ],
+              [
+                77.16692331232396,
+                21.233621656863477
+              ],
+              [
+                77.16682433315819,
+                21.233909152611385
+              ],
+              [
+                77.16650834521776,
+                21.234109748185634
+              ],
+              [
+                77.16650566263333,
+                21.234168516880754
+              ],
+              [
+                77.16656236779912,
+                21.23470574413286
+              ],
+              [
+                77.16656774143685,
+                21.234756655119575
+              ],
+              [
+                77.16662558300355,
+                21.235894295606833
+              ],
+              [
+                77.16662213011837,
+                21.235934375140488
+              ],
+              [
+                77.16655908515284,
+                21.236533046023435
+              ],
+              [
+                77.16647594309458,
+                21.237322556335727
+              ],
+              [
+                77.16646118106371,
+                21.2375472084422
+              ],
+              [
+                77.16644244788156,
+                21.237618067062325
+              ],
+              [
+                77.16607336980745,
+                21.239014091341737
+              ],
+              [
+                77.16565854981046,
+                21.240501378974958
+              ],
+              [
+                77.16525337643988,
+                21.24184190686389
+              ],
+              [
+                77.16494728299637,
+                21.243127353783187
+              ],
+              [
+                77.16487806482382,
+                21.243278829212244
+              ],
+              [
+                77.16667979421759,
+                21.243463197175274
+              ],
+              [
+                77.1673381632783,
+                21.243530562811774
+              ],
+              [
+                77.16748381712165,
+                21.24353288519381
+              ],
+              [
+                77.16771258409793,
+                21.243550158793727
+              ],
+              [
+                77.16914148359294,
+                21.243584754623594
+              ],
+              [
+                77.17006357191137,
+                21.243603026782523
+              ],
+              [
+                77.17040736899935,
+                21.24364021659956
+              ],
+              [
+                77.17248159197666,
+                21.24356352122044
+              ],
+              [
+                77.17271900146446,
+                21.24364968625073
+              ],
+              [
+                77.17402631103964,
+                21.242653461996923
+              ]
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

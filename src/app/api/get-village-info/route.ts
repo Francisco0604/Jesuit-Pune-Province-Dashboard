@@ -35,7 +35,8 @@ export async function GET(request: Request) {
       description: 'No detailed information found for this village.',
       last_updated: new Date().toISOString()
     });
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }

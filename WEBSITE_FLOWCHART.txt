@@ -1,0 +1,53 @@
+# Jesuit Pune Province Activity Map - Architectural Flowchart
+
+## I. USER JOURNEY & PAGE HIERARCHY
+
+[ LANDING PAGE (/) ]
+       |
+       |-- [ Sticky Navigation Header ] --> Global Access (About, News, Map, Connect)
+       |
+       |-- [ Hero Section ]             --> "Explore Map" & "Learn About Us" (High-Visibility CTAs)
+       |-- [ Our Presence ]             --> Mission Context & Impact Statistics
+       |-- [ Mission Pillars ]          --> Detailed Overviews (Parish, NFE, etc.)
+       |-- [ News & Updates Preview ]   --> "Latest News" Grid with direct links
+       |-- [ Connect & Impact Section ] --> Prominent "Connect With Us" CTA & Contact Details
+       |
+       |-- [ Structured Footer ]        --> Multi-column Professional Navigation
+             |-- Column 1: Identity & Motto (AMDG)
+             |-- Column 2: Core Navigation (About Us, News, Map)
+             |-- Column 3: Resources (Admin Dashboard, Province Website, Legal)
+             |-- Column 4: Engagement (Connect with Us CTA -> Popup Modal)
+
+---
+
+## II. KEY PAGES & MODALS
+
+[ ABOUT PAGE (/about) ]
+       |-- Historical Context, Mission & Vision statements.
+
+[ NEWS PAGE (/news) ]
+       |-- Full grid of province updates and field reports.
+
+[ CONNECT MODAL ]
+       |-- Elegant popup with direct Email, Phone, and Address information.
+
+[ ADMIN PORTAL (/admin) ]
+       |-- Data management, GeoJSON imports, and record auditing.
+
+---
+
+## III. INTERACTIVE MAP FLOW (/map)
+
+[ MAP INTERFACE ]
+       |
+       |-- [ Search/Filter Sidebar ] --> Easy village lookup for all ages
+       |-- [ Leaflet Map Canvas ]    --> Visual markers with clustering
+       |-- [ Detail Drawer ]         --> Rich metadata on village click
+
+---
+
+## IV. UX DESIGN FOR SENIOR USERS
+1. Large, high-contrast typography (EB Garamond & Inter).
+2. Generous padding and large click targets for all buttons.
+3. Sticky header ensures navigation is never lost during scrolling.
+4. Clear, descriptive action labels (e.g., "Start Exploring Now", "Browse All News").
