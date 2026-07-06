@@ -57,7 +57,7 @@ export const normalizeCenter = (raw: RawData): Center | null => {
     const type: CenterType = typeMapping[rawType] || 'Parish';
 
     // Special Case: Normalize names
-    let district = raw.DISTRICT || raw.district || raw.district_n || raw.district_4 || '';
+    let district = raw.DISTRICT || raw.district || raw.district_n || raw.district_4 || cluster || '';
     if (district.toUpperCase() === 'AHAMADNAGAR') district = 'AHILYANAGAR';
     
     let tehsil = raw.TEHSIL || raw.tehsil || raw.taluka_nam || '';
@@ -129,17 +129,36 @@ export const normalizeCenter = (raw: RawData): Center | null => {
 };
 
 export const parseCSV = (csvText: string): RawData[] => {
-  const lines = csvText.split('\n');
+  const lines = csvText.split(/\r?\n/);
   if (lines.length < 2) return [];
 
-  const headers = lines[0].split(',').map(h => h.trim());
+  const parseLine = (line: string): string[] => {
+    const result: string[] = [];
+    let current = '';
+    let inQuotes = false;
+    for (let i = 0; i < line.length; i++) {
+      const char = line[i];
+      if (char === '"') {
+        inQuotes = !inQuotes;
+      } else if (char === ',' && !inQuotes) {
+        result.push(current.trim());
+        current = '';
+      } else {
+        current += char;
+      }
+    }
+    result.push(current.trim());
+    return result;
+  };
+
+  const headers = parseLine(lines[0]);
   return lines.slice(1)
     .filter(line => line.trim())
     .map(line => {
-      const values = line.split(',');
+      const values = parseLine(line);
       const obj: RawData = { isCsvOnly: true };
       headers.forEach((header, i) => {
-        obj[header] = values[i]?.trim();
+        obj[header] = values[i];
       });
       return obj;
     });

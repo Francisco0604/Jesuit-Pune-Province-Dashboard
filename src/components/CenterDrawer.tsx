@@ -1,7 +1,7 @@
 'use client';
 
 import { Center } from '@/types';
-import { X, Users, User, GraduationCap, History, CheckCircle2, MapPin } from 'lucide-react';
+import { X, Users, User, GraduationCap, History, MapPin } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -76,12 +76,21 @@ export default function CenterDrawer({ center, onClose }: CenterDrawerProps) {
             </div>
 
             {/* Metrics Dashboard */}
-            <div className="grid grid-cols-3 gap-3 mb-12">
-              {[
-                { label: 'Families', value: center.families || 0, icon: Users, color: 'text-terracotta' },
-                { label: 'Individuals', value: center.individuals || 0, icon: User, color: 'text-gold' },
-                { label: 'Catechists', value: center.catechists_count || 0, icon: GraduationCap, color: 'text-charcoal' },
-              ].map((stat, i) => (
+            <div className={cn(
+              "grid gap-3 mb-12",
+              center.type === 'NFE Centres' ? "grid-cols-2" : "grid-cols-3"
+            )}>
+              {(center.type === 'NFE Centres'
+                ? [
+                    { label: 'Students', value: center.families || 0, icon: Users, color: 'text-[#9333ea]' },
+                    { label: 'Active Teachers', value: center.catechists_count || 0, icon: GraduationCap, color: 'text-charcoal' },
+                  ]
+                : [
+                    { label: 'Families', value: center.families || 0, icon: Users, color: 'text-terracotta' },
+                    { label: 'Individuals', value: center.individuals || 0, icon: User, color: 'text-gold' },
+                    { label: 'Catechists', value: center.catechists_count || 0, icon: GraduationCap, color: 'text-charcoal' },
+                  ]
+              ).map((stat, i) => (
                 <div key={i} className="bg-white p-4 border border-charcoal/5 text-center shadow-sm">
                   <stat.icon size={16} className={cn("mx-auto mb-3", stat.color)} />
                   <p className="text-2xl font-serif font-bold text-charcoal mb-0.5">{stat.value}</p>
@@ -113,20 +122,6 @@ export default function CenterDrawer({ center, onClose }: CenterDrawerProps) {
                 </section>
               </div>
 
-              <section className="pt-8 border-t border-charcoal/5">
-                <div className="flex items-center justify-between bg-charcoal p-5 text-parchment">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 size={18} className="text-gold" />
-                    <div>
-                      <span className="block text-[9px] uppercase tracking-widest font-bold text-parchment/40">Status</span>
-                      <span className="text-xs font-bold uppercase tracking-tight">Data Verified</span>
-                    </div>
-                  </div>
-                  <span className="text-[10px] font-serif italic text-parchment/60">
-                    {center.last_verified ? new Date(center.last_verified).toLocaleDateString() : 'Active 2024'}
-                  </span>
-                </div>
-              </section>
             </div>
           </div>
         </div>

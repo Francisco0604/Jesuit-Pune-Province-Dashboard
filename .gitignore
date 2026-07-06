@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generated static api data
+/public/data/get-map-data.json
+/public/data/get-all-villages.json

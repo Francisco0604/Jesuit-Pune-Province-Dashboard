@@ -1,53 +1,89 @@
-# Jesuit Pune Province Activity Map - Architectural Flowchart
+================================================================================
+                    JESUIT PUNE PROVINCE ACTIVITY MAP
+                        System & Website Flowchart
+================================================================================
 
-## I. USER JOURNEY & PAGE HIERARCHY
+1. SITE NAVIGATION & PAGE HIERARCHY
+--------------------------------------------------------------------------------
 
 [ LANDING PAGE (/) ]
-       |
-       |-- [ Sticky Navigation Header ] --> Global Access (About, News, Map, Connect)
-       |
-       |-- [ Hero Section ]             --> "Explore Map" & "Learn About Us" (High-Visibility CTAs)
-       |-- [ Our Presence ]             --> Mission Context & Impact Statistics
-       |-- [ Mission Pillars ]          --> Detailed Overviews (Parish, NFE, etc.)
-       |-- [ News & Updates Preview ]   --> "Latest News" Grid with direct links
-       |-- [ Connect & Impact Section ] --> Prominent "Connect With Us" CTA & Contact Details
-       |
-       |-- [ Structured Footer ]        --> Multi-column Professional Navigation
-             |-- Column 1: Identity & Motto (AMDG)
-             |-- Column 2: Core Navigation (About Us, News, Map)
-             |-- Column 3: Resources (Admin Dashboard, Province Website, Legal)
-             |-- Column 4: Engagement (Connect with Us CTA -> Popup Modal)
+ ├── [ Sticky Header ] ── Links to: About (/about), News (/news), Map (/map), Connect (Modal)
+ ├── [ Hero Section ] ── Introduces AMDG/Mission with CTAs ("Explore Map" / "Learn More")
+ ├── [ Presence Stats ] ── Static key metrics summary (Villages, Families, Districts)
+ ├── [ Mission Pillars ] ── Detailed descriptions of Parish, NFE, Social Justice, and TDSS
+ ├── [ News Feed Grid ] ── Direct links to recent province updates and field reports
+ ├── [ Connect Panel ] ── Visual invitation to contact the Province
+ └── [ Footer ]
+      ├── Column 1: Identity & Motto (Ad Maiorem Dei Gloriam)
+      ├── Column 2: Quick Links (About Us, News, Map, Contact)
+      └── Column 3: Administration (Admin Portal link, Province Website, Legal info)
 
----
 
-## II. KEY PAGES & MODALS
+[ MAP INTERFACE (/map) ]
+ ├── [ Left Sidebar ] ── Search and Filter controls (by Category, District/Cluster)
+ ├── [ Map Canvas ] ── Leaflet-powered maps, marker clusters, district boundaries
+ └── [ Detail Drawer ] ── Slides out on marker click showing:
+      ├── Header: Village name, category (type), district, establishment year
+      ├── Description: Historical notes and mission summary
+      └── Metrics (Dynamic based on Category):
+           ├── NFE Centres: [Students Count] & [Active Teachers] (Clean 2-Column Grid)
+           └── Others (Parish, TDSS, etc.): [Families Count], [Individuals], & [Catechists] (3-Column Grid)
 
-[ ABOUT PAGE (/about) ]
-       |-- Historical Context, Mission & Vision statements.
 
-[ NEWS PAGE (/news) ]
-       |-- Full grid of province updates and field reports.
+[ ADMIN DASHBOARD (/admin) ]
+ ├── [ Stats Overview ] ── Cards showing Total Centers, Parishes, NFE Centres, and TDSS counts
+ ├── [ Controls Toolbar ]
+      ├── [ Export CSV Data ] ── Downloads dynamically compiled CSV of all villages pre-populated
+      ├── [ Sync All Data ] ── Manually exports current browser state to JSON database files
+      ├── [ Import GeoJSON/CSV ] ── Uploads files (GeoJSON geometry or CSV metadata details)
+      └── [ New Entry ] ── Adds a blank village manually
+ └── [ Village Records List ] ── Table of all villages with details, edit, and delete actions
 
-[ CONNECT MODAL ]
-       |-- Elegant popup with direct Email, Phone, and Address information.
 
-[ ADMIN PORTAL (/admin) ]
-       |-- Data management, GeoJSON imports, and record auditing.
+--------------------------------------------------------------------------------
+2. DATA & FILE FLOW SYSTEM
+--------------------------------------------------------------------------------
 
----
+[ ADMIN IMPORT (CSV / GeoJSON) ]
+       │
+       ▼
+ [ dataProcessor.ts ] ── Normalizes formats, resolves names (e.g. Ahamadnagar -> Ahilyanagar)
+       │
+       ├─► GeoJSON (.geojson/.json) ── Contains coordinates & village shapes
+       │
+       └─► Excel CSV (.csv) ── Contains metadata fields (no lat/lng coordinates required)
+       │
+       ▼
+ [ API: /api/save-village ] ── Matches records by [Name] & [Category]
+       │
+       ├─► IF NEW: Creates fresh village profile JSON
+       │
+       └─► IF EXISTS: Performs smart merge (retains GeoJSON shape/coords, updates metadata)
+       │
+       ▼
+ [ Database Folders ] ── public/data/Village_details/[Category]/[Cluster]/[VillageName].json
 
-## III. INTERACTIVE MAP FLOW (/map)
 
-[ MAP INTERFACE ]
-       |
-       |-- [ Search/Filter Sidebar ] --> Easy village lookup for all ages
-       |-- [ Leaflet Map Canvas ]    --> Visual markers with clustering
-       |-- [ Detail Drawer ]         --> Rich metadata on village click
+--------------------------------------------------------------------------------
+3. DATA EXPORT FLOW
+--------------------------------------------------------------------------------
 
----
+[ CLICK: Download Template / Export CSV ]
+       │
+       ▼
+ [ API: /api/get-all-villages ] ── Queries and aggregates all database profiles
+       │
+       ▼
+ [ Client-side Parser ] ── Escapes quotes/commas, formats fields without lat/lng
+       │
+       ▼
+ [ village_data_export.csv ] ── Downloads clean file ready to open in Microsoft Excel
 
-## IV. UX DESIGN FOR SENIOR USERS
-1. Large, high-contrast typography (EB Garamond & Inter).
-2. Generous padding and large click targets for all buttons.
-3. Sticky header ensures navigation is never lost during scrolling.
-4. Clear, descriptive action labels (e.g., "Start Exploring Now", "Browse All News").
+
+--------------------------------------------------------------------------------
+4. KEY DESIGN STANDARDS & UX
+--------------------------------------------------------------------------------
+* Aesthetics: Parchment background (#f5f5dc), Charcoal text (#2d2d2d), Terracotta highlights (#a34436).
+* Senior-Friendly: Large high-contrast serif headings, generous padding, sticky header navigation.
+* Dynamic Metrics: Intelligent card views based on NFE vs General categories.
+* Verification Status: Removed from public details view (no real-time validation).

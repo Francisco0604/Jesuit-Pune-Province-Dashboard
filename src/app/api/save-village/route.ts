@@ -32,25 +32,36 @@ export async function POST(request: Request) {
     const fileName = `${name.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.json`;
     const filePath = path.join(targetDir, fileName);
 
-    // Default template for village data
+    // Read existing file if it exists, to merge rather than overwrite
+    let existingData: any = {};
+    if (fs.existsSync(filePath)) {
+      try {
+        existingData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+      } catch (e) {
+        console.error('Failed to parse existing village JSON:', e);
+      }
+    }
+
+    // Default template for village data, merging with existing values
     const jsonData = {
       name: name,
       type: type,
-      cluster: cluster || 'General',
-      district: rest.district || '',
-      tehsil: rest.tehsil || '',
-      lat: rest.lat || 0,
-      lng: rest.lng || 0,
-      families: rest.families || 0,
-      individuals: rest.individuals || 0,
-      catechists_count: rest.catechists_count || 0,
-      established_year: rest.established_year || 0,
-      description: rest.description || '',
-      last_verified: rest.last_verified || new Date().toISOString(),
+      cluster: cluster || existingData.cluster || 'General',
+      district: rest.district || existingData.district || '',
+      tehsil: rest.tehsil || existingData.tehsil || '',
+      lat: rest.lat || existingData.lat || 0,
+      lng: rest.lng || existingData.lng || 0,
+      families: rest.families !== undefined && rest.families !== 0 ? rest.families : (existingData.families || 0),
+      individuals: rest.individuals !== undefined && rest.individuals !== 0 ? rest.individuals : (existingData.individuals || 0),
+      catechists_count: rest.catechists_count !== undefined && rest.catechists_count !== 0 ? rest.catechists_count : (existingData.catechists_count || 0),
+      established_year: rest.established_year !== undefined && rest.established_year !== 0 ? rest.established_year : (existingData.established_year || 0),
+      description: rest.description || existingData.description || '',
+      last_verified: rest.last_verified || existingData.last_verified || new Date().toISOString(),
       last_updated: new Date().toISOString(),
-      geometry: rest.geometry || null,
+      geometry: rest.geometry || existingData.geometry || null,
       metadata: {
-        source: rest.source || 'upload',
+        source: rest.source || existingData.metadata?.source || 'upload',
+        ...existingData.metadata,
         ...rest.metadata
       }
     };

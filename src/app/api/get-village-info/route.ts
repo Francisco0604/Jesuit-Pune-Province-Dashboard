@@ -21,11 +21,35 @@ export async function GET(request: Request) {
 
     const sectionFolder = folderMap[type] || 'Parish';
     const fileName = `${name.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.json`;
-    const filePath = path.join(process.cwd(), 'public', 'data', sectionFolder, fileName);
 
-    if (fs.existsSync(filePath)) {
-      const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-      return NextResponse.json(data);
+    // 1. Try with cluster parameter if provided
+    const cluster = searchParams.get('cluster');
+    if (cluster) {
+      const clusterFolder = cluster.replace(/[^a-z0-9]/gi, '_');
+      const filePath = path.join(process.cwd(), 'public', 'data', 'Village_details', sectionFolder, clusterFolder, fileName);
+      if (fs.existsSync(filePath)) {
+        const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+        return NextResponse.json(data);
+      }
+    }
+
+    // 2. Scan all subdirectories in public/data/Village_details/[Category]/
+    const categoryDir = path.join(process.cwd(), 'public', 'data', 'Village_details', sectionFolder);
+    if (fs.existsSync(categoryDir)) {
+      const clusters = fs.readdirSync(categoryDir).filter(f => {
+        try {
+          return fs.statSync(path.join(categoryDir, f)).isDirectory();
+        } catch {
+          return false;
+        }
+      });
+      for (const cFolder of clusters) {
+        const filePath = path.join(categoryDir, cFolder, fileName);
+        if (fs.existsSync(filePath)) {
+          const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+          return NextResponse.json(data);
+        }
+      }
     }
 
     // Default template if file doesn't exist

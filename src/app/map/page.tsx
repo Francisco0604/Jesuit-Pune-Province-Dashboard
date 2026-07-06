@@ -7,6 +7,7 @@ import FilterSidebar from '@/components/FilterSidebar';
 import CenterDrawer from '@/components/CenterDrawer';
 import { Center, GeoJSONFeatureCollection } from '@/types';
 import { processData } from '@/utils/dataProcessor';
+import { getAssetPath, getApiUrl } from '@/utils/paths';
 import { Loader2, Compass } from 'lucide-react';
 
 // Dynamically import MapComponent to avoid SSR issues with Leaflet
@@ -35,21 +36,31 @@ export default function Home() {
     const loadData = async () => {
       try {
         // Load Districts (Static)
-        const districtsResponse = await fetch('/data/districts.geojson');
+        const districtsResponse = await fetch(getAssetPath('/data/districts.geojson'));
         if (districtsResponse.ok) {
           const dData = await districtsResponse.json();
           setDistrictsData(dData);
         }
 
-        // Load Dynamic Map Data from /data/uploads
-        const mapResponse = await fetch('/api/get-map-data');
+        // Load Dynamic Map Data from /data/uploads (raw GeoJSON boundaries)
+        const mapResponse = await fetch(getApiUrl('/api/get-map-data'));
+        let rawGeo = null;
         if (mapResponse.ok) {
-          const rawData = await mapResponse.json();
-          setRawGeoData(rawData);
-          
-          const processed = processData(rawData);
+          rawGeo = await mapResponse.json();
+          setRawGeoData(rawGeo);
+        }
+
+        // Load fully merged villages (including descriptions, details, etc.)
+        const villagesResponse = await fetch(getApiUrl('/api/get-all-villages'));
+        if (villagesResponse.ok) {
+          const processed = await villagesResponse.json();
           setCenters(processed);
-          setFilteredCenters(processed); // Initialize filtered centers
+          setFilteredCenters(processed);
+        } else if (rawGeo) {
+          // Fallback if get-all-villages fails but map data is available
+          const processed = processData(rawGeo);
+          setCenters(processed);
+          setFilteredCenters(processed);
         }
       } catch (error) {
         console.error('Data loading failed:', error);
@@ -61,8 +72,15 @@ export default function Home() {
 
   const handleCenterClick = async (center: Center) => {
     try {
-      // Fetch detailed info for the sidebar
-      const response = await fetch(`/api/get-village-info?name=${encodeURIComponent(center.name)}&type=${encodeURIComponent(center.type)}`);
+      const apiUrl = getApiUrl(`/api/get-village-info?name=${encodeURIComponent(center.name)}&type=${encodeURIComponent(center.type)}`);
+      if (!apiUrl) {
+        // On static hosting, the center object already has all merged details
+        setSelectedCenter(center);
+        return;
+      }
+      
+      // Fetch detailed info for the sidebar (useful in development)
+      const response = await fetch(apiUrl);
       if (response.ok) {
         const fullData = await response.json();
         setSelectedCenter({ ...center, ...fullData });

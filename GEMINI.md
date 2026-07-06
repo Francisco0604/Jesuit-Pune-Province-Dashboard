@@ -78,3 +78,10 @@ Villages are normalized using `src/utils/dataProcessor.ts`. The system looks for
 - Development: `npm run dev`
 - Build: `npm run build`
 - Port: `http://localhost:3000`
+
+---
+
+## 5. Team Roles & Workflow
+- **Jaunita**: Information Manager. Responsible for gathering, verifying, and importing village statistics (Families, Students, Active Teachers, descriptions) via the Excel/CSV importer.
+- **Juhi**: GIS Specialist. Responsible for generating, mapping, and uploading all GeoJSON boundary/point coordinate files into `public/data/uploads`.
+- **Francisco**: Web Developer. Responsible for Next.js website maintenance, API logic, UI improvements, authentication/security setup, and hosting deployments.

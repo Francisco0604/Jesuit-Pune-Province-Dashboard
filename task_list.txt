@@ -1,0 +1,76 @@
+================================================================================
+                    JESUIT PUNE PROVINCE MAP - IMPLEMENTATION CHECKLIST
+================================================================================
+
+This document lists the remaining tasks grouped by individual responsibility. 
+Use these checklists to track progress during the project.
+
+--------------------------------------------------------------------------------
+1. JAUNITA - INFORMATION CHECKLIST
+--------------------------------------------------------------------------------
+[ ] Download the pre-populated CSV template from the Admin Panel or locate it
+    at public/data/village_import_template.csv.
+[ ] Edit and verify the statistics (e.g., Students, Active Teachers, Families) 
+    for all 36 NFE Centres and parishes in Microsoft Excel.
+[ ] Confirm that tehsil and cluster names match the existing records.
+[ ] Upload and import the completed Excel CSV file through the Admin Dashboard 
+    (http://localhost:3000/admin) to link statistics and update village profiles.
+
+--------------------------------------------------------------------------------
+2. JUHI - GIS & SPATIAL DATA CHECKLIST
+--------------------------------------------------------------------------------
+[ ] Gather GeoJSON point or polygon files for any missing villages or boundaries.
+[ ] Upload these GeoJSON files through the Admin Dashboard to initialize 
+    geographical shapes and set coordinate locations on the map.
+
+--------------------------------------------------------------------------------
+3. FRANCISCO - DEVELOPMENT & DEPLOYMENT CHECKLIST
+--------------------------------------------------------------------------------
+[ ] Security & Access Control:
+    * Secure the Admin Dashboard (/admin) using NextAuth.js or basic HTTP Auth 
+      so that public users cannot write or delete records.
+[ ] Data Validation & Sanitation:
+    * Build server-side validation on CSV file imports to prevent incorrect types, 
+      missing names, or non-numeric values.
+[ ] Automatic Data Backups:
+    * Implement an automatic backup script for public/data/Village_details 
+      and public/data/uploads directories.
+[ ] Senior Accessibility & Contrast Audit:
+    * Check readability, font sizing, and color contrast ratios for senior 
+      members of the province (contrast between #f5f5dc parchment and text).
+[ ] Mobile Optimization:
+    * Verify drawer and filter sidebar responsiveness on mobile devices/tablets.
+[ ] Offline Caching:
+    * Configure Leaflet tile caching to allow map access in low-connectivity zones.
+[ ] Code Quality & Warning Resolution:
+    * Run 'npm run lint' to scan and clean up styling/code warnings.
+    * Fix the Next.js hydration issues common with Leaflet SSR dynamic rendering.
+[ ] Production Build & Bundling:
+    * Run 'npm run build' to test bundling and static generation.
+[ ] Hosting & Deployment Setup:
+    * Deploy the repository to a production environment (Vercel, Netlify, or VPS).
+[ ] Custom Domain & SSL:
+    * Direct the custom domain name (e.g., map.punejesuits.org) and enable HTTPS/SSL.
+
+--------------------------------------------------------------------------------
+4. FRANCISCO - MAP BEAUTIFICATION & ADVANCED FEATURES CHECKLIST
+--------------------------------------------------------------------------------
+[ ] Change Leaflet Map Tile Provider:
+    * Swap the default OpenStreetMap tile layer for a premium, clean, and highly 
+      aesthetic tile layout (e.g., CartoDB Positron, Stadia Alidade Smooth, or a 
+      custom parchment-styled theme) that matches the site design.
+[ ] Mark District & Inner Boundaries:
+    * Load and render GeoJSON boundaries overlays to draw distinct lines marking 
+      the district borders and the inner taluka/tehsil boundaries on the map.
+[ ] Beautify Map Aesthetics & Interactivity:
+    * Customize the marker cluster styling to use the province theme colors.
+    * Replace default Leaflet popups with custom HTML/CSS styled popup cards 
+      (charcoal borders and gold button accents).
+    * Add interactive hover highlights to boundary shapes.
+[ ] Dynamic News Administration System:
+    * Move the news items in /news from static code into dynamic JSON profiles.
+    * Add a section in the Admin Dashboard (/admin) to create, edit, and delete 
+      news articles (saved as JSON files in public/data/news/).
+[ ] Search Fuzzy Matching:
+    * Enhance the sidebar search filter in /map with fuzzy matching so that minor 
+      typos in village/district names still return search results.
