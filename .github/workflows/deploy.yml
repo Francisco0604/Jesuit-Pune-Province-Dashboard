@@ -34,11 +34,6 @@ jobs:
         with:
           node-version: "20"
           cache: npm
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        with:
-          # Automatically inject basePath in your Next.js config files
-          static_site_generator: next
       - name: Install dependencies
         run: npm ci
       - name: Build with Next.js
